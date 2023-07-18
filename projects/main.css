@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .hello {
+            font-size: 24px;
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="hello">Hello, World!</div>
+</body>
+</html>
