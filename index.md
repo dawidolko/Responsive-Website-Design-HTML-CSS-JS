@@ -25,7 +25,7 @@ redirect_to: css.dawidolko.pl
 
 ### Kursy:
 
-**[Co to kursy?](courses/README.md) - Definicja i zagadnienia**
+**[Co to kursy?](Courses/README.md) - Definicja i zagadnienia**
 - **[Kurs 1](https://github.com/dawidolko/Programming-CSS/tree/main/Courses/Course1)**
   - [Opis kursu](Courses/Course1/README.md)
 
