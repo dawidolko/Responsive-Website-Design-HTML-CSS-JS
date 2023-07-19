@@ -2,12 +2,7 @@
 redirect_to: css.dawidolko.pl
 ---
 
-
----
-redirect_to: c.dawidolko.pl
----
-
-# Język C
+# Język C#
 
 <br>![C#](csharp.png)
 
