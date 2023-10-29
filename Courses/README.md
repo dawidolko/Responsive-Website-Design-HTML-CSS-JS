@@ -1,26 +1,26 @@
-# **Kursy CSS**
+# **CSS Courses**
 
-Witaj w repozytorium, które gromadzi zasoby i kursy związane z językiem stylów CSS. To miejsce stworzone zostało z myślą o osobach, które chcą poszerzyć swoją wiedzę na temat CSS lub poprawić swoje umiejętności w stylizacji stron internetowych.
+Welcome to the repository that brings together resources and courses related to the CSS styling language. This place was created for people who want to expand their knowledge of CSS or improve their website styling skills.
 
-## **O repozytorium**
-Repozytorium zawiera różnorodne kursy, tutoriale oraz materiały edukacyjne dotyczące języka CSS. Znajdziesz tutaj zasoby dla początkujących, jak i dla bardziej zaawansowanych programistów, którzy chcą poszerzyć swoje umiejętności w zakresie stylizacji stron internetowych.
+## **About the repository**
+The repository contains a variety of courses, tutorials and educational materials about the CSS language. Here you'll find resources for beginners as well as more advanced developers who want to expand their website styling skills.
 
-Kursy zostały podzielone tematycznie, obejmując takie obszary jak:
+The courses have been divided thematically, covering areas such as:
 
-1. Podstawy CSS: Zrozumienie składni CSS, selektorów, właściwości i wartości do stylizacji elementów HTML.
-2. Box Model: Poznanie modelu pudełkowego w CSS i jego roli w układzie i stylizacji elementów na stronie.
-3. Stylizacja tekstu: Nauczenie się różnych sposobów formatowania i stylizacji tekstu na stronie.
-4. Flexbox i Grid: Wykorzystywanie Flexboxa i Grida do tworzenia elastycznych i responsywnych układów stron.
-5. Animacje i przejścia: Tworzenie animacji i płynnych przejść między stanami elementów na stronie.
-6. Tworzenie responsywnych stron: Projektowanie stron internetowych, które dostosowują się do różnych urządzeń i ekranów.
+1. CSS Basics: Understand CSS syntax, selectors, properties and values for styling HTML elements.
+2. Box Model: Learning about the box model in CSS and its role in the arrangement and styling of elements on the page.
+3. Text Styling: Learning different ways to format and style text on a page.
+4. Flexbox and Grid: Using Flexbox and Grid to create flexible and responsive page layouts.
+5. Animations and transitions: Create animations and smooth transitions between the states of elements on the page.
+6. Creating Responsive Websites: Designing websites that adapt to different devices and screens.
 
-## **Jak korzystać z repozytorium**
-Zachęcamy do swobodnego przeglądania dostępnych kursów i materiałów edukacyjnych. Każdy kurs zawiera opis, materiały źródłowe, przykłady kodu oraz praktyczne ćwiczenia, które pomogą Ci w nauce i zrozumieniu języka CSS.
+## **How to use the repository**
+We encourage you to freely browse the available courses and educational materials. Each course includes a description, reference materials, code examples, and hands-on exercises to help you learn and understand CSS.
 
-## **Wkład i wsparcie**
-Zapraszamy do aktywnego uczestnictwa w rozwoju tego repozytorium poprzez dodawanie swoich kursów, tutoriali czy materiałów, dzielenie się pomysłami oraz udzielanie opinii i sugestii. Naszym celem jest stworzenie bogatej bazy wiedzy i zasobów dla wszystkich zainteresowanych CSS.
+## **Contribution and support**
+We invite you to actively participate in the development of this repository by adding your courses, tutorials or materials, sharing your ideas and providing opinions and suggestions. Our goal is to create a rich base of knowledge and resources for everyone interested in CSS.
 
-## **Dołącz do społeczności**
-Skorzystaj z okazji, aby dołączyć do społeczności programistów CSS, gdzie wspólnie poszerzamy nasze umiejętności i rozwijamy się w zakresie stylizacji stron internetowych.
+## **Join the community**
+Take the opportunity to join the CSS developer community, where together we expand our skills and develop in the field of website styling.
 
-Zapraszamy do zapoznania się z dostępnymi kursami i dołączenia do naszej społeczności. Razem możemy poszerzyć naszą wiedzę i zdolności w stylizacji stron internetowych.
+We invite you to check out the available courses and join our community. Together we can expand our knowledge and skills in website styling.
