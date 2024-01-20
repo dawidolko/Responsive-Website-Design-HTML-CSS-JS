@@ -1,3 +1,52 @@
+
+/* Root variables
+Definicje globalnych zmiennych CSS, które określają kolorystykę strony, w tym kolory tła, tekstów i akcentów.
+*/
+
+/* Body Styles
+Podstawowe style dla całego dokumentu, ustawiające m.in. kolor tła, rodzinę czcionek, wyrównanie elementów i układ flex.
+*/
+
+/* Header Styles
+Style dla nagłówka strony, określające jego pozycjonowanie, rozmiar i wyrównanie.
+*/
+
+/* Loading Bars
+Style dla animowanych pasków ładowania na górze i dole strony, z określeniem pozycji, rozmiaru i gradientu kolorów.
+*/
+
+/* Blur Background
+Style dla rozmytego tła, zdefiniowanie pozycji, rozmiaru, obrazu tła i filtru rozmycia.
+*/
+
+/* Header Text
+Style dla tekstu w nagłówku, w tym rozmiar fontu, kolor, margines i efekt przejścia.
+*/
+
+/* Call to Action Button
+Style dla przycisku zachęcającego do działania w nagłówku, określające jego wygląd i interakcje.
+*/
+
+/* Navigation Bar
+Style dla paska nawigacji, w tym jego pozycjonowanie, układ, kolor tła i style dla logo oraz elementów nawigacyjnych.
+*/
+
+/* FAQ Section
+Style dla sekcji FAQ, w tym stylowanie dla kategorii pytań, pytań i odpowiedzi oraz interakcje z details i summary.
+*/
+
+/* Footer Styles
+Style dla stopki, określające tło, kolor tekstu, linki i ich interakcje oraz style dla obrazków.
+*/
+
+/* Media Queries for medium screens
+Zestaw reguł dla responsywności strony na średnich ekranach, w tym zmiany w stylach nawigacji i nagłówka.
+*/
+
+/* Media Queries for small screens
+Zestaw reguł dla responsywności strony na małych ekranach, w tym zmiany w stylach nawigacji, nagłówka i pozycjonowania elementów.
+*/
+
 :root{
   --primary-color: #000;
   --secondary-color: #fff;
@@ -199,6 +248,20 @@ ol > li:hover > a{
   
   input#toggle {
     display: none;
+  }
+
+  .cart-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #cartCount {
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 0.8em;
   }
   
   .blur-background {
@@ -463,6 +526,72 @@ ol > li:hover > a{
   details > summary::-webkit-details-marker {
     display: none;
   }
+
+.chat-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    border-radius: 15px 15px 0 0;
+    background: #ffffff;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-header {
+    padding: 10px;
+    background: #b15f01;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.przycisk{
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #b15f01;
+    color: white;
+}
+
+.expanded .chat-content {
+    display: block;
+}
+
+.dark-mode .chat-header {
+    background: #343a40;
+}
+
+.dark-mode .chat-container {
+    background: #495057;
+}
+
+.dark-mode button {
+    background-color: #5a6268;
+}
+
+.quote-style {
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 3px solid #b15f01;
+    font-style: italic;
+    display: inline-block;
+    color: #000;
+    background-color: #f0f0f0;
+}
   
   footer {
     padding-top: 1rem;
@@ -694,6 +823,15 @@ ol > li:hover > a{
   }
   
   @media (max-width: 650px) {
+
+    #menu > li > ul {
+      display: none;
+      top: -100px;
+    }
+    
+    #menu > li:hover > ul{
+      margin-left:50px;
+    }
   
     .toggle{
       margin-top: 5px;

@@ -1,3 +1,70 @@
+/* Root variables
+Zdefiniowanie globalnych zmiennych CSS (kolorów) dla łatwej zmiany motywu i spójności na całej stronie.
+*/
+
+/* Custom Properties
+Zdefiniowanie własnych właściwości CSS dla dynamicznych efektów, jak obracanie elementów.
+*/
+
+/* Animations
+Definicje animacji, w tym fadeOut dla stopniowego znikania elementów, spin dla obracania elementów, oraz fly dla animacji przesunięcia i zanikania.
+*/
+
+/* Body Styles
+Podstawowe style dla całej strony, w tym ustawienia wyświetlania, czcionki, koloru tła oraz układu elementów.
+*/
+
+/* Header Styles
+Style specyficzne dla nagłówka strony, w tym wyrównanie, rozmiar i sposób wyświetlania.
+*/
+
+/* Loading Bars
+Style dla pasków ładowania umieszczonych na górze i dole strony, w tym ich pozycja, rozmiar i gradient tła.
+*/
+
+/* Blur Background
+Styl dla rozmytego tła, w tym pozycja, rozmiar, obraz tła i filtr rozmycia.
+*/
+
+/* Header Text
+Style dla tekstu w nagłówku, w tym rozmiar fontu, kolor, margines i animacja przy najechaniu.
+*/
+
+/* Call to Action Button
+Style dla przycisku akcji (CTA) w nagłówku, w tym dekoracja tekstu, kolor, rozmiar fontu i animacja przy najechaniu.
+*/
+
+/* Navigation Bar
+Style dla paska nawigacji, w tym pozycja, kolor tła, wyświetlanie, i style dla logo oraz elementów nawigacyjnych.
+*/
+
+/* Main Content
+Style dla głównej sekcji treści, w tym marginesy.
+*/
+
+/* Section Heading
+Style dla nagłówków sekcji, w tym rozmiar fontu, kolor i marginesy.
+*/
+
+/* Thank You Modal
+Style dla modalu 'Dziękujemy', w tym sposób wyświetlania, pozycjonowanie, animacja i kolor tła.
+*/
+
+/* Contact Section
+Style dla sekcji kontaktowej, w tym tło, pozycjonowanie, animacje i specyficzne style dla formularza.
+*/
+
+/* Form Styles
+Style dla formularzy, w tym tło, cienie, rozmiary i style dla pól tekstowych i przycisków.
+*/
+
+/* Footer Styles
+Style dla stopki, w tym tło, kolor tekstu, linki i ich interakcje oraz style dla obrazków.
+*/
+
+/* Media Queries
+Zestaw reguł dla responsywności strony, w tym zmiany w stylach dla różnych szerokości ekranów.
+*/
 :root{
   --primary-color: #000;
   --secondary-color: #fff;
@@ -55,6 +122,45 @@
     animation-timing-function: ease-in-out;
   }
 }
+
+@keyframes fadeOut {
+
+  0%,
+  10% {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  90%,
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+@keyframes spin {
+  0% {
+      --rotate: 0deg;
+  }
+  100% {
+      --rotate: 360deg;
+  }
+}
+
+@keyframes fly {
+  10% {
+      transform: translate(-10px, 10px);
+  }
+  40% {
+      transform: translate(-15px, 15px);
+      opacity: 1;
+  }
+  100% {
+      transform: translate(100vw, -100vh);
+      opacity: 0;
+  }
+}
+
 
 @keyframes show-cookies {
   to {
@@ -199,6 +305,20 @@ ol > li:hover > a{
   
   input#toggle {
     display: none;
+  }
+
+  .cart-icon {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+  }
+  
+  #cartCount {
+    background-color: red;
+    color: white;
+    padding: 2px 5px;
+    border-radius: 50%;
+    font-size: 0.8em;
   }
   
   .blur-background {
@@ -464,26 +584,6 @@ ol > li:hover > a{
     border-radius: 6px;
 }
 
-#contact::before {
-    content: "";
-    display: block;
-    width: 104%;
-    height: 110%;
-    border-radius: 8px;
-    background: conic-gradient(from var(--rotate) at 50% 50%,
-        #03295e6b 6%,
-        transparent 30%,
-        transparent 70%,
-        #0009575b 90%,
-        #1d7afc3d 100%),
-        #00189e52;
-    position: absolute;
-    z-index: -1;
-    top: -5%;
-    left: -2%;
-    animation: spin 2s linear infinite;
-}
-
 .form {
     margin-top: 70px;
     background: var(--lilinav-color);
@@ -497,6 +597,8 @@ ol > li:hover > a{
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 0 10px #f00, 0 0 20px #0f0, 0 0 30px #00f, 0 0 40px #ff0, 0 0 50px #f0f, 0 0 60px #0ff, 0 0 70px #ff0;
+
 }
 
 .form h2 {
@@ -716,6 +818,72 @@ span.button {
     color: #ffffff;
     border-radius: 10px;
   }
+
+.chat-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 350px;
+    border-radius: 15px 15px 0 0;
+    background: #ffffff;
+    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-header {
+    padding: 10px;
+    background: #b15f01;
+    color: white;
+    border-radius: 15px 15px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.chat-content {
+    display: none;
+    padding: 20px;
+    text-align: center;
+}
+
+.przycisk{
+    padding: 10px 15px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #b15f01;
+    color: white;
+}
+
+.expanded .chat-content {
+    display: block;
+}
+
+.dark-mode .chat-header {
+    background: #343a40;
+}
+
+.dark-mode .chat-container {
+    background: #495057;
+}
+
+.dark-mode button {
+    background-color: #5a6268;
+}
+
+.quote-style {
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 3px solid #b15f01;
+    font-style: italic;
+    display: inline-block;
+    color: #000;
+    background-color: #f0f0f0;
+}
   
   @media (max-width: 1100px){
     .row{
@@ -851,6 +1019,15 @@ span.button {
   }
   
   @media (max-width: 650px) {
+
+    #menu > li > ul {
+      display: none;
+      top: -100px;
+    }
+    
+    #menu > li:hover > ul{
+      margin-left:50px;
+    }
   
     .toggle{
       margin-top: 5px;

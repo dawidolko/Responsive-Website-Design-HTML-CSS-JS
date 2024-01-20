@@ -1,24 +1,33 @@
+// Pobranie referencji do elementów HTML
 let container = document.getElementById("container"),
     content = document.getElementById("content"),
     message = document.getElementById("message"),
     button = document.getElementById("button");
 
-    button.addEventListener("click", function () {
-        let input_hour = document.getElementById("select-hour").value;
-        let input_minutes = document.getElementById("input-minutes").value;
-    
-        message.innerHTML = `Chcę się spotkać o <b>${input_hour}:${input_minutes}</b> <br> (uzgodnione z kim trzeba) <br> zapraszam przed tą godziną <br> Dawid Olko:)`;
-        content.style.display = "flex"; 
-        content.style.justifyContent = "center";
-        container.style.display = "none";
-    
-        setTimeout(function () {
-            content.style.display = "none"; 
-            container.style.display = "flex"; 
-        }, 2000); 
-    });
-    
+// Dodanie obsługi zdarzenia kliknięcia przycisku
+button.addEventListener("click", function () {
+    // Pobranie wartości z pól wyboru godziny i minut
+    let input_hour = document.getElementById("select-hour").value;
+    let input_minutes = document.getElementById("input-minutes").value;
 
+    // Ustawienie treści wiadomości zgodnie z wybraną godziną i minutami
+    message.innerHTML = `Chcę się spotkać o <b>${input_hour}:${input_minutes}</b> <br> (uzgodnione z kim trzeba) <br> zapraszam przed tą godziną <br> Dawid Olko:)`;
+    
+    // Ustawienie wyświetlania kontenera z wiadomością
+    content.style.display = "flex"; 
+    content.style.justifyContent = "center";
+    
+    // Ukrycie kontenera z polami wyboru godziny i minut
+    container.style.display = "none";
+
+    // Użycie setTimeout do ponownego ukazania kontenera po 2 sekundach
+    setTimeout(function () {
+        content.style.display = "none"; 
+        container.style.display = "flex"; 
+    }, 2000); 
+});
+
+// Reszta kodu obsługuje zegar i zmianę motywu jasnego/ciemnego, ale nie jest związana z funkcją obsługi spotkania.
 const hourElement = document.querySelector(".hour");
 const minuteElement = document.querySelector(".minute");
 const secondElement = document.querySelector(".second");
@@ -71,34 +80,21 @@ const setTime = () => {
     const month = time.getMonth();
     const day = time.getDay();
     const hours = time.getHours();
-    const hoursForClock = hours;
     const minutes = time.getMinutes();
     const seconds = time.getSeconds();
     const ampm = "";
 
     hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(
-        hoursForClock,
-        0,
-        11,
-        0,
-        360
+        hours + minutes / 60, 0, 12, 0, 360
     )}deg)`;
     minuteElement.style.transform = `translate(-50%, -100%) rotate(${scale(
-        minutes,
-        0,
-        59,
-        0,
-        360
+        minutes, 0, 60, 0, 360
     )}deg)`;
     secondElement.style.transform = `translate(-50%, -100%) rotate(${scale(
-        seconds,
-        0,
-        59,
-        0,
-        360
+        seconds, 0, 60, 0, 360
     )}deg)`;
 
-    timeElement.innerHTML = `${hoursForClock}:${
+    timeElement.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${
         minutes < 10 ? `0${minutes}` : minutes
     } ${ampm}`;
     dateElement.innerHTML = `${days[day]},  <span class="circle">${date}</span> ${months[month]} `;

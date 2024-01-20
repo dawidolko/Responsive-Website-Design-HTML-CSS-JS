@@ -1,3 +1,56 @@
+/* Root variables
+   --blue: Główny kolor niebieski używany w stylach.
+   --black-color: Czarny kolor używany dla tekstu lub tła.
+   --white-color: Biały kolor używany dla tekstu lub tła.
+   --gray-color: Szary kolor używany jako neutralny lub dla tekstu.
+   --red-color, --red2-color: Odcienie czerwonego używane dla akcentów lub przycisków.
+   --first-color do --ten-color: Paleta kolorów używana w projekcie dla różnych elementów.
+*/
+
+/* Animations
+   @keyframes pulse: Definicja animacji pulsowania dla elementów.
+   @keyframes fadeOut: Animacja wygaszania elementów na stronie.
+   @keyframes animacja1: Animacja obrotu 360 stopni.
+   @keyframes animacja2: Animacja zmniejszenia skali elementu.
+   @keyframes animacja3: Animacja obrotu -360 stopni (w przeciwnym kierunku).
+   @keyframes animacjaX: Kombinacja animacji obrotu i zmiany skali.
+   @keyframes rocking: Animacja kołysania elementu.
+   @keyframes blink-animation: Animacja zmiany tła elementu.
+   @keyframes slideInOut: Animacja przesuwania elementu.
+   @keyframes typing: Symulacja animacji pisania maszynowego.
+   @keyframes blink: Animacja migania kursora.
+   @keyframes neon1: Animacja efektu neonowego tekstu.
+*/
+
+/* Global settings
+   *: Resetowanie marginesów i paddingów oraz ustawienie box-sizing na border-box.
+   body: Definicja podstawowych stylów dla całej strony.
+   img: Uniwersalne ustawienia dla obrazków, takie jak szerokość, wysokość i zachowanie proporcji.
+*/
+
+/* Components
+   .header: Stylizacja głównego nagłówka strony.
+   .blur-background: Styl dla rozmytego tła w nagłówku.
+   .logoTrans: Animacja i styl dla logo z efektem przejścia.
+   .circle: Styl dla elementu okrągłego, często używanego dla logo lub avatara.
+   .loading-top, .loading-bottom: Style dla pasków ładowania na górze i dole strony.
+   .header__text: Stylizacja tekstu w nagłówku.
+   .wrapper: Uniwersalny wrapper dla centrowania elementów.
+   .navbar: Stylizacja paska nawigacyjnego.
+   ... (Reszta komentarzy dotycząca poszczególnych komponentów i ich stylów)
+*/
+
+/* Media queries
+   Definicje zachowania stylów na różnych szerokościach ekranu.
+   Szczególnie ważne dla responsywności strony.
+   Zawiera różne punkty przełamania dla różnych typów urządzeń.
+*/
+
+
+/* Root variables
+   Zmiennne globalne do przechowywania kolorów i innych często używanych wartości.
+   Możliwe do użycia w całym arkuszu stylów dla łatwego dostępu i zmiany.
+*/
 :root{
   --primary-color: #000;
   --secondary-color: #fff;
@@ -62,6 +115,147 @@
     transform: translateY(0);
   }
 }
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+
+  50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+  }
+
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+
+  0%,
+  10% {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  90%,
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+@keyframes animacja1 {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes animacja2 {
+  0% {
+      transform: scale(1);
+  }
+
+  100% {
+      transform: scale(0.5);
+  }
+}
+
+@keyframes animacja3 {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+
+@keyframes animacjaX {
+  0% {
+      transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+      transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@keyframes rocking {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  50% {
+      transform: rotate(-25deg);
+  }
+
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes blink-animation {
+  from {
+      background-image: url("../img/logo1transparent.webp");
+  }
+
+  to {
+      background-image: url("../img/logo2transparent.webp");
+  }
+}
+
+@keyframes slideInOut {
+  0%, 100% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {width: 0}
+}
+
+@keyframes blink {
+  50% {
+      border-color: transparent
+  }
+}
+
+@keyframes neon1 {
+  from {
+      text-shadow: 0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px #ff1177,
+      0 0 70px #ff1177,
+      0 0 80px #ff1177,
+      0 0 100px #ff1177,
+      0 0 150px #ff1177;
+  }
+  to {
+      text-shadow: 0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px #ff1177,
+      0 0 35px #ff1177,
+      0 0 40px #ff1177,
+      0 0 50px #ff1177,
+      0 0 75px #ff1177;
+  }
+}
+
 
 * {
   margin: 0;
@@ -199,6 +393,20 @@ ol > li:hover > a{
 
 input#toggle {
   display: none;
+}
+
+.cart-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#cartCount {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 0.8em;
 }
 
 .blur-background {
@@ -418,7 +626,7 @@ li:hover{
   width: 50%;
   display: flex;
   flex-direction: column;
-  background-color: #e9ecef;
+  background-color: rgba(233, 236, 239, 0.5);
   padding: 10px;
   margin-top: 10px;
 }
@@ -538,7 +746,7 @@ li:hover{
 
 #current-weather,
 #future-weather {
-  background-color: #e9ecef;
+  background-color: rgba(233, 236, 239, 0.5);
   border-radius: 0.25rem;
   padding: 1rem;
   margin-top: 1rem;
@@ -597,6 +805,20 @@ main {
 
 input#toggle {
   display: none;
+}
+
+.cart-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#cartCount {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 0.8em;
 }
 
 .section {
@@ -1559,7 +1781,7 @@ footer img:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 30%;
+  height: 35%;
   padding: 2em 0;
   background-color: rgb(37, 37, 37);
   color: #ffffff;
@@ -1602,6 +1824,73 @@ footer img:hover {
   border: 1px solid #ffffff;
   color: #ffffff;
   border-radius: 10px;
+}
+
+
+.chat-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  border-radius: 15px 15px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #b15f01;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chat-content {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.przycisk{
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #b15f01;
+  color: white;
+}
+
+.expanded .chat-content {
+  display: block;
+}
+
+.dark-mode .chat-header {
+  background: #343a40;
+}
+
+.dark-mode .chat-container {
+  background: #495057;
+}
+
+.dark-mode button {
+  background-color: #5a6268;
+}
+
+.quote-style {
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 3px solid #b15f01;
+  font-style: italic;
+  display: inline-block;
+  color: #000;
+  background-color: #f0f0f0;
 }
 
 @media (max-width:1200px) {
@@ -1851,6 +2140,15 @@ footer img:hover {
 }
 
 @media (max-width: 650px) {
+
+  #menu > li > ul {
+    display: none;
+    top: -100px;
+  }
+  
+  #menu > li:hover > ul{
+    margin-left:50px;
+  }
 
   .toggle{
     margin-top: 5px;

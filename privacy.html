@@ -11,12 +11,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@100&family=Roboto:ital,wght@0,100;1,100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styleCart.css">
+    <link rel="stylesheet" href="css/stylePrivacy.css">
 </head>
 
 <body>
     <header>
-         <nav>
+        <nav>
             <div id="nav">
                 <label id="hamburger" for="toggle">☰</label>
                         <!-- Przycisk menu hamburger dla responsywności -->
@@ -118,13 +118,14 @@
                     <a href="./cart.html"><img src="img/shopping-cart.svg" alt="Cart" height="25" width="25"></a>
                     <span id="cartCount">0</span>
                 </div>
+            </div>
         </nav>
     </header>
     <main>
         <div id="container" class="container">
             <button style="display: none;" id="button" class="button">Potwierdź godzinę !</button>
         </div>
-        
+
         <div class="chat-container">
             <div class="chat-header">
                 <span>DRAW A QUOTE!</span>
@@ -139,31 +140,72 @@
         </div>
 
 
-        <div class="testi">
-            <div id="cartItems"></div>
-            <div>Total: <span id="totalPrice"></span></div>
+        <section class="section privacy" id="privacy">
+            <h1 style="display:none;">.</h1>
+            <div class="privacy__container">
+                <h2 class="section__heading">Polityka Prywatności</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget massa sed sapien luctus bibendum.
+                    Mauris
+                    interdum interdum dolor, nec bibendum enim. Duis nec justo velit. Integer bibendum purus mauris, et
+                    accumsan
+                    mi
+                    facilisis nec. Nulla facilisi. Suspendisse fringilla tortor at nulla lacinia blandit. Cras ac eros a
+                    velit
+                    ultrices bibendum vel ac justo. Nunc euismod, nisi at elementum sagittis, odio lectus dignissim mi, ac
+                    ultrices
+                    turpis nulla et nisi. Proin vestibulum, felis vitae lobortis luctus, dolor enim venenatis tortor, a
+                    convallis
+                    ex
+                    velit eget lectus. In hac habitasse platea dictumst. Suspendisse vel egestas nisi. Donec semper dui
+                    at
+                    facilisis
+                    eleifend. Donec malesuada libero id metus semper interdum.
 
-            <!-- Sekcja danych osobowych i płatności -->
-            <div id="checkoutSection">
-            <form id="personalInfoForm">
-                <h2>Personal Information</h2>
-                <!-- Pola formularza dla danych osobowych -->
-                <input type="text" id="name" placeholder="Name and Surname" required>
-                <input type="text" id="phone" placeholder="Phone Number" required>
-                <input type="text" id="address" placeholder="Address" required>
-                
-                <h2>Card Information</h2>
-                <!-- Pola formularza dla danych karty -->
-                <input type="text" id="cardNumber" placeholder="Card Number" required>
-                <input type="text" id="cardMM" placeholder="MM" required>
-                <input type="text" id="cardYYYY" placeholder="YYYY" required>
-                <input type="text" id="cardCVV" placeholder="CVV" required>
-                
-                <button type="button" onclick="validateAndCheckout()">Checkout!</button>
-            </form>
+                    Nulla vel ex vitae turpis hendrerit fringilla at sit amet velit. Aenean finibus justo vitae est
+                    sollicitudin,
+                    sit amet
+                    viverra arcu volutpat. Nulla facilisi. Donec nec ullamcorper nisl. Vestibulum cursus malesuada ante,
+                    et
+                    feugiat
+                    eros varius vitae. Maecenas vel odio ac turpis consectetur egestas. Suspendisse feugiat justo eu
+                    neque
+                    tincidunt
+                    condimentum. Sed vitae ultrices odio. Aenean vitae magna sit amet risus malesuada aliquet. Aenean a
+                    facilisis
+                    justo.
+                    Etiam sagittis mi elit, in malesuada turpis venenatis eu.
+
+                    Vestibulum euismod vitae enim nec scelerisque. Integer laoreet mauris quam, at pellentesque nulla
+                    iaculis
+                    eu.
+                    Pellentesque laoreet tincidunt est. Nam accumsan euismod neque, et accumsan magna aliquet eu.
+                    Suspendisse
+                    consectetur
+                    ultrices elit, id elementum purus tempus et. Nunc sagittis nunc ex, id ultrices nisl fermentum eu.
+                    Suspendisse
+                    luctus
+                    libero eu tellus varius euismod. Pellentesque sed gravida magna.
+
+                    Duis feugiat bibendum varius. Integer quis turpis ut justo viverra ultricies. Sed vel nulla quis
+                    justo
+                    euismod
+                    scelerisque. Suspendisse et metus dui. Nullam vel tellus nec ligula tempus varius ac quis magna.
+                    Fusce
+                    vestibulum
+                    pellentesque eros, id hendrerit mi cursus in. Sed eu justo fermentum, semper purus nec, feugiat odio.
+                    Vivamus
+                    rhoncus magna eu risus tempor, non tincidunt odio fermentum. Nulla facilisi. Etiam nec lectus vel
+                    justo
+                    feugiat
+                    dignissim eget quis ligula. Integer id ipsum dapibus, scelerisque odio ac, pharetra risus. Nulla nec
+                    quam
+                    quis
+                    ipsum euismod efficitur at nec eros. Sed semper finibus sapien vitae cursus. Fusce hendrerit aliquam
+                    massa,
+                    id
+                    efficitur justo. Donec eu odio sit amet justo venenatis efficitur non at tellus.</p>
             </div>
-
-        </div>
+        </section>
     </main>
     <footer>
         <div id="socialmedia">
@@ -181,7 +223,7 @@
                 <a href="./privacy.html" class="footer__link">Privacy Policy</a>
             </p>
         </div>
-        <div id="css">
+        <div>
            <!-- Dodatkowe informacje lub linki -->
             <p>
                 <a href="https://jigsaw.w3.org/css-validator/check/referer">
@@ -194,8 +236,8 @@
     </footer>
 
     <script type="module" src="js/app.js"></script>
-    <script src="js/cart.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

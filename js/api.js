@@ -170,6 +170,24 @@ function clearHistory(event) {
   location.reload();
 }
 
+// Dodaj obsługę zdarzenia keydown na polu do wprowadzania miasta
+searchCity.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    displayWeather(event);
+  }
+});
+
+// Zaktualizuj funkcję displayWeather, aby obsługiwała również wciśnięcie Enter
+function displayWeather(event) {
+  if (event) {
+    event.preventDefault();
+  }
+  if (searchCity.value.trim() !== "") {
+    city = searchCity.value.trim();
+    currentWeather(city);
+  }
+}
+
 // Obsługa zdarzeń
 searchButton.addEventListener("click", displayWeather);
 document.addEventListener("click", invokePastSearch);

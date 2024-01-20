@@ -114,6 +114,10 @@
                     </ruby></a></li>
                 </ol>
                 <button class="toggle">Dark mode</button>
+                <div class="cart-icon">
+                    <a href="./cart.html"><img src="img/shopping-cart.svg" alt="Cart" height="25" width="25"></a>
+                    <span id="cartCount">0</span>
+                </div>
             </div>
         </nav>
     </header>
@@ -121,6 +125,21 @@
         <div id="container" class="container">
             <button style="display: none;" id="button" class="button">Potwierdź godzinę !</button>
         </div>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <span>DRAW A QUOTE!</span>
+                <button class="przycisk" id="toggle-theme">change theme</button>
+                <button class="przycisk" id="expand-collapse-btn">-</button>
+            </div>
+            <div class="chat-content">
+                <p>See what someone has to say to you today. Think about it...</p>
+                <button class="przycisk" id="get-quote">Download quote</button>
+                <div class="przycisk" id="quote-display"></div>
+            </div>
+        </div>
+
+
         <section class="section about-us" id="about">
             <h1 style="display:none;">.</h1>
             <div class="about-us__container">
@@ -172,7 +191,9 @@
         </div>
     </footer>
 
+    <script type="module" src="js/app.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>
