@@ -1,0 +1,3804 @@
+/* Root variables
+   --blue: Główny kolor niebieski używany w stylach.
+   --black-color: Czarny kolor używany dla tekstu lub tła.
+   --white-color: Biały kolor używany dla tekstu lub tła.
+   --gray-color: Szary kolor używany jako neutralny lub dla tekstu.
+   --red-color, --red2-color: Odcienie czerwonego używane dla akcentów lub przycisków.
+   --first-color do --ten-color: Paleta kolorów używana w projekcie dla różnych elementów.
+*/
+
+/* Animations
+   @keyframes pulse: Definicja animacji pulsowania dla elementów.
+   @keyframes fadeOut: Animacja wygaszania elementów na stronie.
+   @keyframes animacja1: Animacja obrotu 360 stopni.
+   @keyframes animacja2: Animacja zmniejszenia skali elementu.
+   @keyframes animacja3: Animacja obrotu -360 stopni (w przeciwnym kierunku).
+   @keyframes animacjaX: Kombinacja animacji obrotu i zmiany skali.
+   @keyframes rocking: Animacja kołysania elementu.
+   @keyframes blink-animation: Animacja zmiany tła elementu.
+   @keyframes slideInOut: Animacja przesuwania elementu.
+   @keyframes typing: Symulacja animacji pisania maszynowego.
+   @keyframes blink: Animacja migania kursora.
+   @keyframes neon1: Animacja efektu neonowego tekstu.
+*/
+
+/* Global settings
+   *: Resetowanie marginesów i paddingów oraz ustawienie box-sizing na border-box.
+   body: Definicja podstawowych stylów dla całej strony.
+   img: Uniwersalne ustawienia dla obrazków, takie jak szerokość, wysokość i zachowanie proporcji.
+*/
+
+/* Components
+   .header: Stylizacja głównego nagłówka strony.
+   .blur-background: Styl dla rozmytego tła w nagłówku.
+   .logoTrans: Animacja i styl dla logo z efektem przejścia.
+   .circle: Styl dla elementu okrągłego, często używanego dla logo lub avatara.
+   .loading-top, .loading-bottom: Style dla pasków ładowania na górze i dole strony.
+   .header__text: Stylizacja tekstu w nagłówku.
+   .wrapper: Uniwersalny wrapper dla centrowania elementów.
+   .navbar: Stylizacja paska nawigacyjnego.
+   ... (Reszta komentarzy dotycząca poszczególnych komponentów i ich stylów)
+*/
+
+/* Media queries
+   Definicje zachowania stylów na różnych szerokościach ekranu.
+   Szczególnie ważne dla responsywności strony.
+   Zawiera różne punkty przełamania dla różnych typów urządzeń.
+*/
+
+
+/* Root variables
+   Zmiennne globalne do przechowywania kolorów i innych często używanych wartości.
+   Możliwe do użycia w całym arkuszu stylów dla łatwego dostępu i zmiany.
+*/
+:root{
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --nav-color: #7c4200;
+  --linav-color: #b15f01;
+  --lilinav-color: #da7400;
+  --lililinav--color: #ff8800;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #3f3f3f;
+  --color-grayLight: #6e6e6e;
+  --color-grayLight2: #afafaf;
+  --color-grayLight3: #b9b9b9;
+  --color-bg: #ccc;
+  --color-red:red;
+  --color1: #383838;
+  --color2: #3a3a3a;
+  --color3: #292929;
+  --color11: #3a3a3a;
+  --bg-color: #d1c6c6;
+  --bg2-color: #6693af;
+  --blue: #0033a0;
+  --black-color: #000;
+  --white-color: #fefefe;
+  --gray-color: gray;
+  --red-color: #f55;
+  --red2-color: #f40;
+  --first-color: #193242;
+  --second-color: #375465;
+  --third-color: #183141;
+  --fourth-color: #1a3344;
+  --fifth-color: #385566;
+  --sixth-color: #355264;
+  --seventh-color: #1d384a;
+  --eighth-color: #1e394b;
+  --ninth-color: #395667;
+  --ten-color: #203a4d;
+}
+
+/*
+HOME - sekcja główna strony
+
+Cała strona główna prezentuję się tak, jak na załączonym obrazku. Zawiera ona nagłówek, sekcję z ofertą, sekcję z galerią, sekcję z opisem i sekcję z informacjami. Rodzieliłem ją na poszczególne sekcje, aby łatwiej było zdefiniować style dla poszczególnych elementów.
+
+Markup:
+<main>
+        <div class="blur-background"></div>
+        <div id="container" class="container">
+            <div class="clock-div">
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="needle hour"></div>
+                        <div class="needle minute"></div>
+                        <div class="needle second"></div>
+                        <div class="center-point"></div>
+                    </div>
+                    <div class="time"></div>
+                    <div class="date"></div>
+                </div>
+            </div>
+            <p class="message pb-4">
+                O której godzinie chcesz się ze mną spotkać?
+            </p>
+            <div class="inline-flex text-lg border rounded-md shadow-lg p-5">
+                <select name="" id="select-hour" class="px-2 outline-none appearance-none bg-transparent">
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <span class="px-2">:</span>
+                <select name="" id="input-minutes" class="px-2 outline-none appearance-none bg-transparent">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+            <button id="button" class="button">Potwierdź godzinę !</button>
+        </div>
+        <div id="content" class="content hidden">
+            <p id="message" class="message"></p>
+        </div>
+        <div class="containerApi">
+            <div class="row">
+                <div class="szukaj">
+                <div class="col">
+                    <!-- Formularz do wyszukiwania miasta -->
+                    <h4 class="City"><strong>Search for a City:</strong></h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search-city" placeholder="Enter the city" aria-label="City Search" aria-describedby="search-button">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="search-button">🔍</button>
+                        </div>
+                    </div>
+                    <button class="btn-mt-2" type="button" id="clear-history">Clear History</button>
+                    <ul class="list-group mt-2" id="search-history">
+                    </ul>
+                </div>
+                    <div class="row">
+                        <div class="col-row" id="current-weather">
+                            <h3 class="city-name" id="current-city"></h3>
+                            <p>Temperature: <span class="current" id="temperature"></span></p>
+                            <p>Humidity: <span class="current" id="humidity"></span></p>
+                            <p>Wind Speed: <span class="current" id="wind-speed"></span></p>
+                            <p>UV Index: <span class="current" id="uv-index"></span></p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Wiersz do wyświetlania przyszłych danych -->
+                    <div class="col-smain" id="future-weather">
+                        <h3>5-Day Forecast:</h3>
+                        <div class="row1">
+                            <div class="col-sm">
+                                <p id="fDate0"></p>
+                                <p id="fImg0"></p>
+                                <p>Temp: <span id="fTemp0"></span></p>
+                                <p>Humidity: <span id="fHumidity0"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate1"></p>
+                                <p id="fImg1"></p>
+                                <p>Temp: <span id="fTemp1"></span></p>
+                                <p>Humidity: <span id="fHumidity1"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate2"></p>
+                                <p id="fImg2"></p>
+                                <p>Temp: <span id="fTemp2"></span></p>
+                                <p>Humidity: <span id="fHumidity2"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate3"></p>
+                                <p id="fImg3"></p>
+                                <p>Temp: <span id="fTemp3"></span></p>
+                                <p>Humidity: <span id="fHumidity3"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate4"></p>
+                                <p id="fImg4"></p>
+                                <p>Temp: <span id="fTemp4"></span></p>
+                                <p>Humidity: <span id="fHumidity4"></span></p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+          <section class="photoFirst">
+            <h2 style="display:none;">.</h2>
+            <img id="photos1" src="img/mainPage4.webp" alt="Lorem ipsum 1" loading="lazy" width="300" height="300">
+            <img id="photos2" src="img/mainPage5.webp" alt="Lorem ipsum 2" loading="lazy" width="300" height="300">
+            <img id="photos3" src="img/mainPage6.webp" alt="Lorem ipsum 3" loading="lazy" width="300" height="300">
+        </section>
+        <input type="checkbox" id="toggleImages">
+        <label for="toggleImages" id="showMoreButton" class="buttonFoto">LOAD MORE PHOTO</label>
+        <div class="photoSecond">
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-regular.svg" alt="oksy1" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot1" width="140" height="140">
+            </div>
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-deal-with-it.svg" alt="oksy2" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot2" width="140" height="140">
+            </div>
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-hearts.svg" alt="oksy3" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot3" width="140" height="140">
+            </div>
+        </div>
+        <section class="photoSecond">
+            <h2 style="display:none;">.</h2>
+            <img class="photosX" src="img/mainPage1.webp" alt="Lorem ipsum 4" loading="lazy" width="300" height="300">
+            <img class="photosX" src="img/mainPage2.webp" alt="Lorem ipsum 5" loading="lazy" width="300" height="300">
+            <img class="photosX" src="img/mainPage3.webp" alt="Lorem ipsum 6" loading="lazy" width="300" height="300">
+        </section>
+        <label for="toggleImages" id="showLessButton" class="buttonFoto">LOAD LESS PHOTO</label>
+        <div class="product-grid">
+            <div class="product-item" style="background-color: #eae9e7;">
+                <div class="product-image">
+                    <img src="img/gallery1.webp" alt="Gallery 1" loading="lazy" width="300" height="300">
+                </div>
+                <div class="product-content">
+                    <h3>LOREM IPSUM</h3>
+                    <a href="./gallery.html" class="details-button">VIEW DETAILS</a>
+                </div>
+            </div>
+            <div id="drugie" class="product-item" style="background-color: #eae9e7">
+                <div class="product-image">
+                    <img src="img/gallery2.webp" alt="Gallery 2" loading="lazy" width="300" height="300">
+                </div>
+                <div class="product-content">
+                    <h3>LOREM IPSUM</h3>
+                    <a href="./gallery.html" class="details-button">VIEW DETAILS</a>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <h2 class="section__heading">Lorem ipsum</h2>
+            <div class="about-us__textbox">
+                <p class="about-us__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                    ac felis mi. Nulla urna risus, malesuada nec blandit at, dictum a
+                    est. Integer pulvinar dui elit, vitae vehicula est tempor venenatis.
+                    Proin pulvinar pulvinar enim, et vestibulum leo. Vivamus placerat,
+                    magna non commodo suscipit, sapien lorem finibus dui, nec interdum
+                    lectus ante dictum mi.
+                </p>
+                <label for="modalCheck" class="button">Lorem ipsum!</label>
+                <input type="checkbox" id="modalCheck" style="display: none">
+                <div class="modal">
+                    <div class="modal-content">
+                        <p>Tak dobrze trafiłeś! To lorem ipsum!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item4">
+                <img src="img/item1.webp" alt="Item" loading="lazy" width="1200" height="700">
+                <div class="info-box">
+                    <h2>Lorem Ipsum</h2>
+                    <p class="price2">$50.00 <span class="old-price">$200.00</span></p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="./services.html" class="details-button2">VIEW DETAILS</a>
+                </div>
+            </div>
+            <div class="slider">
+                <div class="slides">
+                    <div id="slide-1" class="slide">
+                        <img src="img/mainPage1.webp" alt="Lorem ipsum 1v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-2" class="slide">
+                        <img src="img/mainPage2.webp" alt="Lorem ipsum 2v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-3" class="slide">
+                        <img src="img/mainPage10.webp" alt="Lorem ipsum 3v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-4" class="slide">
+                        <img src="img/mainPage11.webp" alt="Lorem ipsum 4v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-5" class="slide">
+                        <img src="img/mainPage14.webp" alt="Lorem ipsum 5v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-6" class="slide">
+                        <img src="img/mainPage13.webp" alt="Lorem ipsum 6v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-7" class="slide">
+                        <img src="img/mainPage12.webp" alt="Lorem ipsum 7v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-8" class="slide">
+                        <img src="img/mainPage8.webp" alt="Lorem ipsum 8v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-9" class="slide">
+                        <img src="img/mainPage9.webp" alt="Lorem ipsum 9v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <input type="radio" id="slide-radio-1v2" name="slide" class="slider-radio">
+                <label for="slide-radio-1v2" class="slider-label" onclick="window.location.href='#slide-1';"></label>
+                <input type="radio" id="slide-radio-2v2" name="slide" class="slider-radio">
+                <label for="slide-radio-2v2" class="slider-label" onclick="window.location.href='#slide-2';"></label>
+                <input type="radio" id="slide-radio-3v2" name="slide" class="slider-radio">
+                <label for="slide-radio-3v2" class="slider-label" onclick="window.location.href='#slide-3';"></label>
+                <input type="radio" id="slide-radio-4v2" name="slide" class="slider-radio">
+                <label for="slide-radio-4v2" class="slider-label" onclick="window.location.href='#slide-4';"></label>
+                <input type="radio" id="slide-radio-5v2" name="slide" class="slider-radio" checked>
+                <label for="slide-radio-5v2" class="slider-label" onclick="window.location.href='#slide-5';"></label>
+                <input type="radio" id="slide-radio-6v2" name="slide" class="slider-radio">
+                <label for="slide-radio-6v2" class="slider-label" onclick="window.location.href='#slide-6';"></label>
+                <input type="radio" id="slide-radio-7v2" name="slide" class="slider-radio">
+                <label for="slide-radio-7v2" class="slider-label" onclick="window.location.href='#slide-7';"></label>
+                <input type="radio" id="slide-radio-8v2" name="slide" class="slider-radio">
+                <label for="slide-radio-8v2" class="slider-label" onclick="window.location.href='#slide-8';"></label>
+                <input type="radio" id="slide-radio-9v2" name="slide" class="slider-radio">
+                <label for="slide-radio-9v2" class="slider-label" onclick="window.location.href='#slide-9';"></label>
+            </div>
+        </section>
+            <div class="product-grid1">
+                <div class="product-item1">
+                    <img src="img/gallery9.webp" alt="LoremIpsum" loading="lazy" width="200" height="200">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Lorem</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                            </p>
+                            <a href="./product.html" class="details-button-x">VIEW ALL</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery12.webp" alt="Loremer" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja1" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja2" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja3" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja4" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja5" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery11.webp" alt="Loremer2" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja6" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja7" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja8" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja9" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja10" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery10.webp" alt="Loremer3" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja11" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja12" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja13" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja14" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja15" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid2">
+                <div class="product-item1">
+                    <img src="img/abootUs4.webp" alt="Loremer4" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja16" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja17" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja18" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja19" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja20" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs3.webp" alt="Loremer5" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja21" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja22" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja23" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja24" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja25" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs2.webp" alt="Loremer6" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja26" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja27" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja28" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja29" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja30" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs1.webp" alt="Loremer7" loading="lazy" width="200" height="200">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Lorem</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                            </p>
+                            <a href="./product.html" class="details-button-x">VIEW ALL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <section class="collection">
+            <div class="collection__men">
+                <h3 class="collection__heading">Product 1 Collection</h3>
+                <div class="collection__shadow">
+                    <img src="img/product1.webp" alt="product 1" class="collection__img" loading="lazy" width="150" height="150">
+                </div>
+                <a class="collection__btn" href="./product.html">explore more</a>
+            </div>
+            <div class="collection__women">
+                <h3 class="collection__heading">Product 2 Collection</h3>
+                <div class="collection__shadow">
+                    <img src="img/product7.webp" alt="product 2" class="collection__img" loading="lazy" width="150" height="150">
+                </div>
+                <a class="collection__btn" href="./product.html">explore more</a>
+            </div>
+            <div class="collection__kids">
+                <h3 class="collection__heading">Product 3 Collection</h3>
+                <div class="collection__shadow">
+                    <img src="img/product3.webp" alt="product 3" class="collection__img" loading="lazy" width="150" height="150">
+                </div>
+                <a class="collection__btn" href="./product.html">explore more</a>
+            </div>
+        </section>
+        <section class="offer">
+            <h2 style="display:none;">.</h2>
+            <div class="offer__body">
+                <img src="img/logo1transparent.webp" alt="LOGOv2" class="offer__img" loading="lazy" width="300" height="300">
+                <div class="offer__content container">
+                    <p class="offer__heading">SPECIAL OFFER</p>
+                    <p class="offer__title">UPTO 70% OFF</p>
+                    <p class="offer__text">
+                        Upgrade your footwear collection with our 70% off special deal!
+                        LOREM IPSUM!
+                    </p>
+                    <a href="./product.html" class="details-button">VIEW ALL</a>
+                </div>
+            </div>
+        </section>
+        <section class="service">
+            <div class="service__content container">
+                <div class="service__box">
+                    <img src="img/pay1.webp" alt="pay1" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">FREE SHIPING</h4>
+                        <p class="service__describe">All Lorem ipsum $150</p>
+                    </div>
+                </div>
+                <div class="service__box">
+                    <img src="img/pay2.webp" alt="pay2" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">QUICK PAYMENT</h4>
+                        <p class="service__describe">100% Lorem ipsum </p>
+                    </div>
+                </div>
+                <div class="service__box">
+                    <img src="img/pay1.webp" alt="pay3" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">FREE RETURNS</h4>
+                        <p class="service__describe">Lorem ipsum 30 days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="load-more-container">
+            <a href="./gallery.html" class="load-more-btn">LOAD MORE PRODUCTS</a>
+        </div>
+        <div class="newsletter-signup-section">
+            <div class="newsletter-signup-container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">SIGN UP FOR THE NEWSLETTER</h2>
+                    <p class="newsletter-description">Subscribe for the latest stories and promotions</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter-submit-btn">
+                        <img src="img/phone.svg" alt="Send" loading="lazy" width="30" height="30">
+                    </button>
+                </form>
+            </div>
+        </div>
+</main>
+
+Style guide: 1.0
+*/
+
+@keyframes swingdown {
+  0% {
+    opacity: 0.99999;
+    transform: rotateX(90deg);
+  }
+  30% {
+    transform: rotateX(-20deg) rotateY(5deg);
+    animation-timing-function: ease-in-out;
+  }
+  65% {
+    transform: rotateX(20deg) rotateY(-3deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes show-cookies {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+
+  50% {
+      transform: scale(1.1);
+      opacity: 0.7;
+  }
+
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+
+  0%,
+  10% {
+      opacity: 1;
+      visibility: visible;
+  }
+
+  90%,
+  100% {
+      opacity: 0;
+      visibility: hidden;
+  }
+}
+
+@keyframes animacja1 {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes animacja2 {
+  0% {
+      transform: scale(1);
+  }
+
+  100% {
+      transform: scale(0.5);
+  }
+}
+
+@keyframes animacja3 {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(-360deg);
+  }
+}
+
+@keyframes animacjaX {
+  0% {
+      transform: rotate(0deg) scale(1);
+  }
+
+  100% {
+      transform: rotate(360deg) scale(0.5);
+  }
+}
+
+@keyframes rocking {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  50% {
+      transform: rotate(-25deg);
+  }
+
+  100% {
+      transform: rotate(0deg);
+  }
+}
+
+@keyframes blink-animation {
+  from {
+      background-image: url("../img/logo1transparent.webp");
+  }
+
+  to {
+      background-image: url("../img/logo2transparent.webp");
+  }
+}
+
+@keyframes slideInOut {
+  0%, 100% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  from {width: 0}
+}
+
+@keyframes blink {
+  50% {
+      border-color: transparent
+  }
+}
+
+@keyframes neon1 {
+  from {
+      text-shadow: 0 0 10px #fff,
+      0 0 20px #fff,
+      0 0 30px #fff,
+      0 0 40px #ff1177,
+      0 0 70px #ff1177,
+      0 0 80px #ff1177,
+      0 0 100px #ff1177,
+      0 0 150px #ff1177;
+  }
+  to {
+      text-shadow: 0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 15px #fff,
+      0 0 20px #ff1177,
+      0 0 35px #ff1177,
+      0 0 40px #ff1177,
+      0 0 50px #ff1177,
+      0 0 75px #ff1177;
+  }
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+#nav{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding:10px 0;
+  background-color: var(--nav-color);
+  padding: 15px 0 15px 0;
+  text-align: center;
+  border-top: 0.5px solid var(--color-black);
+  border-bottom: 0.5px solid var(--color-black);
+}
+
+#menu{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 15px;
+  height: 35px;
+  line-height: 200%;
+}
+
+#menu a{
+  color: var(--color-white);
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+#menu > li{
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 40px;
+  border-right: 1px dotted var(--color-white);
+}
+
+#menu > li:last-child{
+  border-right: none;
+}
+
+#menu > li:hover{
+  background-color: var(--linav-color);
+}
+
+ol > li:hover > a{
+  color: var(--color-grayLight);
+}
+
+#menu > li > ul {
+  display: none;
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--linav-color);
+  border-bottom: 1px dotted var(--color-black);
+  z-index: 100;
+}
+
+#menu > li:hover > ul{
+  padding: 15px 0;
+  display: block;
+  animation-name: swingdown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+#menu > li > ul > li:hover{
+  background-color: #da7400;
+}
+#menu > li > ul > li:last-child{
+  border-bottom: none;
+}
+
+#menu > li > ul > li > ul{
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 150px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  border-bottom: 1px dotted var(--color-black);
+  background-color: var(--lilinav-color);
+  z-index: 100;
+}
+
+
+#menu  > li > ul > li > ul > li:hover{
+  background-color: var(--lililinav--color);
+}
+
+#menu > li > ul > li:hover > ul{
+  display: flex;
+  flex-direction: column;
+}
+
+#hamburger {
+  display: none;
+}
+
+input#toggle {
+  display: none;
+}
+
+.cart-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#cartCount {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+
+.blur-background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg-photo.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.container,
+.content {
+  width: 100%;
+  font-size: 20px;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.container.hidden,
+.content.hidden {
+  display: none;
+}
+
+.input {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #eaeaea;
+  line-height: inherit;
+  margin: 25px 0;
+  text-align: center;
+  background: none;
+}
+
+.button {
+  border: 2px solid var(--color-black);
+  outline: none;
+  padding: 10px 10px;
+  color: var(--color-black);
+
+  font-family: inherit;
+  line-height: inherit;
+
+  display: block;
+  margin: 25px auto;
+
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button:hover {
+  color: var(--color-red);
+  background: var(--primary-color);
+}
+
+.message {
+  text-align: center;
+  /* margin: 25px 0; */
+  margin: 0 auto;
+
+  max-width: 400px;
+}
+
+.toggle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+.clock-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 40px;
+}
+
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 65px;
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+.needle.second {
+  background-color: #e74c3c;
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+.center-point {
+  background-color: #e74c3c;
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.center-point::after {
+  content: "";
+  background-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+.time {
+  font-size: 60px;
+}
+
+.date {
+  color: #aaa;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+}
+
+.clock-div {
+  margin-bottom: 80px;
+}
+.input {
+  color: var(--primary-color);
+}
+
+h3{
+  font-weight: bold;
+}
+.forecast{
+  font-size: 0.9em;
+}
+span{
+  font-size: 1em;
+}
+li:hover{
+  background-color: lightslategray;
+  text-decoration: underline;
+}
+
+/*
+HOME CLOCK - sekcja zegara
+
+1. **blur-background**: Ten element tworzy rozmyte tło strony z użyciem obrazu tła.
+
+2. **container, .container**: To jest główny kontener strony, w którym znajduje się zegar i formularz.
+
+3. **clock-div**: Kontener dla zegara.
+
+4. **clock-container**: Kontener dla samego zegara.
+
+5. **clock**: To jest miejsce, gdzie wyświetlany jest zegar analogowy.
+
+6. **needle hour**, **needle minute**, **needle second**: Są to wskazówki godzinowa, minutowa i sekundowa zegara.
+
+7. **center-point**: To jest centralny punkt zegara.
+
+8. **time**: W tym elemencie wyświetlana jest aktualna godzina.
+
+9. **date**: W tym elemencie wyświetlana jest aktualna data.
+
+10. **message pb-4**: To jest akapit tekstu, który informuje użytkownika, aby wybrał godzinę spotkania.
+
+11. **inline-flex text-lg border rounded-md shadow-lg p-5**: To jest kontener dla formularza wyboru godziny spotkania.
+
+12. **select-hour**, **input-minutes**: To są rozwijane listy do wyboru godziny i minut.
+
+13. **button**: To jest przycisk do potwierdzenia wybranej godziny spotkania.
+
+14. Skrypt JavaScript znajdujący się na końcu pliku obsługuje działanie strony. Po wybraniu godziny i kliknięciu przycisku "Potwierdź godzinę !", wyświetla się wiadomość potwierdzająca wybraną godzinę.
+
+15. Stylowanie strony jest zawarte w kodzie CSS. Obejmuje ono m.in. ustawienie tła strony, kolorystykę, wygląd zegara oraz formularza.
+
+Ten kod tworzy interaktywną stronę internetową z zegarem i możliwością wyboru godziny spotkania. Po wyborze godziny, użytkownik otrzymuje potwierdzenie i może ponownie wybrać godzinę.
+Markup:
+        <div class="blur-background"></div>
+        <div id="container" class="container">
+            <div class="clock-div">
+                <div class="clock-container">
+                    <div class="clock">
+                        <div class="needle hour"></div>
+                        <div class="needle minute"></div>
+                        <div class="needle second"></div>
+                        <div class="center-point"></div>
+                    </div>
+                    <div class="time"></div>
+                    <div class="date"></div>
+                </div>
+            </div>
+            <p class="message pb-4">
+                O której godzinie chcesz się ze mną spotkać?
+            </p>
+            <div class="inline-flex text-lg border rounded-md shadow-lg p-5">
+                <select name="" id="select-hour" class="px-2 outline-none appearance-none bg-transparent">
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                </select>
+                <span class="px-2">:</span>
+                <select name="" id="input-minutes" class="px-2 outline-none appearance-none bg-transparent">
+                    <option value="00">00</option>
+                    <option value="30">30</option>
+                </select>
+            </div>
+            <button id="button" class="button">Potwierdź godzinę !</button>
+        </div>
+        <div id="content" class="content hidden">
+            <p id="message" class="message"></p>
+        </div>
+        <script>
+          let container = document.getElementById("container"),
+              content = document.getElementById("content"),
+              message = document.getElementById("message"),
+              button = document.getElementById("button");
+          button.addEventListener("click", function () {
+              let input_hour = document.getElementById("select-hour").value;
+              let input_minutes = document.getElementById("input-minutes").value;
+              message.innerHTML = `Chcę się spotkać o <b>${input_hour}:${input_minutes}</b> <br> (uzgodnione z kim trzeba) <br> zapraszam przed tą godziną <br> Dawid Olko:)`;
+              content.style.display = "flex"; 
+              content.style.justifyContent = "center";
+              container.style.display = "none";
+              setTimeout(function () {
+                  content.style.display = "none"; 
+                  container.style.display = "flex"; 
+              }, 2000); 
+          });
+          const hourElement = document.querySelector(".hour");
+          const minuteElement = document.querySelector(".minute");
+          const secondElement = document.querySelector(".second");
+          const timeElement = document.querySelector(".time");
+          const dateElement = document.querySelector(".date");
+          const toggle = document.querySelector(".toggle");
+          const days = [
+              "Niedziela",
+              "Poniedziałek",
+              "Wtorek",
+              "Środa",
+              "Czwartek",
+              "Piątek",
+              "Sobota",
+          ];
+          const months = [
+              "Sty",
+              "Lut",
+              "Mar",
+              "Kwi",
+              "Maj",
+              "Cze",
+              "Lip",
+              "Sie",
+              "Wrz",
+              "Paz",
+              "Lis",
+              "Gru",
+          ];
+          toggle.addEventListener("click", (e) => {
+              const html = document.querySelector("html");
+              if (html.classList.contains("dark")) {
+                  html.classList.remove("dark");
+                  e.target.innerHTML = "Dark mode";
+              } else {
+                  html.classList.add("dark");
+                  e.target.innerHTML = "Bright mode";
+              }
+          });
+          const scale = (num, in_min, in_max, out_min, out_max) => {
+              return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
+          };
+          const setTime = () => {
+              const time = new Date();
+              const date = time.getDate();
+              const month = time.getMonth();
+              const day = time.getDay();
+              const hours = time.getHours();
+              const minutes = time.getMinutes();
+              const seconds = time.getSeconds();
+              const ampm = "";
+              hourElement.style.transform = `translate(-50%, -100%) rotate(${scale(
+                  hours + minutes / 60, 0, 12, 0, 360
+              )}deg)`;
+              minuteElement.style.transform = `translate(-50%, -100%) rotate(${scale(
+                  minutes, 0, 60, 0, 360
+              )}deg)`;
+              secondElement.style.transform = `translate(-50%, -100%) rotate(${scale(
+                  seconds, 0, 60, 0, 360
+              )}deg)`;
+              timeElement.innerHTML = `${hours < 10 ? `0${hours}` : hours}:${
+                  minutes < 10 ? `0${minutes}` : minutes
+              } ${ampm}`;
+              dateElement.innerHTML = `${days[day]},  <span class="circle">${date}</span> ${months[month]} `;
+          };
+          setTime();
+          setInterval(setTime, 1000);
+</script>
+
+Style guide: 1.1
+*/
+
+.col-row{
+  width: 100%;
+}
+
+.containerApi {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.szukaj{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.col{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(233, 236, 239, 0.5);
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.col-sm{
+  width: 200px;
+  margin: 0 1.5%;
+  padding: 0;
+}
+
+.col-sm p{
+  font-weight: bold;
+  color:#000;
+}
+
+.row{
+  display: flex;
+  margin-left: 17%;
+  flex-direction: column;
+  width: 70%;
+}
+
+.col-smain{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row img{
+  background-color: azure;
+  border-radius: 10px;
+}
+
+.row1{
+  display: flex;
+  width: 100%;
+}
+
+.col-row h3{
+  font-weight: bold;
+}
+
+.col-row p {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #000;
+}
+
+.col-smain h3{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 20px;
+  min-width: 150px;
+}
+
+#search-city{
+  border-radius: 0.25rem;
+  border: 0.5px solid #ced4da;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  height: 35px;
+  text-align: left;
+  padding: 10px;
+  width: 326px;
+}
+
+.City {
+  margin: 1rem 0;
+  font-size: 1.8rem;
+}
+
+.input-group {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  border-radius: 0.25rem;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  height: 35px;
+  width: 35px;
+  font-size: 1.2rem;
+  background-color: #292929;
+  border: 0px;
+}
+
+.btn-primary:hover{
+  background-color: #6b6b6b;
+}
+
+.btn-mt-2{
+  padding: 8px 10px;
+  border-radius: 0.25rem;
+  color: white;
+  width: 150px;
+  background-color: #292929;
+}
+
+.btn-mt-2:hover{
+  color: rgb(199, 199, 199);
+  background-color: #6b6b6b;
+}
+
+.list-group{
+  padding: 0 10px;
+  list-style: none;
+}
+.list-group li{
+  padding: 10px;
+  background-color: #9c9fa1;
+  border: 1px solid #ced4da;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
+
+#current-weather,
+#future-weather {
+  background-color: rgba(233, 236, 239, 0.5);
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.city-name {
+  font-size: 1.75rem;
+  color: #333;
+}
+
+.current {
+  font-weight: bold;
+}
+
+#future-weather h3 {
+  margin-bottom: 1rem;
+}
+
+.col-sm {
+  text-align: center;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#future-weather .col-sm {
+  background-color: #dee2e6;
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+/*
+HOME API - sekcja pogodowa
+
+Kod HTML:
+
+- **containerApi**: Główny kontener strony, który jest wyśrodkowany na stronie i ma szerokość 80% szerokości okna przeglądarki.
+
+- **szukaj**: Kontener zawierający elementy związane z wyszukiwaniem miasta. Wykorzystuje flexbox do wyśrodkowania zawartości.
+
+- **col**: Kontener kategorii "Search for a City". Jest to kolumna o szerokości 50% szerokości swojego rodzica, zawiera nagłówek, pole do wprowadzania nazwy miasta, przycisk do wyszukiwania, oraz przycisk "Clear History" i listę historii wyszukiwań.
+
+- **col-sm**: Kontener dla pojedynczej prognozy pogody w sekcji "5-Day Forecast". Ma szerokość 200px i zawiera datę, obrazek pogodowy, temperaturę i wilgotność.
+
+- **row**: Kontener dla wiersza z danymi dotyczącymi aktualnej pogody (np., temperatura, wilgotność, itp.).
+
+- **col-row**: Kontener dla aktualnych danych pogodowych. Jest wykorzystywany na szerokość 100% i zawiera dane takie jak nazwa miasta, temperatura, wilgotność, prędkość wiatru i wskaźnik UV.
+
+- **row1**: Kontener dla prognozy pogody na 5 dni. Składa się z pięciu kolumn o równej szerokości.
+
+Kod CSS:
+
+- **containerApi**: Styl dla głównego kontenera strony. Ma szerokość 80%, jest wyśrodkowany na stronie i posiada marginesy po lewej i prawej stronie.
+
+- **szukaj**: Styl dla kontenera "szukaj". Wykorzystuje flexbox do wyśrodkowania zawartości, szerokość wynosi 100%.
+
+- **col**: Styl dla kategorii "Search for a City". Ma szerokość 50%, jest wyśrodkowany, posiada tło koloru rgba(233, 236, 239, 0.5), padding, oraz marginesy.
+
+- **col-sm**: Styl dla kontenera prognozy pogody na 1 dzień. Ma szerokość 200px, marginesy i padding.
+
+- **row**: Styl dla kontenera wiersza z danymi dotyczącymi aktualnej pogody. Ma wyśrodkowaną zawartość, marginesy i tło koloru rgba(233, 236, 239, 0.5).
+
+- **col-row**: Styl dla kontenera z aktualnymi danymi pogodowymi. Ma szerokość 100% i tło koloru rgba(233, 236, 239, 0.5).
+
+- **row1**: Styl dla kontenera prognozy pogody na 5 dni. Jest to flexbox, który zajmuje 100% szerokości dostępnej przestrzeni.
+
+- **search-city**: Styl dla pola tekstowego do wprowadzania nazwy miasta. Ma zaokrąglone rogi, obramowanie i wysokość 35px.
+
+- **City**: Styl dla nagłówka "Search for a City". Marginesy, rozmiar czcionki, itp.
+
+- **btn-primary**: Styl dla przycisku "🔍" do wyszukiwania. Zaokrąglone rogi, kolor tła i tekst na przycisku.
+
+- **btn-mt-2**: Styl dla przycisku "Clear History". Marginesy, tło, kolor tekstu.
+
+- **list-group**: Styl dla listy historii wyszukiwań. Padding i stylizacja wyglądu listy.
+
+- **list-group li**: Styl dla elementów listy historii wyszukiwań. Marginesy, tło i obramowanie.
+
+- **current-weather** i **future-weather**: Styl dla kontenerów aktualnej pogody i prognozy pogody na 5 dni. Tło, zaokrąglone rogi, padding, marginesy.
+
+- **city-name**: Styl dla nazwy miasta w aktualnej pogodzie. Rozmiar czcionki i kolor.
+
+- **current**: Styl dla aktualnych danych pogodowych (np. temperatura, wilgotność, itp.). Pogrubiony tekst.
+
+- **col-sm img**: Styl dla obrazków pogodowych w prognozie pogody na 5 dni. Marginesy i tło.
+
+- Media queries: W kodzie znajdują się także media queries, które dostosowują wygląd strony w zależności od szerokości ekranu. Są one odpowiedzialne za reakcję strony na różne rozmiary urządzeń, zmieniając układ elementów, kolory tła, itp.
+
+Markup:
+ <div class="containerApi">
+            <div class="row">
+                <div class="szukaj">
+                <div class="col">
+                    <h4 class="City"><strong>Search for a City:</strong></h4>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="search-city" placeholder="Enter the city" aria-label="City Search" aria-describedby="search-button">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary" id="search-button">🔍</button>
+                        </div>
+                    </div>
+                    <button class="btn-mt-2" type="button" id="clear-history">Clear History</button>
+                    <ul class="list-group mt-2" id="search-history">
+                    </ul>
+                </div>
+                    <div class="row">
+                        <div class="col-row" id="current-weather">
+                            <h3 class="city-name" id="current-city"></h3>
+                            <p>Temperature: <span class="current" id="temperature"></span></p>
+                            <p>Humidity: <span class="current" id="humidity"></span></p>
+                            <p>Wind Speed: <span class="current" id="wind-speed"></span></p>
+                            <p>UV Index: <span class="current" id="uv-index"></span></p>
+                        </div>
+                    </div>
+                </div>
+                    <div class="col-smain" id="future-weather">
+                        <h3>5-Day Forecast:</h3>
+                        <div class="row1">
+                            <div class="col-sm">
+                                <p id="fDate0"></p>
+                                <p id="fImg0"></p>
+                                <p>Temp: <span id="fTemp0"></span></p>
+                                <p>Humidity: <span id="fHumidity0"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate1"></p>
+                                <p id="fImg1"></p>
+                                <p>Temp: <span id="fTemp1"></span></p>
+                                <p>Humidity: <span id="fHumidity1"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate2"></p>
+                                <p id="fImg2"></p>
+                                <p>Temp: <span id="fTemp2"></span></p>
+                                <p>Humidity: <span id="fHumidity2"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate3"></p>
+                                <p id="fImg3"></p>
+                                <p>Temp: <span id="fTemp3"></span></p>
+                                <p>Humidity: <span id="fHumidity3"></span></p>
+                            </div>
+                            <div class="col-sm">
+                                <p id="fDate4"></p>
+                                <p id="fImg4"></p>
+                                <p>Temp: <span id="fTemp4"></span></p>
+                                <p>Humidity: <span id="fHumidity4"></span></p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <script>
+            var city = "";
+            var searchCity = document.getElementById("search-city");
+            var searchButton = document.getElementById("search-button");
+            var clearButton = document.getElementById("clear-history");
+            var currentCity = document.getElementById("current-city");
+            var currentTemperature = document.getElementById("temperature");
+            var currentHumidity = document.getElementById("humidity");
+            var currentWSpeed = document.getElementById("wind-speed");
+            var currentUvindex = document.getElementById("uv-index");
+            var sCity = [];
+            function find(c) {
+              for (var i = 0; i < sCity.length; i++) {
+                if (c.toUpperCase() === sCity[i]) {
+                  return -1;
+                }
+              }
+              return 1;
+            }
+            var APIKey = "a0aca8a89948154a4182dcecc780b513";
+            function displayWeather(event) {
+              event.preventDefault();
+              if (searchCity.value.trim() !== "") {
+                city = searchCity.value.trim();
+                currentWeather(city);
+              }
+            }
+            function currentWeather(city) {
+              var queryURL =
+                "https://api.openweathermap.org/data/2.5/weather?q=" +
+                city +
+                "&APPID=" +
+                APIKey;
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", queryURL, true);
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  var response = JSON.parse(xhr.responseText);
+                  var weatherIcon = response.weather[0].icon;
+                  var iconURL = "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png";
+                  var date = new Date(response.dt * 1000).toLocaleDateString();
+                  currentCity.innerHTML = response.name + " (" + date + ") " + "<img src=" + iconURL + ">";
+                  var tempF = (response.main.temp - 273.15);
+                  currentTemperature.innerHTML = tempF.toFixed(2) + "&#8451";
+                  currentHumidity.innerHTML = response.main.humidity + "%";
+                  var ws = response.wind.speed;
+                  var windSmph = (ws * 2.237).toFixed(1);
+                  currentWSpeed.innerHTML = windSmph + "MPH";
+                  UVIndex(response.coord.lon, response.coord.lat);
+                  forecast(response.id);
+                  sCity = JSON.parse(localStorage.getItem("cityname")) || [];
+                  if (find(city) > 0) {
+                    sCity.push(city.toUpperCase());
+                    localStorage.setItem("cityname", JSON.stringify(sCity));
+                    addToList(city);
+                  }
+                } else {
+                  console.log("Błąd: " + xhr.status);
+                }
+              };
+              xhr.send();
+            }
+            function UVIndex(ln, lt) {
+              var uvqURL = "https://api.openweathermap.org/data/2.5/uvi?appid=" + APIKey + "&lat=" + lt + "&lon=" + ln;
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", uvqURL, true);
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  var response = JSON.parse(xhr.responseText);
+                  currentUvindex.innerHTML = response.value;
+                } else {
+                  console.log("Błąd: " + xhr.status);
+                }
+              };
+              xhr.send();
+            }
+            function forecast(cityid) {
+              var dayover = false;
+              var queryForcastURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityid + "&appid=" + APIKey;
+              var xhr = new XMLHttpRequest();
+              xhr.open("GET", queryForcastURL, true);
+              xhr.onload = function () {
+                if (xhr.status === 200) {
+                  var response = JSON.parse(xhr.responseText);
+                  for (var i = 0; i < 5; i++) {
+                    var date = new Date(response.list[((i + 1) * 8) - 1].dt * 1000).toLocaleDateString();
+                    var iconCode = response.list[((i + 1) * 8) - 1].weather[0].icon;
+                    var iconURL = "https://openweathermap.org/img/wn/" + iconCode + ".png";
+                    var tempK = response.list[((i + 1) * 8) - 1].main.temp;
+                    var tempF = ((tempK - 273.5)).toFixed(2);
+                    var humidity = response.list[((i + 1) * 8) - 1].main.humidity;
+                    document.getElementById("fDate" + i).innerHTML = date;
+                    document.getElementById("fImg" + i).innerHTML = "<img src=" + iconURL + ">";
+                    document.getElementById("fTemp" + i).innerHTML = tempF + "&#8451";
+                    document.getElementById("fHumidity" + i).innerHTML = humidity + "%";
+                  }
+                } else {
+                  console.log("Błąd: " + xhr.status);
+                }
+              };
+              xhr.send();
+            }
+            function addToList(c) {
+              var listEl = document.createElement("li");
+              listEl.textContent = c.toUpperCase();
+              listEl.className = "list-group-item";
+              listEl.dataset.value = c.toUpperCase();
+              document.querySelector(".list-group").appendChild(listEl);
+            }
+            function invokePastSearch(event) {
+              var liEl = event.target;
+              if (liEl.matches("li")) {
+                city = liEl.textContent.trim();
+                currentWeather(city);
+              }
+            }
+            function loadLastCity() {
+              document.querySelector("ul").innerHTML = "";
+              var sCity = JSON.parse(localStorage.getItem("cityname"));
+              if (sCity !== null) {
+                for (var i = 0; i < sCity.length; i++) {
+                  addToList(sCity[i]);
+                }
+                city = sCity[i - 1];
+                currentWeather(city);
+              }
+            }
+            function clearHistory(event) {
+              event.preventDefault();
+              sCity = [];
+              localStorage.removeItem("cityname");
+              location.reload();
+            }
+            searchCity.addEventListener("keydown", function (event) {
+              if (event.key === "Enter") {
+                displayWeather(event);
+              }
+            });
+            function displayWeather(event) {
+              if (event) {
+                event.preventDefault();
+              }
+              if (searchCity.value.trim() !== "") {
+                city = searchCity.value.trim();
+                currentWeather(city);
+              }
+            }
+            searchButton.addEventListener("click", displayWeather);
+            document.addEventListener("click", invokePastSearch);
+            window.addEventListener("load", loadLastCity);
+            clearButton.addEventListener("click", clearHistory);
+        </script>
+
+Style guide: 1.2
+*/
+
+.logoTrans {
+  width: 240px;
+  height: 240px;
+  background-image: url("../img/logo1transparent.webp");
+  background-size:contain;
+  animation: blink-animation 6s infinite alternate;
+  transition: all 0.3s ease;
+}
+
+.logoTrans:hover {
+  transform: scale(1.05);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+#hamburger {
+  display: none;
+}
+
+input#toggle {
+  display: none;
+}
+
+.cart-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#cartCount {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+
+.section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.photoFirst img,
+.photoSecond img {
+  width: 300px;
+  height: 300px;
+}
+
+label.button {
+  border: 0px;
+  width: 200px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-decoration: underline;
+  color: var(--red-color);
+  margin-left: 1rem;
+  transition: transform 2s;
+}
+
+label.button:hover,
+.promo-text a:hover {
+  color: var(--red2-color);
+  transform: scale(1.2);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.photoFirst {
+  margin-left: 100px;
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttonFoto {
+  cursor: pointer;
+  background-color: var(--red-color);
+  color: var(--white-color);
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+  text-align: center;
+  text-decoration: none;
+}
+
+.buttonFoto:hover {
+  background-color: var(--red2-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+#toggleImages {
+  display: none;
+}
+
+#toggleImages:checked ~ #showMoreButton {
+  display: none;
+}
+
+#toggleImages:checked ~ #showLessButton {
+  display: block;
+}
+
+#toggleImages:checked ~ .photoSecond {
+  display: grid;
+}
+
+.photoSecond {
+  justify-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  display: none;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#showLessButton {
+  display: none;
+}
+
+
+#photos1:hover {
+  animation-name: animacja1;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+#photos2:hover {
+  animation-name: animacja2;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+#photos3:hover {
+  animation-name: animacja3;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.photosX:hover {
+  animation-name: animacjaX;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+.logoCat {
+  width: 140px; 
+  height: auto; 
+  position: relative; 
+  z-index: 1; 
+  animation-name: animacja1;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.animation {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
+}
+
+.glasses {
+  position: absolute; 
+  top: 50%; 
+  transform: translateY(-50%);  
+  z-index: 2; 
+  width: 140px; 
+  height: auto; 
+  transition: all 0.3s ease;
+}
+
+.glasses:hover {
+  transform: scale(1.1);
+}
+.glasses:nth-of-type(2) {
+  animation-delay: -1.8s;
+}
+.glasses:nth-of-type(3) {
+  animation-delay: -0.25s;
+}
+.glasses:nth-of-type(4) {
+  animation-delay: 1.25s;
+}
+.glasses:nth-of-type(5) {
+  animation-delay: 2.65s;
+}
+
+/*
+HOME GALLERY - sekcja galerii
+
+Oto przerobiony opis bez znaczników i z pogrubionymi nazwami klas, id i atrybutami:
+
+**Kod HTML:**
+
+1. **photoFirst**: Jest to sekcja zawierająca zdjęcia. Klasa "photoFirst" może być wykorzystywana do określania stylu dla tej sekcji.
+
+2. **h2**: Jest to nagłówek drugiego poziomu, który jest ukryty (display:none;) i prawdopodobnie jest używany do celów związanych z dostępnością lub stylizacją strony.
+
+3. **photos1, photos2, photos3**: Są to trzy obrazy z różnymi identyfikatorami (id) oraz atrybutami src, alt, loading, width i height. Identyfikatory mogą być wykorzystywane do manipulacji tymi elementami za pomocą CSS lub JavaScript.
+
+4. **toggleImages**: Jest to pole wyboru typu "checkbox" z identyfikatorem "toggleImages".
+
+5. **showMoreButton**: Jest to etykieta powiązana z polem wyboru o identyfikatorze "toggleImages". Ma również klasę "buttonFoto" i zawiera tekst "LOAD MORE PHOTO".
+
+6. **photoSecond**: Jest to kolejna sekcja zawierająca obrazy. Klasa "photoSecond" może być wykorzystywana do określenia stylu dla tej sekcji.
+
+7. Wewnątrz "photoSecond" znajdują się trzy grupy obrazów wewnątrz `<div class="animation">`, z różnymi identyfikatorami i atrybutami alt, width i height.
+
+8. **photoSecond**: Jest to kolejna sekcja o klasie "photoSecond".
+
+9. **showLessButton**: Jest to druga etykieta powiązana z polem wyboru o identyfikatorze "toggleImages". Ma również klasę "buttonFoto" i zawiera tekst "LOAD LESS PHOTO".
+
+**Kod CSS:**
+
+1. Styl dla elementu `main` zawiera definicje flex, szerokość i inne właściwości.
+
+2. Styl dla elementu o identyfikatorze "hamburger" ukrywa ten element.
+
+3. Styl dla elementu `input` o identyfikatorze "toggle" ukrywa to pole wyboru.
+
+4. Styl dla elementu o klasie "cart-icon" definiuje kursor, wyśrodkowanie i inne właściwości.
+
+5. Styl dla elementu o identyfikatorze "cartCount" definiuje wygląd licznika koszyka.
+
+6. Styl dla elementu o klasie "section" definiuje maksymalną szerokość i margines.
+
+7. Styl dla elementów `<img>` w sekcjach "photoFirst" i "photoSecond" definiuje szerokość i wysokość.
+
+8. Styl dla etykiet o klasie "button" definiuje różne właściwości, takie jak kolor, rozmiar, podkreślenie, margines itp.
+
+9. Styl dla etykiet o klasie "buttonFoto" definiuje wygląd przycisków na stronie.
+
+10. Styl dla elementu o identyfikatorze "toggleImages" definiuje jego wygląd oraz ukrywanie.
+
+11. Styl dla elementu o identyfikatorze "showMoreButton" ukrywa ten element, gdy pole wyboru jest zaznaczone.
+
+12. Styl dla elementu o identyfikatorze "showLessButton" ukrywa ten element, gdy pole wyboru nie jest zaznaczone.
+
+13. Styl dla elementów o klasie "photoSecond" definiuje różne właściwości, takie jak margines, wyświetlanie itp.
+
+14. Styl dla elementów o identyfikatorach "photos1", "photos2", "photos3" i "photosX" definiuje animacje podczas najechania myszką.
+
+15. Styl dla elementu o klasie "logoCat" definiuje animację na nieskończoność.
+
+16. Styl dla elementu o klasie "animation" definiuje różne właściwości, takie jak pozycja, wyśrodkowanie itp.
+
+17. Styl dla elementów o klasie "glasses" definiuje różne właściwości, takie jak pozycja, przejście itp. Są także zdefiniowane opóźnienia animacji dla niektórych elementów.
+
+18. Zdefiniowane są również reguły dla mediów, które dostosowują wygląd strony w zależności od szerokości ekranu.
+
+Markup:
+      <section class="photoFirst">
+            <h2 style="display:none;">.</h2>
+            <img id="photos1" src="img/mainPage4.webp" alt="Lorem ipsum 1" loading="lazy" width="300" height="300">
+            <img id="photos2" src="img/mainPage5.webp" alt="Lorem ipsum 2" loading="lazy" width="300" height="300">
+            <img id="photos3" src="img/mainPage6.webp" alt="Lorem ipsum 3" loading="lazy" width="300" height="300">
+        </section>
+        <input type="checkbox" id="toggleImages">
+        <label for="toggleImages" id="showMoreButton" class="buttonFoto">LOAD MORE PHOTO</label>
+        <div class="photoSecond">
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-regular.svg" alt="oksy1" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot1" width="140" height="140">
+            </div>
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-deal-with-it.svg" alt="oksy2" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot2" width="140" height="140">
+            </div>
+            <div class="animation">
+                <img class="glasses" src="https://kibbles.klausapp.com/assets/img/loader/glasses-hearts.svg" alt="oksy3" width="140" height="140">
+                <img class="logoCat" src="https://kibbles.klausapp.com/assets/img/loader/main.svg" alt="cot3" width="140" height="140">
+            </div>
+        </div>
+        <section class="photoSecond">
+            <h2 style="display:none;">.</h2>
+            <img class="photosX" src="img/mainPage1.webp" alt="Lorem ipsum 4" loading="lazy" width="300" height="300">
+            <img class="photosX" src="img/mainPage2.webp" alt="Lorem ipsum 5" loading="lazy" width="300" height="300">
+            <img class="photosX" src="img/mainPage3.webp" alt="Lorem ipsum 6" loading="lazy" width="300" height="300">
+        </section>
+        <label for="toggleImages" id="showLessButton" class="buttonFoto">LOAD LESS PHOTO</label>
+
+Style guide: 1.3
+*/
+
+.product-grid {
+  margin-left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-image img {
+  width: 300px;
+}
+
+.product-item {
+  flex-basis: calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  background-color: var(--white-color);
+  float: left;
+  margin: 10px 0;
+  margin-right: 10px;
+  border: 1px solid var(--white-color);
+}
+
+.product-item img {
+  margin: 10px;
+  max-width: 100%;
+  height: 300px;
+}
+
+.product-description {
+  padding: 10px;
+}
+
+.product-content {
+  flex-basis: 50%;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.product-content h3 {
+  margin-right: 5px;
+}
+
+.details-button{
+  margin-right: 5px;
+  text-align: center;
+  width: 200px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid var(--color-gray);
+  color: var(--gray-color);
+  text-decoration: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.details-button:hover, .details-button1:hover {
+  background-color: var(--grayLight-color);
+  color: var(--white-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+
+.section__heading,
+.about-us__text,
+.about-us__img {
+  transition: transform 0.3s ease;
+}
+
+
+.section__heading:hover,
+.about-us__text:hover,
+.about-us__img:hover {
+  transform: scale(1.1);
+}
+
+
+.section__heading {
+  font-size: 2rem;
+  color: var(--red-color);
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+  margin-left: 1rem;
+  margin-right: 10px;
+}
+
+.section__heading:hover {
+  transform: scale(1.2);
+}
+
+.about-us__textbox {
+  max-width: 80vw;
+  margin: 0 auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.about-us__text {
+  text-align: justify;
+  font-weight: bold;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  color: var(--eighth-color);
+  transition: transform 0.2s;
+}
+
+.about-us__test:hover {
+  transform: scale(1.2);
+}
+
+.about-us__link {
+  color: var(--red-color);
+  text-decoration: underline;
+  transition: transform 0.2s;
+}
+
+.about-us__link:hover {
+  transform: scale(1.2);
+}
+
+.about-us__box {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  margin-top: 2rem;
+  transition: transform 0.2s;
+}
+
+.about-us__box:hover {
+  transform: scale(0.8);
+}
+
+.about-us__img {
+  width: 80%;
+  max-width: 300px;
+  flex-shrink: 0;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+  background-color: var(--white-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid var(--gray-color);
+  width: 80%;
+}
+
+.close {
+  color: var(--gray-color);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#modalCheck:checked ~ .modal {
+  display: block;
+  animation: fadeOut 3s forwards;
+}
+
+
+.product-item4 img {
+  margin-top: 20px;
+}
+
+.product-item4 {
+  position: relative;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.product-item4 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.info-box {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translateY(-50%);
+  width: 300px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+  margin-bottom: 10px;
+}
+
+.price2 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  font-weight: normal;
+  margin-left: 10px;
+}
+
+.details-button2 {
+  text-decoration: none;
+  color: var(--black-color);
+  border: 1px solid var(--black-color);
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.details-button2:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+}
+
+/*
+HOME DETAILS - sekcja detali
+
+1. **product-grid**: Styl dla kontenera zawierającego produkty. Ustawia margines po lewej stronie, ustawia go jako flex container z możliwością zawijania elementów i określa odstęp między nimi.
+
+2. **product-image img**: Styl dla obrazów produktów, ogranicza ich szerokość na 300 pikseli.
+
+3. **product-item**: Styl dla pojedynczego elementu produktu. Ustawia jego szerokość na podstawie obliczeń, wyśrodkowuje elementy, określa tło, marginesy i obramowanie.
+
+4. **product-item img**: Styl dla obrazów wewnątrz elementu produktu. Określa marginesy, maksymalną szerokość na 100% i wysokość na 300 pikseli.
+
+5. **product-description**: Styl dla opisu produktu, określa wewnętrzny padding.
+
+6. **product-content**: Styl dla zawartości produktu. Ustawia jego szerokość na podstawie obliczeń, lewy padding i wyrównuje tekst do lewej.
+
+7. **product-content h3**: Styl dla nagłówka h3 wewnątrz zawartości produktu, określa margines po prawej stronie.
+
+8. **details-button**: Styl dla przycisków "Details". Określa margines po prawej stronie, szerokość, wyśrodkowanie, kolor i inne właściwości. Podczas najechania myszką zmienia kolor tła, tekst i podkreślenie oraz kształt kursora na wskaźnik.
+
+9. **section__heading**, **about-us__text**, **about-us__img**: Stylizacja nagłówka sekcji, tekstu i obrazków w różnych sekcjach. Włącza animację "transform: scale(1.1)" podczas najechania myszką.
+
+10. **section__heading**: Dodatkowe style dla nagłówka sekcji, takie jak rozmiar czcionki, kolor i marginesy. Podczas najechania myszką zmienia rozmiar przy pomocy animacji.
+
+11. **about-us__textbox**: Style dla kontenera tekstu w sekcji "About Us". Określa szerokość i marginesy.
+
+12. **about-us__text**: Styl dla tekstu w sekcji "About Us" i animacja "transform: scale(1.2)" podczas najechania myszką.
+
+13. **about-us__link**: Styl dla odnośników w sekcji "About Us". Określa kolor i animację "transform: scale(1.2)" podczas najechania myszką.
+
+14. **about-us__box**: Styl dla kontenera zawierającego elementy sekcji "About Us". Określa wygląd i marginesy oraz animację "transform: scale(0.8)" podczas najechania myszką.
+
+15. **about-us__img**: Styl dla obrazków w sekcji "About Us". Określa szerokość, maksymalną szerokość, elastyczność, zaokrąglenie narożników i marginesy.
+
+16. **modal**: Stylizacja modala (okna modalnego) do wyświetlania treści na stronie. Określa jego wygląd, pozycję i tło.
+
+17. **modal-content**: Styl dla zawartości modala. Określa tło, marginesy i obramowanie.
+
+18. **close**: Styl dla przycisku zamykania modala. Określa kolor, rozmiar czcionki i wygląd podczas najechania myszką.
+
+19. **#modalCheck:checked ~ .modal**: Stylizacja modala w zależności od zaznaczenia checkboxa o id "modalCheck". Wyświetla modal i ustawia animację "fadeOut" na 3 sekundy.
+
+20. **product-item4 img**: Stylizacja obrazków w określonym elemencie o klasie "product-item4". Dodaje margines od góry.
+
+21. **product-item4**: Stylizacja konkretnego elementu o klasie "product-item4". Ustawia pozycję jako relatywną, szerokość i wysokość jako automatyczne oraz wyśrodkowuje go na stronie.
+
+22. **info-box**: Stylizacja okna informacyjnego (info-box) z danymi. Określa pozycję, tło, padding i cień.
+
+23. **info-box h2**: Stylizacja nagłówka w oknie informacyjnym. Określa margines na dole.
+
+24. **price2**: Stylizacja ceny w oknie informacyjnym. Określa wagę tekstu i margines na dole.
+
+25. **old-price**: Stylizacja przekreślonej starej ceny w oknie informacyjnym. Określa dekorację tekstu, wagę i margines po lewej stronie.
+
+26. **details-button2**: Stylizacja przycisku "Details" w oknie informacyjnym. Określa kolor tekstu, obramowanie, padding i margines na górze. Podczas najechania myszką zmienia kolor tła i kolor tekstu.
+Markup:
+   <div class="product-grid">
+            <div class="product-item" style="background-color: #eae9e7;">
+                <div class="product-image">
+                    <img src="img/gallery1.webp" alt="Gallery 1" loading="lazy" width="300" height="300">
+                </div>
+                <div class="product-content">
+                    <h3>LOREM IPSUM</h3>
+                    <a href="./gallery.html" class="details-button">VIEW DETAILS</a>
+                </div>
+            </div>
+            <div id="drugie" class="product-item" style="background-color: #eae9e7">
+                <div class="product-image">
+                    <img src="img/gallery2.webp" alt="Gallery 2" loading="lazy" width="300" height="300">
+                </div>
+                <div class="product-content">
+                    <h3>LOREM IPSUM</h3>
+                    <a href="./gallery.html" class="details-button">VIEW DETAILS</a>
+                </div>
+            </div>
+        </div>
+        <section class="section">
+            <h2 class="section__heading">Lorem ipsum</h2>
+            <div class="about-us__textbox">
+                <p class="about-us__text">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+                    ac felis mi. Nulla urna risus, malesuada nec blandit at, dictum a
+                    est. Integer pulvinar dui elit, vitae vehicula est tempor venenatis.
+                    Proin pulvinar pulvinar enim, et vestibulum leo. Vivamus placerat,
+                    magna non commodo suscipit, sapien lorem finibus dui, nec interdum
+                    lectus ante dictum mi.
+                </p>
+                <label for="modalCheck" class="button">Lorem ipsum!</label>
+                <input type="checkbox" id="modalCheck" style="display: none">
+                <div class="modal">
+                    <div class="modal-content">
+                        <p>Tak dobrze trafiłeś! To lorem ipsum!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="product-item4">
+                <img src="img/item1.webp" alt="Item" loading="lazy" width="1200" height="700">
+                <div class="info-box">
+                    <h2>Lorem Ipsum</h2>
+                    <p class="price2">$50.00 <span class="old-price">$200.00</span></p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, et do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    </p>
+                    <a href="./services.html" class="details-button2">VIEW DETAILS</a>
+                </div>
+            </div>
+
+Style guide: 1.4
+*/
+
+.collection {
+  font-family: Roboto, sans-serif;
+  flex-direction: row;
+  gap: 1em;
+}
+
+.collection__btn {
+  position: relative;
+  transition: 0.4s;
+  overflow: hidden;
+}
+
+.collection__btn:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transition: none;
+}
+
+.collection__btn:hover:after {
+  left: 100%;
+  transition: 0.8s;
+}
+
+.collection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5em;
+  padding: 6em 0.5em;
+}
+
+.collection__men,
+.collection__women,
+.collection__kids {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  max-width: 350px;
+  padding: 1em 0;
+}
+
+.collection__men,
+.collection__kids {
+  background-color: var(--fifth-color);
+}
+
+.collection__heading {
+  font-family: Roboto, sans-serif;
+  text-align: center;
+  font-size: 3rem;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.collection__btn {
+  position: relative;
+  padding: 0.7em 1.7em;
+  background: transparent;
+  text-decoration: none;
+  border: 1px solid var(--white-color);
+  color: var(--white-color);
+  text-transform: uppercase;
+  border-radius: 5px;
+}
+
+.collection__women {
+  background-color: var(--red-color);
+}
+
+.collection__img {
+  width: 350px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.slides img {
+  width: 260px;
+  height: 400px;
+}
+
+.slides img:hover {
+  animation: pulse 2s infinite;
+}
+
+.slides img:hover ~ .slide-description {
+  animation: pulse 2s infinite;
+}
+
+div.slider-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  height: 10px;
+  margin-bottom: 30px;
+}
+
+.slider-radio {
+  display: none;
+}
+
+.slider-label {
+  color: var(--red-color);
+  text-decoration: underline;
+  transition: transform 0.2s;
+}
+
+.slider-label {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--white-color);
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.slider-radio:checked + .slider-label {
+  background: var(--black-color);
+}
+
+.slider-controls > a:hover,
+.slider-controls > a:focus,
+.slider-nav > div:target {
+  background: var(--black-color);
+}
+
+.slider {
+  display: flex;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+}
+
+.slides {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  padding: 20px 0;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.slide {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 260px;
+  margin: 0 0px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slides {
+  display: flex;
+  scroll-snap-type: x mandatory;
+  overflow-x: hidden;
+  padding: 20px 0;
+}
+
+.slide {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 260px;
+  margin: 0 25px;
+  background: #fff;
+  position: relative;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*
+HOME SLIDER - sekcja slider
+
+1. **slides img**: Stylizacja obrazków w elemencie o klasie "slides". Określa szerokość na 260 pikseli i wysokość na 400 pikseli.
+
+2. **slides img:hover**: Stylizacja obrazków w elemencie o klasie "slides" podczas najechania myszką. Dodaje animację o nazwie "pulse" trwającą 2 sekundy, która jest powtarzana nieskończoną ilość razy.
+
+3. **slides img:hover ~ .slide-description**: Stylizacja elementu o klasie "slide-description" podczas najechania myszką na obrazki w elemencie o klasie "slides". Dodaje animację o nazwie "pulse" trwającą 2 sekundy, która jest powtarzana nieskończoną ilość razy.
+
+4. **slider-controls**: Stylizacja kontrolek slidera. Ustawia wyśrodkowanie elementów, margines na górze i na dole oraz wysokość na 10 pikseli.
+
+5. **slider-radio**: Stylizacja elementów radio (przycisków wyboru) slidera. Ukrywa te elementy.
+
+6. **slider-label**: Stylizacja etykiet przycisków wyboru slidera. Określa kolor tekstu, podkreślenie oraz efekt transformacji podczas najechania myszką.
+
+7. **slider-label**: Dodatkowe style dla etykiet przycisków wyboru slidera. Określa szerokość, wysokość, zaokrąglenie narożników, tło, marginesy oraz kursor myszki.
+
+8. **slider-radio:checked + .slider-label**: Stylizacja etykiet przycisków wyboru slidera, które są zaznaczone. Zmienia tło etykiety na kolor czarny.
+
+9. **slider-controls > a:hover, .slider-controls > a:focus, .slider-nav > div:target**: Stylizacja nawigacji slidera podczas najechania myszką lub skupienia oraz podczas aktywacji danego slajdu. Zmienia tło na kolor czarny.
+
+10. **slider**: Stylizacja kontenera slidera. Określa, że ma być to flex container, zajmujący całą dostępną szerokość i wyśrodkowany tekst.
+
+11. **slides**: Stylizacja kontenera slajdów wewnątrz slidera. Określa, że ma być to flex container, umożliwiający przewijanie w poziomie i zawijający elementy. Ustawia szerokość na 100% widoku i ukrywa poziome przewijanie.
+
+12. **slide**: Stylizacja pojedynczego slajdu w sliderze. Określa, że slajd powinien być wyśrodkowany, ma elastyczną szerokość, marginesy, tło, cień i inne właściwości.
+
+13. **slides** i **slide**: Duplikacja stylizacji dla kontenera slajdów i pojedynczego slajdu. Istnieje błąd w kodzie, który powoduje duplikację tych stylów.
+
+Podsumowując, powyższe style są używane do stworzenia efektu slidera ze slajdami, gdzie obrazki i ich opisy zmieniają się podczas najechania myszką lub wyboru przycisków. Dodatkowo, style definiują kontrole slidera i jego wygląd ogólny.
+Markup:
+   <div class="slider">
+                <div class="slides">
+                    <div id="slide-1" class="slide">
+                        <img src="img/mainPage1.webp" alt="Lorem ipsum 1v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-2" class="slide">
+                        <img src="img/mainPage2.webp" alt="Lorem ipsum 2v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-3" class="slide">
+                        <img src="img/mainPage10.webp" alt="Lorem ipsum 3v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-4" class="slide">
+                        <img src="img/mainPage11.webp" alt="Lorem ipsum 4v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-5" class="slide">
+                        <img src="img/mainPage14.webp" alt="Lorem ipsum 5v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-6" class="slide">
+                        <img src="img/mainPage13.webp" alt="Lorem ipsum 6v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-7" class="slide">
+                        <img src="img/mainPage12.webp" alt="Lorem ipsum 7v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-8" class="slide">
+                        <img src="img/mainPage8.webp" alt="Lorem ipsum 8v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                    <div id="slide-9" class="slide">
+                        <img src="img/mainPage9.webp" alt="Lorem ipsum 9v2" loading="lazy" width="260" height="400">
+                        <div class="slide-description">
+                            <p class="product-name">Lorem Ipsum</p>
+                            <p class="price">10$</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+Style guide: 1.5
+*/
+
+#tooltip .icon {
+  margin: 0 10px;
+  color: var(--white-color);
+  background-color: var(--white-color);
+  border-radius: 50%;
+  padding: 10px;
+}
+
+.icon:hover {
+  transform: scale(1.2);
+}
+
+.icon {
+  margin: 10px;
+}
+
+
+.product-grid1 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-grid2 {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-item1 {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  width: 200px;
+  background-color: var(--white-color);
+}
+
+.product-item1 img {
+  width: 30px;
+  height: auto;
+}
+
+span .price {
+  margin-right: 20px;
+}
+
+.price-rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 150px;
+  width: 20px;
+}
+
+.details-button-x{
+  margin-right: 5px;
+  width: 150px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  border: 1px solid var(--black-color);
+  color: var(--black-color);
+  background-color: var(--white-color);
+  text-decoration: none;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+
+.details-button-x:hover {
+  background-color: var(--black-color);
+  color: var(--white-color);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.h3 {
+  font-weight: bold;
+}
+
+.price {
+  font-weight: bold;
+}
+
+.product-item1 img {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: var(--white-color);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide-description {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 90px;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(180, 49, 49, 0.5);
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+.product-name,
+.price {
+  margin: 0;
+}
+
+.price {
+  font-weight: bold;
+}
+
+/*
+HOME PRODUCTS - sekcja produktów
+
+1. **.product-grid**: Kontener produktów z odstępem 15 pikseli po lewej stronie. Elementy wewnątrz są układane w układzie flex, owijane i oddzielane odstępem 20 pikseli.
+
+2. **.product-image img**: Szerokość obrazków produktów ograniczona do 300 pikseli.
+
+3. **.product-item**: Element pojedynczego produktu z elastycznym flex-basis obliczanym na 50% szerokości, marginesem 20 pikseli z prawej strony, tłem o kolorze var(--white-color), marginesami 10 pikseli po lewej i prawej stronie, cieniem i obramowaniem.
+
+4. **.product-item img**: Obrazki wewnątrz elementów produktów z marginesem 10 pikseli, szerokością maksymalną 100% i wysokością 300 pikseli.
+
+5. **.product-description**: Treść opisu produktu z wewnętrznym marginesem o wysokości 10 pikseli.
+
+6. **.product-content**: Zawartość produktu z elastycznym flex-basis na 50%, lewym wewnętrznym marginesem 20 pikseli i wyrównaniem do lewej strony.
+
+7. **.product-content h3**: Nagłówek elementu produktu z marginesem 5 pikseli po prawej stronie.
+
+8. **.details-button**: Przycisk "Details" z marginesem 5 pikseli po prawej stronie, szerokością 200 pikseli, wyśrodkowany, z różnymi stylami, takimi jak obramowanie, tło i kolor tekstu. Po najechaniu kursorem zmienia się tło, kolor tekstu i tekst jest podkreślany.
+
+9. **.section__heading, .about-us__text, .about-us__img**: Elementy z animacją transformacji (skalowania) po najechaniu kursorem.
+
+10. **.section__heading**: Nagłówek sekcji z określonym rozmiarem czcionki, kolorem, marginesami i animacją transformacji.
+
+11. **.about-us__textbox**: Kontener dla tekstu z maksymalną szerokością 80vw i marginesami po lewej i prawej stronie.
+
+12. **.about-us__text**: Tekst z właściwościami takimi jak justyfikacja, waga czcionki, rozmiar, linia, kolor i animacja transformacji.
+
+13. **.about-us__link**: Linki w tekście ze stylem koloru i animacją transformacji.
+
+14. **.about-us__box**: Kontener dla sekcji "O nas" z różnymi stylami i animacją transformacji.
+
+15. **.about-us__img**: Obrazki w sekcji "O nas" z określonymi właściwościami, takimi jak szerokość, maksymalna szerokość, elastyczność i zaokrąglenie rogów.
+
+16. **.modal**: Okno modalne ukrywane domyślnie, pozycja stała, z indeksem z przodu i tłem o kolorze rgba.
+
+17. **.modal-content**: Zawartość okna modalnego z określonym tłem, marginesami, obramowaniem i szerokością.
+
+18. **.close**: Przycisk zamykania okna modalnego z określonym kolorem, rozmiarem i grubością czcionki.
+
+19. **#modalCheck:checked ~ .modal**: Wyświetla okno modalne i stosuje animację po zaznaczeniu odpowiedniego elementu formularza.
+
+20. **.product-item4**: Elementy produktów o klasie "product-item4" z różnymi właściwościami, takimi jak pozycja, szerokość, wysokość i marginesy.
+
+21. **.product-item4 img**: Obrazki wewnątrz elementów produktów o klasie "product-item4" z określonymi właściwościami.
+
+22. **.info-box**: Skrzynka z informacjami o produkcie z różnymi właściwościami, takimi jak pozycja, szerokość, tło i cień.
+
+23. **.info-box h2**: Nagłówek skrzynki z informacjami z marginesem dolnym.
+
+24. **.price2, .old-price**: Ceny produktów z określonymi stylami, takimi jak grubość czcionki i dekoracje tekstowe.
+
+25. **.details-button2**: Przyciski "Details" w innej sekcji z różnymi stylami, takimi jak tło i kolor tekstu.
+
+Media Queries:
+
+Kod zawiera także media queries, które dostosow
+
+ują układ strony dla ekranów o szerokości poniżej 768px i 650px. Dla mniejszych ekranów, elementy są dostosowywane, marginesy, szerokości i inne właściwości są modyfikowane, aby strona była responsywna.
+
+Struktura HTML:
+
+Kod HTML zawiera sekcje z elementami o klasach "product-grid1" i "product-grid2", które reprezentują różne produkty z obrazkami, nagłówkami i cenami.
+
+Ogólnie rzecz biorąc, ten kod HTML i CSS jest używany do wyświetlania produktów na stronie internetowej w formie siatki, z odpowiednimi stylami i animacjami. Jest również odpowiednio dostosowany do różnych rozmiarów ekranów dzięki media queries.
+Markup:
+            <div class="product-grid1">
+                <div class="product-item1">
+                    <img src="img/gallery9.webp" alt="LoremIpsum" loading="lazy" width="200" height="200">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Lorem</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                            </p>
+                            <a href="./product.html" class="details-button-x">VIEW ALL</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery12.webp" alt="Loremer" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja1" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja2" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja3" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja4" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja5" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery11.webp" alt="Loremer2" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja6" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja7" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja8" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja9" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja10" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/gallery10.webp" alt="Loremer3" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja11" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja12" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja13" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja14" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja15" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="product-grid2">
+                <div class="product-item1">
+                    <img src="img/abootUs4.webp" alt="Loremer4" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja16" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja17" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja18" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja19" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja20" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs3.webp" alt="Loremer5" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja21" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja22" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja23" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja24" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja25" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs2.webp" alt="Loremer6" loading="lazy" width="200" height="200">
+                    <h3>Lorem</h3>
+                    <div class="price-rating">
+                        <span class="price">30$</span>
+                        <span class="rating"><img src="img/gwiazda_zolta.svg" alt="Promocja26" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja27" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja28" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_zolta.svg" alt="Promocja29" loading="lazy" width="30" height="30">
+                            <img src="img/gwiazda_szara.svg" alt="Promocja30" loading="lazy" width="30" height="30">
+                        </span>
+                    </div>
+                </div>
+                <div class="product-item1">
+                    <img src="img/abootUs1.webp" alt="Loremer7" loading="lazy" width="200" height="200">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Lorem</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+                            </p>
+                            <a href="./product.html" class="details-button-x">VIEW ALL</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+Style guide: 1.6
+*/
+
+.offer {
+  display: flex;
+  background-color: var(--seventh-color);
+  font-family: Roboto, sans-serif;
+  display: flex;
+  justify-content: space-around;
+  padding: 2em 0;
+  overflow: hidden;
+  font-family: "Oswald", sans-serif;
+}
+
+.offer__body {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.offer__content {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+
+.offer__heading {
+  padding: 0 0.3em;
+  letter-spacing: 1.4px;
+  font-size: 3.1rem;
+  font-weight: 800;
+  background-color: var(--white-color);
+  color: var(--black-color);
+}
+
+.offer__title {
+  margin: 15px;
+  text-align: center;
+  font-size: 3.7rem;
+  font-weight: 700;
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
+.offer__text {
+  max-width: 300px;
+  margin-bottom: 1em;
+  text-align: center;
+  color: var(--black-color);
+  background-color: var(--white-color);
+}
+
+.offer__btn {
+  display: block;
+  padding: 0.7em 1.7em;
+  background-color: var(--red2-color);
+  border-radius: 20px;
+  color: var(--white-color);
+}
+
+.offer__img{
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  padding: 4em 0;
+  animation: rocking 10s infinite;
+  transform-origin: center;
+}
+
+.service {
+  padding: 3em 0;
+  gap: 10px;
+}
+
+.service__content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3em;
+}
+
+.service__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  margin-bottom: 10px;
+}
+
+.service__box img {
+  width: 70px;
+  height: 70px;
+}
+
+.service__title {
+  font-family: Roboto, sans-serif;
+}
+
+.service__truck {
+  margin-right: 5px;
+}
+
+.load-more-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.load-more-btn {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.2rem;
+  background-color: var(--red-color);
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  border: none;
+}
+
+.newsletter-signup-section {
+  display: flex;
+  justify-content: flex-end;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+
+.newsletter-signup-container {
+  width: 100%;
+}
+
+.newsletter-content {
+  text-align: left;
+}
+
+.newsletter-title {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.newsletter-description {
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  display: flex;
+  margin-right: 20px;
+  justify-content: flex-end;
+  float: right;
+}
+
+.newsletter-input {
+  padding: 10px;
+  width: 150px;
+  border: 1px solid var(--white-color);
+}
+
+.newsletter-submit-btn {
+  background-color: var(--red-color);
+  border: 1px solid var(--black-color);
+  cursor: pointer;
+}
+
+.newsletter-submit-btn img {
+  width: 20px;
+  height: auto;
+}
+
+.load-more-btn:hover {
+  background-color: var(--red2-color);
+  text-decoration: underline;
+}
+
+.load-more-btn a {
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  padding: 0.7rem 2rem;
+  border-radius: 5px;
+  transition: transform 0.2s;
+  text-decoration: none;
+}
+
+/*
+HOME OFERTA/SERWIS - sekcja ofert
+
+1. **.offer**: Stylizacja sekcji oferty, która określa tło, font oraz marginesy, a także wyśrodkowuje zawartość. Nadmiarowy tekst jest ukrywany.
+
+2. **.offer__body**: Stylizacja elementu zawierającego treść oferty. Ustawia wygląd elementu, centruje zawartość i ukrywa nadmiarowy tekst.
+
+3. **.offer__content**: Stylizacja kontenera treści oferty. Określa wygląd fontu, centruje zawartość i ustala odstępy między elementami.
+
+4. **.offer__heading**: Stylizacja nagłówka oferty. Określa wygląd fontu, rozmiar, wagę, kolor tła i kolor tekstu.
+
+5. **.offer__title**: Stylizacja tytułu oferty. Określa wygląd fontu, rozmiar, wagę, kolor tła i kolor tekstu.
+
+6. **.offer__text**: Stylizacja tekstu oferty. Określa maksymalną szerokość, margines na dole, wygląd fontu, kolor tła i kolor tekstu.
+
+7. **.offer__btn**: Stylizacja przycisku oferty. Definiuje wygląd tła, zaokrąglenie narożników, kolor tekstu i kursor myszki.
+
+8. **.offer__img**: Stylizacja obrazka w ofercie. Określa szerokość, wysokość, maksymalną szerokość, marginesy, animację oraz punkt transformacji.
+
+9. **.service**: Stylizacja sekcji usług, która ustala padding i odstępy między elementami.
+
+10. **.service__content**: Stylizacja zawartości sekcji usług. Wyśrodkowuje zawartość i definiuje odstępy między elementami.
+
+11. **.service__box**: Stylizacja pojedynczego bloku usługi. Ustawia wygląd fontu, marginesy oraz odstępy między elementami.
+
+12. **.service__box img**: Stylizacja obrazka w bloku usługi. Określa szerokość i wysokość obrazka.
+
+13. **.service__title**: Stylizacja tytułu usługi. Określa wygląd fontu.
+
+14. **.service__truck**: Stylizacja ikony samochodu ciężarowego w usłudze. Ustala margines z prawej strony.
+
+15. **.load-more-container**: Stylizacja kontenera przycisku "Load More". Określa wygląd oraz marginesy.
+
+16. **.load-more-btn**: Stylizacja przycisku "Load More". Definiuje wygląd tła, zaokrąglenie narożników, kolor tekstu i efekt transformacji podczas najechania myszką.
+
+17. **.newsletter-signup-section**: Stylizacja sekcji z formularzem subskrypcji newslettera. Wyśrodkowuje zawartość i ustala marginesy.
+
+18. **.newsletter-signup-container**: Stylizacja kontenera formularza subskrypcji.
+
+19. **.newsletter-content**: Stylizacja treści formularza subskrypcji. Ustala wygląd tekstu.
+
+20. **.newsletter-title**: Stylizacja tytułu formularza subskrypcji. Określa rozmiar czcionki i marginesy.
+
+21. **.newsletter-description**: Stylizacja opisu formularza subskrypcji. Określa margines na dole.
+
+22. **.newsletter-form**: Stylizacja formularza subskrypcji. Ustala wygląd i marginesy.
+
+23. **.newsletter-input**: Stylizacja pola wprowadzania danych w formularzu subskrypcji. Określa padding, szerokość, obramowanie i kolor tła.
+
+24. **.newsletter-submit-btn**: Stylizacja przycisku wysyłania formularza subskrypcji. Definiuje wygląd tła, obramowanie, kursor myszki i rozmiar obrazka.
+
+25. **.load-more-btn:hover**: Stylizacja przycisku "Load More" podczas najechania myszką. Zmienia kolor tła i dodaje podkreślenie.
+
+26. **.load-more-btn a**: Dodatkowe style dla przycisku "Load More". Zmienia kolor tekstu i efekt transformacji podczas najechania myszką.
+
+Podsumowując, powyższe style są używane do stylizacji różnych sekcji na stronie internetowej, takich jak oferta, usługi, przyciski "Load More" oraz formularz subskrypcji newslettera.
+
+Markup:
+ <section class="offer">
+            <h2 style="display:none;">.</h2>
+            <div class="offer__body">
+                <img src="img/logo1transparent.webp" alt="LOGOv2" class="offer__img" loading="lazy" width="300" height="300">
+                <div class="offer__content container">
+                    <p class="offer__heading">SPECIAL OFFER</p>
+                    <p class="offer__title">UPTO 70% OFF</p>
+                    <p class="offer__text">
+                        Upgrade your footwear collection with our 70% off special deal!
+                        LOREM IPSUM!
+                    </p>
+                    <a href="./product.html" class="details-button">VIEW ALL</a>
+                </div>
+            </div>
+        </section>
+        <section class="service">
+            <div class="service__content container">
+                <div class="service__box">
+                    <img src="img/pay1.webp" alt="pay1" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">FREE SHIPING</h4>
+                        <p class="service__describe">All Lorem ipsum $150</p>
+                    </div>
+                </div>
+                <div class="service__box">
+                    <img src="img/pay2.webp" alt="pay2" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">QUICK PAYMENT</h4>
+                        <p class="service__describe">100% Lorem ipsum </p>
+                    </div>
+                </div>
+                <div class="service__box">
+                    <img src="img/pay1.webp" alt="pay3" loading="lazy" width="150" height="150">
+                    <div class="service__text">
+                        <h4 class="service__title">FREE RETURNS</h4>
+                        <p class="service__describe">Lorem ipsum 30 days</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="load-more-container">
+            <a href="./gallery.html" class="load-more-btn">LOAD MORE PRODUCTS</a>
+        </div>
+        <div class="newsletter-signup-section">
+            <div class="newsletter-signup-container">
+                <div class="newsletter-content">
+                    <h2 class="newsletter-title">SIGN UP FOR THE NEWSLETTER</h2>
+                    <p class="newsletter-description">Subscribe for the latest stories and promotions</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                    <button type="submit" class="newsletter-submit-btn">
+                        <img src="img/phone.svg" alt="Send" loading="lazy" width="30" height="30">
+                    </button>
+                </form>
+            </div>
+        </div>
+
+Style guide: 1.7
+*/
+
+footer {
+  padding-top: 1rem;
+  background-color: #7c4200;
+  color: var(--white-color);
+  text-align: center;
+  width: 100%;
+}
+
+#socialmedia{
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.footer__text {
+  font-size: 1.2rem;
+  color: var(--white-color);
+}
+
+.footer__link {
+  color: var(--red-color);
+  text-decoration: underline;
+  transition: transform 0.3s ease;
+}
+
+.footer__link:hover {
+  transform: scale(1.2);
+  color: var(--red2-color);
+}
+
+.footer__link:visited {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+  transition: all 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2);
+}
+
+.cookie {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 35%;
+  padding: 2em 0;
+  background-color: rgb(37, 37, 37);
+  color: #ffffff;
+  z-index: 9;
+  opacity: 0;
+  animation: show-cookies 0.5s 0.5s forwards;
+  transform: translateY(100%);
+}
+.cookie__box {
+  max-width: 500px;
+  height: 30px;
+}
+.cookie__title {
+  margin-bottom: 0.7em;
+  width: 50%;
+  font-size: 2rem;
+}
+.cookie__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.cookie__img {
+  font-size: 3rem;
+}
+.cookie__text {
+  margin-bottom: 1em;
+  font-size: 0.7rem;
+}
+.cookie__btn {
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.7em 1.7em;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  color: #ffffff;
+  border-radius: 10px;
+}
+
+
+.chat-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  border-radius: 15px 15px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #b15f01;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chat-content {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.przycisk{
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #b15f01;
+  color: white;
+}
+
+.expanded .chat-content {
+  display: block;
+}
+
+.dark-mode .chat-header {
+  background: #343a40;
+}
+
+.dark-mode .chat-container {
+  background: #495057;
+}
+
+.dark-mode button {
+  background-color: #5a6268;
+}
+
+.quote-style {
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 3px solid #b15f01;
+  font-style: italic;
+  display: inline-block;
+  color: #000;
+  background-color: #f0f0f0;
+}
+
+@media (max-width:1200px) {
+  .collection {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5em;
+      padding: 6em 0.5em;
+      margin-bottom: 5em;
+  }
+}
+
+@media (max-width: 1100px){
+  .row{
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto;
+      width: 100%;
+      flex-direction: column;
+  }
+
+  .szukaj{
+    width: 50%;
+    gap:10px;
+  }
+
+    .col-smain {
+      width: 80%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .row1 {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+
+  .col-sm{
+    width: 97%;
+    margin: 0 1.5%;
+    padding: 0;
+  
+  }
+
+  .col-row{
+    min-height: 300px;
+    min-width: 400px;
+  }
+
+  .col{
+    width: 70%;
+  }
+}
+
+@media (min-width: 1000px) {
+
+
+  .photoFirst {
+      margin-left: 0px;
+      justify-items: center;
+      grid-template-columns: repeat(3, 250px);
+  }
+	
+  .photoSecond {
+      margin-left: 0px;
+      justify-items: center;
+      grid-template-columns: repeat(3, 250px);
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 999px) {
+
+  #hamburger {
+    display: flex;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: transform 0.2s;
+    padding: 0px 10px;
+    font-size: 1.5rem;
+  }
+
+  #toggle {
+      display: none;
+      border: 0px;
+  }
+
+  #toggle:checked ~ #menu {
+      display: flex;
+  }
+
+  #menu {
+      display: none;
+  }
+
+  .col-row{
+    min-height: 200px;
+    min-width: 300px;
+  }
+
+  #search-city{
+    width: 150px;
+  }
+
+  .photoFirst,
+  .photoSecond {
+      margin-left: 0px;
+      margin-right: 60px;
+      grid-template-columns: repeat(2, 250px);
+  }
+
+  .product-grid1,
+  .product-grid2 {
+      display: none;
+  }
+
+  .product-grid,
+  .product-grid1,
+  .product-grid2 {
+      flex-direction: column;
+  }
+
+  .product-item,
+  .product-item1 {
+      height: 50%;
+      margin-right: 10px;
+  }
+
+  .product-item img {
+      width: 100px;
+      height: 100px;
+  }
+
+  .details-button,
+  .details-button2, .details-button1 {
+      width: 150px;
+      margin: 10px;
+  }
+
+
+}
+
+@media (max-width: 768px) {
+
+  .cookie{
+    height: 45%;
+  }
+
+  #hamburger {
+    display: flex;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: transform 0.2s;
+    padding: 0px 10px;
+    font-size: 1.5rem;
+  }
+
+  #toggle {
+      display: none;
+      border: 0px;
+  }
+
+  #toggle:checked ~ #menu {
+      display: flex;
+  }
+
+
+  .col-row{
+    min-height: 200px;
+    min-width: 300px;
+  }
+
+  #search-city{
+    width: 150px;
+  }
+
+  #menu {
+      display: none;
+  }
+
+  .product-grid{
+    flex-direction: column;
+  }
+
+  .containerApi {
+      width: 95%;
+  }
+  .photoFirst,
+  .photoSecond {
+      margin-left: 0px;
+      grid-template-columns: repeat(2, 300px);
+      justify-items: center;
+  }
+
+  .about-us__box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 2rem;
+      transition: transform 0.2s;
+  }
+
+  .about-us__img {
+      width: calc(50% - 1rem);
+  }
+
+  .product-grid1,
+  .product-grid2 {
+      display: none;
+  }
+
+  .details-button,
+  .details-button2, .details-button1 {
+      width: 150px;
+      margin: 10px;
+  }
+
+
+  .price {
+      font-weight: bold;
+      font-size: 1.5em;
+  }
+
+  .price2 {
+      display: none;
+  }
+
+  .info-box p {
+      display: none;
+  }
+
+  .info-box h2 {
+      text-align: center;
+      width: 165px;
+      font-size: medium;
+  }
+
+  .info-box {
+      padding-top: 5px;
+      width: 200px;
+      height: 140px;
+  }
+}
+
+@media (max-width: 650px) {
+
+  #menu > li > ul {
+    display: none;
+    top: -100px;
+  }
+  
+  #menu > li:hover > ul{
+    margin-left:50px;
+  }
+
+  .toggle{
+    margin-top: 5px;
+  }
+
+  #menu > li > ul > li > ul{
+    width: 50px;
+  }
+
+  #hamburger {
+    margin-left: 6px;
+    display: flex;
+    color: var(--white-color);
+    text-decoration: none;
+    transition: transform 0.2s;
+    padding: 0px 10px;
+    font-size: 1.5rem;
+  }
+
+  #toggle {
+      display: none;
+      border: 0px;
+  }
+
+  #toggle:checked ~ #menu {
+      display: flex;
+      flex-direction: column;
+  }
+
+  #menu a, #menu li{
+    width: 50px;
+    margin-bottom: 7px;
+    background-color: #7c4200;
+    border-right: 0px;
+  }
+
+
+  .col{
+    width: 300px;
+  }
+  .col-row{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 300px;
+  }
+
+  .row img{
+    margin-left: 80px;
+  }
+  
+  .col-row p{
+    text-align: center;
+  }
+
+  #search-city{
+    width: 150px;
+  }
+
+  .szukaj{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .offer__heading {
+    padding: 0 0.3em;
+    letter-spacing: 1.4px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    background-color: var(--white-color);
+    color: var(--black-color);
+}
+
+.offer__title {
+    margin: 15px;
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 300;
+    color: var(--black-color);
+}
+
+.offer__text {
+    max-width: 100px;
+    margin-bottom: 1em;
+    text-align: center;
+    color: var(--black-color);
+}
+
+.offer__img {
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    max-height: 400px;
+    padding: 4em 0;
+    animation: rocking 10s infinite;
+    transform-origin: center;
+}
+
+.service__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 3em;
+}
+
+.photoFirst,
+.photoSecond {
+    margin-left: 0px;
+    grid-template-columns: repeat(1, 300px);
+    justify-items: center;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 40%;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--white-color);
+    margin: 50% auto;
+    padding: 20px;
+    border: 1px solid var(--gray-color);
+    width: 80%;
+}
+
+.product-item img {
+    margin: 10px;
+    max-width: 100%;
+    height: 150px;
+    width: 150px;
+}
+}

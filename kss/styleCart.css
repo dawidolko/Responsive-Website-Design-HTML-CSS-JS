@@ -1,0 +1,1598 @@
+/* Root variables
+Definicje globalnych zmiennych CSS, które określają kolorystykę strony, w tym kolory tła, tekstów i akcentów.
+*/
+
+/* Body Styles
+Podstawowe style dla całego dokumentu, ustawiające m.in. kolor tła, rodzinę czcionek, wyrównanie elementów i układ flex.
+*/
+
+/* Header Styles
+Style dla nagłówka strony, określające jego pozycjonowanie, rozmiar i wyrównanie.
+*/
+
+/* Loading Bars
+Style dla animowanych pasków ładowania na górze i dole strony, z określeniem pozycji, rozmiaru i gradientu kolorów.
+*/
+
+/* Blur Background
+Style dla rozmytego tła, zdefiniowanie pozycji, rozmiaru, obrazu tła i filtru rozmycia.
+*/
+
+/* Header Text
+Style dla tekstu w nagłówku, w tym rozmiar fontu, kolor, margines i efekt przejścia.
+*/
+
+/* Call to Action Button
+Style dla przycisku zachęcającego do działania w nagłówku, określające jego wygląd i interakcje.
+*/
+
+/* Navigation Bar
+Style dla paska nawigacji, w tym jego pozycjonowanie, układ, kolor tła i style dla logo oraz elementów nawigacyjnych.
+*/
+
+/* Footer Styles
+Style dla stopki, określające tło, kolor tekstu, linki i ich interakcje oraz style dla obrazków.
+*/
+
+/* Media Queries for medium screens
+Zestaw reguł dla responsywności strony na średnich ekranach, w tym zmiany w stylach nawigacji i nagłówka.
+*/
+
+/* Media Queries for small screens
+Zestaw reguł dla responsywności strony na małych ekranach, w tym zmiany w stylach nawigacji, nagłówka i pozycjonowania elementów.
+*/
+
+:root{
+  --primary-color: #000;
+  --secondary-color: #fff;
+  --nav-color: #7c4200;
+  --linav-color: #b15f01;
+  --lilinav-color: #da7400;
+  --lililinav--color: #ff8800;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-gray: #3f3f3f;
+  --color-grayLight: #6e6e6e;
+  --color-grayLight2: #afafaf;
+  --color-grayLight3: #b9b9b9;
+  --color-bg: #ccc;
+  --color-red:red;
+  --color1: #383838;
+  --color2: #3a3a3a;
+  --color3: #292929;
+  --color11: #3a3a3a;
+  --bg-color: #d1c6c6;
+  --bg2-color: #6693af;
+  --blue: #0033a0;
+  --black-color: #000;
+  --white-color: #fefefe;
+  --gray-color: gray;
+  --red-color: #f55;
+  --red2-color: #f40;
+  --first-color: #193242;
+  --second-color: #375465;
+  --third-color: #183141;
+  --fourth-color: #1a3344;
+  --fifth-color: #385566;
+  --sixth-color: #355264;
+  --seventh-color: #1d384a;
+  --eighth-color: #1e394b;
+  --ninth-color: #395667;
+  --ten-color: #203a4d;
+}
+
+@keyframes swingdown {
+  0% {
+    opacity: 0.99999;
+    transform: rotateX(90deg);
+  }
+  30% {
+    transform: rotateX(-20deg) rotateY(5deg);
+    animation-timing-function: ease-in-out;
+  }
+  65% {
+    transform: rotateX(20deg) rotateY(-3deg);
+    animation-timing-function: ease-in-out;
+  }
+  100% {
+    transform: rotateX(0);
+    animation-timing-function: ease-in-out;
+  }
+}
+
+@keyframes show-cookies {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+#nav{
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  padding:10px 0;
+  background-color: var(--nav-color);
+  padding: 15px 0 15px 0;
+  text-align: center;
+  border-top: 0.5px solid var(--color-black);
+  border-bottom: 0.5px solid var(--color-black);
+}
+
+#menu{
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  font-size: 15px;
+  height: 35px;
+  line-height: 200%;
+}
+
+#menu a{
+  color: var(--color-white);
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+#menu > li{
+  position: relative;
+  float: left;
+  width: 150px;
+  height: 40px;
+  border-right: 1px dotted var(--color-white);
+}
+
+#menu > li:last-child{
+  border-right: none;
+}
+
+#menu > li:hover{
+  background-color: var(--linav-color);
+}
+
+ol > li:hover > a{
+  color: var(--color-grayLight);
+}
+
+#menu > li > ul {
+  display: none;
+  position: relative;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: var(--linav-color);
+  border-bottom: 1px dotted var(--color-black);
+  z-index: 100;
+}
+
+#menu > li:hover > ul{
+  padding: 15px 0;
+  display: block;
+  animation-name: swingdown;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+}
+
+#menu > li > ul > li:hover{
+  background-color: #da7400;
+}
+#menu > li > ul > li:last-child{
+  border-bottom: none;
+}
+
+#menu > li > ul > li > ul{
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  width: 150px;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  border-bottom: 1px dotted var(--color-black);
+  background-color: var(--lilinav-color);
+  z-index: 100;
+}
+
+
+#menu  > li > ul > li > ul > li:hover{
+  background-color: var(--lililinav--color);
+}
+
+#menu > li > ul > li:hover > ul{
+  display: flex;
+  flex-direction: column;
+}
+  #hamburger {
+    display: none;
+  }
+  
+  input#toggle {
+    display: none;
+  }
+  
+  .container,
+  .content {
+    width: 100%;
+    font-size: 20px;
+    width: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container.hidden,
+  .content.hidden {
+    display: none;
+  }
+  
+  .input {
+    font-family: inherit;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #eaeaea;
+    line-height: inherit;
+    margin: 25px 0;
+    text-align: center;
+    background: none;
+  }
+  
+  .button {
+    border: 2px solid var(--color-black);
+    outline: none;
+    padding: 10px 10px;
+    color: var(--color-black);
+  
+    font-family: inherit;
+    line-height: inherit;
+  
+    display: block;
+    margin: 25px auto;
+  
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    color: var(--color-red);
+    background: var(--primary-color);
+  }
+  
+  .message {
+    text-align: center;
+    /* margin: 25px 0; */
+    margin: 0 auto;
+  
+    max-width: 400px;
+  }
+  
+  .toggle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  .toggle:focus {
+    outline: none;
+  }
+  
+  .clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .clock {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin-bottom: 40px;
+  }
+  
+  .needle {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+  }
+  
+  .needle.hour {
+    transform: translate(-50%, -100%) rotate(0deg);
+  }
+  
+  .needle.minute {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+  }
+  
+  .needle.second {
+    background-color: #e74c3c;
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+  }
+  
+  .center-point {
+    background-color: #e74c3c;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .center-point::after {
+    content: "";
+    background-color: var(--primary-color);
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+  }
+  
+  .time {
+    font-size: 60px;
+  }
+  
+  .date {
+    color: #aaa;
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+    margin-top: 20px;
+  }
+  
+  .date .circle {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border-radius: 50%;
+    height: 22px;
+    width: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    line-height: 18px;
+    transition: all 0.5s ease-in;
+  }
+  
+  .clock-div {
+    margin-bottom: 80px;
+  }
+  .input {
+    color: var(--primary-color);
+  }
+  
+  .logoTrans {
+    width: 240px;
+    height: 240px;
+    background-image: url("../img/logo1transparent.webp");
+    background-size:contain;
+    animation: blink-animation 6s infinite alternate;
+    transition: all 0.3s ease;
+  }
+  
+  .logoTrans:hover {
+    transform: scale(1.05);
+  }
+  
+  main {
+    min-height:100%;
+	position:relative;
+    flex: 1;
+    width: 100%;
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  
+  input#toggle {
+    display: none;
+  }
+
+  *,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical;
+}
+
+ul {
+  list-style-type: none;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Oswald", sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+  padding: 0 0.5em;
+}
+
+.nav {
+  position: fixed;
+  width: 100%;
+  height: 8vh;
+  z-index: 10;
+  background-color: rgb(19, 19, 19);
+  color: #ffffff;
+}
+.nav__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+.nav__hide {
+  display: none;
+}
+.nav__logo {
+  display: none;
+}
+.nav__links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  height: 30vh;
+  width: 100%;
+  background-color: rgb(21, 96, 99);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+  z-index: 10;
+}
+.nav__links-active {
+  transform: translateX(0);
+}
+.nav__link {
+  text-transform: uppercase;
+  color: #fff;
+}
+.nav__shop {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3em;
+}
+.nav__basket {
+  position: relative;
+  font-size: 2rem;
+  color: white;
+}
+.nav__quantity {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -9px;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgb(156, 31, 9);
+  font-size: 1rem;
+  color: #fff;
+  transform: translateX(-50%);
+}
+.nav__total {
+  padding: 0.1em;
+  color: #8e928f;
+}
+
+.basket {
+  position: fixed;
+  top: 8vh;
+  right: 0;
+  padding: 1em 3em;
+  background-color: #d4d7d8;
+  transform: translateX(100%);
+  z-index: 10;
+  transition: 0.3s;
+}
+.basket__active {
+  transform: translateX(0);
+}
+
+.fa-basket-shopping:before, .fa-shopping-basket:before {
+    content: "\f291";
+}
+
+.fa-solid, .fas {
+    font-weight: 900;
+}
+
+.fa-classic, .fa-regular, .fa-solid, .far, .fas {
+    font-family: "Font Awesome 6 Free";
+}
+
+.cart {
+  display: flex;
+  flex-direction: column;
+}
+.cart__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3em;
+  padding: 0.5em;
+  margin-top: 5em;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+}
+.cart__heading {
+  padding: 2.5em 0 1em;
+  font-size: 3rem;
+  text-align: center;
+  background-color: rgb(247, 246, 245);
+  border-bottom: 1px solid rgb(231, 228, 228);
+}
+.cart__table {
+  border-collapse: collapse;
+}
+.cart__table-titles {
+  height: 50px;
+}
+.cart__table-content {
+  text-align: center;
+}
+.cart__table-content td {
+  border: 1px solid rgb(223, 220, 220);
+}
+.cart__table-img {
+  height: 70px;
+  width: 70px;
+}
+.cart__total {
+  padding: 0 0.5em;
+}
+.cart__minus, .cart__plus {
+  padding: 0.5em;
+  font-size: 1.2rem;
+}
+.cart__box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+.cart__continue {
+  padding: 1em 2em;
+  background-color: #396e75;
+  color: #ffffff;
+  font-size: 1.4rem;
+  border-radius: 50px;
+}
+.cart__total-price {
+  font-size: 2rem;
+}
+
+.payment {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 2em;
+  background-color: #2b5b61;
+  color: #ffffff;
+}
+.payment__title {
+  margin-bottom: 1em;
+  font-size: 2rem;
+  color: lightgray;
+}
+.payment__title:last-of-type {
+  margin-bottom: 0.3em;
+}
+.payment__label {
+  font-size: 1.4rem;
+}
+.payment__input {
+  width: 100%;
+  padding: 0.5em;
+  margin: 1em 0;
+  background-color: inherit;
+  border: none;
+  color: #d4d7d8;
+  border-bottom: 1px solid rgb(250, 250, 250);
+}
+.payment__input:focus {
+  outline: none;
+}
+.payment__input-date {
+  width: 30%;
+}
+.payment__input::-moz-placeholder {
+  color: rgb(163, 163, 163);
+}
+.payment__input::placeholder {
+  color: rgb(163, 163, 163);
+}
+.payment__icons {
+  display: flex;
+}
+.payment__icon {
+  width: 40px;
+  margin-right: 1em;
+}
+.payment__info {
+  display: flex;
+  justify-content: space-between;
+}
+.payment__message {
+  padding: 1em 0;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.payment__button {
+  width: 100%;
+  margin-top: 1em;
+  padding: 0.8em 0;
+  border-radius: 10px;
+  font-size: 1.6rem;
+  background-color: #ececec;
+  color: rgb(20, 20, 20);
+}
+
+.contact {
+  padding: 3em 0;
+  background-color: rgb(27, 27, 27);
+}
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  color: #ffffff;
+}
+.contact__logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contact__logo-img {
+  width: 60px;
+}
+.contact__logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.2em;
+  margin-bottom: 0.5em;
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  color: #ffffff;
+}
+.contact__logo-text {
+  max-width: 250px;
+  text-align: center;
+  font-size: 1.4rem;
+}
+.contact__media {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 220px;
+  padding: 2em 0;
+  border-bottom: 1px solid rgb(59, 59, 59);
+  border-top: 1px solid rgb(59, 59, 59);
+}
+.contact__media-title {
+  margin-bottom: 0.5em;
+  font-family: "Oswald", sans-serif;
+  font-size: 2.5rem;
+}
+.contact__media-icon {
+  margin-right: 0.5em;
+  font-size: 2rem;
+}
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5em;
+}
+.contact__content-title {
+  margin-bottom: 0.5em;
+  font-size: 2rem;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+.contact__content-icon {
+  margin-right: 0.5em;
+  font-size: 1.6rem;
+}
+.contact__content-icons {
+  margin-bottom: 0.2em;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+.contact__message-mail, .contact__message-tel {
+  display: none;
+  color: #ca9635;
+  font-size: 1.4rem;
+}
+
+  
+  footer {
+    padding-top: 1rem;
+    background-color: var(--nav-color);
+    color: var(--white-color);
+    text-align: center;
+    width: 100%;
+  }
+  
+  #socialmedia{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .footer__text {
+    font-size: 1.2rem;
+    color: var(--white-color);
+  }
+  
+  .footer__link {
+    color: var(--red-color);
+    text-decoration: underline;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer__link:hover {
+    transform: scale(1.2);
+    color: var(--red2-color);
+  }
+  
+  .footer__link:visited {
+    color: rgba(0, 0, 0, 0.7);
+  }
+  
+  footer img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
+    transition: all 0.3s ease;
+  }
+  
+  footer img:hover {
+    transform: scale(1.2);
+  }
+
+  #css{
+    display: flex;
+    justify-content: center;
+  }
+  
+  .cookie {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    padding: 2em 0;
+    background-color: rgb(37, 37, 37);
+    color: #ffffff;
+    z-index: 9;
+    opacity: 0;
+    animation: show-cookies 0.5s 0.5s forwards;
+    transform: translateY(100%);
+  }
+  .cookie__box {
+    max-width: 500px;
+    height: 30px;
+  }
+  .cookie__title {
+    margin-bottom: 0.7em;
+    width: 50%;
+    font-size: 2rem;
+  }
+  .cookie__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+  .cookie__img {
+    font-size: 3rem;
+  }
+  .cookie__text {
+    margin-bottom: 1em;
+    font-size: 0.7rem;
+  }
+  .cookie__btn {
+    cursor: pointer;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 0.7em 1.7em;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    border-radius: 10px;
+  }
+
+/*
+COOKIE - sekcja plików cookie
+
+Oto opis stylizacji sekcji cookies (plików cookie) oraz jej elementów:
+
+1. **.cookie**: To główny kontener sekcji plików cookie. Ma styl `display: flex;`, który ustawia elementy w sekcji w jednym rzędzie, `justify-content: center;`, co wyśrodkowuje zawartość poziomo, `position: fixed;`, co trzyma sekcję na stałe na dole ekranu, `bottom: 0;`, aby umieścić ją na dolnej krawędzi strony, `width: 100%;`, co sprawia, że zajmuje pełną szerokość strony, oraz `height: 30%;`, co ustawia jej wysokość na 30% widoku ekranu. Ma tło w kolorze ciemnoszarym (`background-color: rgb(37, 37, 37);`) oraz biały kolor tekstu (`color: #ffffff;`). Z-index ustawiony jest na 9, co oznacza, że jest na wierzchu innych elementów na stronie. Sekcja jest domyślnie niewidoczna (opacity: 0) i pojawia się płynnie z efektem animacji (`animation: show-cookies 0.5s 0.5s forwards;`). Jest także przesunięta na dół o 100% swojej wysokości (`transform: translateY(100%);`).
+
+2. **.cookie__box**: Jest to kontener wewnątrz sekcji cookies. Ma maksymalną szerokość 500 pikseli i wysokość 30 pikseli.
+
+3. **.cookie__title**: Tytuł sekcji cookies. Ma margines na dole wynoszący 0.7em, szerokość równą 50% szerokości rodzica oraz rozmiar czcionki 2rem.
+
+4. **.cookie__content**: Kontener dla treści sekcji cookies. Elementy wewnątrz są rozmieszczone w kolumnie (`flex-direction: column;`), wycentrowane w pionie i poziomie (`justify-content: center; align-items: center;`) oraz mają odstęp między nimi 1em.
+
+5. **.cookie__img**: Ikona plików cookie (🍪). Ma duży rozmiar czcionki 3rem.
+
+6. **.cookie__text**: Tekst informujący o wykorzystywaniu plików cookie. Ma margines na dole wynoszący 1em i niewielki rozmiar czcionki 0.7rem.
+
+7. **.cookie__btn**: Przycisk "Accept" służący do akceptacji plików cookie. Ma kursor myszy w postaci wskaźnika, a jego szerokość dostosowuje się do zawartości (`width: -moz-fit-content; width: fit-content;`). Posiada padding 0.7em na górze i dole oraz 1.7em poziomo, rozmiar czcionki 1.5rem, tekst wyśrodkowany, tło przezroczyste z białym obramowaniem o grubości 1px i białą czcionką. Ponadto, posiada zaokrąglone rogi (border-radius: 10px;).
+
+8. **Media Query (min-width: 768px)**: W tym punkcie definiowane są zmiany wizualne dla większych ekranów. Przycisk "Accept" ma efekt zmiany koloru tła na biały i czcionki na czarną po najechaniu kursorem (`transition: background-color 0.3s ease, color 0.3s ease;`).
+
+9. **Wstawienie HTML**: Sekcja cookies jest zawarta wewnątrz elementu div o klasie "cookie". Wewnątrz tego kontenera znajduje się tytuł z ikoną plików cookie oraz treść informacyjna i przycisk "Accept".
+
+Markup:
+    <div class="cookie">
+        <div class="cookie__box">
+            <p class="cookie__title">
+                <span class="cookie__img">🍪</span> We use cookie filles
+            </p>
+            <div class="cookie__content">
+                <p class="cookie__text">
+                    This website uses cookies to enhance your browsing experience. By
+                    clicking "Accept," you consent to their use. For more information,
+                    please refer to our Privacy Policy.
+                </p>
+                <button class="cookie__btn">Accept</button>
+            </div>
+        </div>
+    </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+        const cookieContainer = document.querySelector('.cookie');
+        const acceptButton = document.querySelector('.cookie__btn');
+        const hideCookieBanner = () => {
+            cookieContainer.style.display = 'none';
+        };
+        const cookieAccepted = localStorage.getItem('cookieAccepted');
+        if (cookieAccepted) {
+            hideCookieBanner();
+        }
+        acceptButton.addEventListener('click', () => {
+            localStorage.setItem('cookieAccepted', 'true');
+            hideCookieBanner();
+        });
+    });
+    </script>
+
+Style guide: 13.0
+*/
+
+  .testi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 0.5em;
+    margin-top: 200px;
+  }
+  /* Add to your existing styleCard.css or create if not exists */
+  #cartItems .item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+#cartItems .item img {
+    margin-right: 10px;
+}
+
+#cartItems .item button {
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#checkoutSection {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px; /* Dostosuj zgodnie z potrzebą */
+  margin: 20px;
+  padding: 20px;
+  background-color: #f5f5f5; /* Dostosuj kolor tła */
+}
+
+#checkoutSection h2 {
+  margin-bottom: 10px;
+}
+
+#personalInfoForm input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+}
+
+#personalInfoForm button {
+  padding: 10px 20px;
+  background-color: green; /* Dostosuj kolor przycisku */
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.cart-icon {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+}
+
+#cartCount {
+  background-color: red;
+  color: white;
+  padding: 2px 5px;
+  border-radius: 50%;
+  font-size: 0.8em;
+}
+
+/*
+CART - sekcja koszyka
+
+Oto opis stylizacji sekcji koszyka (cart) oraz jej elementów:
+
+1. **.cart**: Główny kontener sekcji koszyka. Ma następujące właściwości stylu:
+   - `position: fixed;` - Ustawia sekcję w pozycji stałej.
+   - `top: 8vh;` - Umieszcza sekcję na 8% wysokości widoku od góry strony.
+   - `right: 0;` - Przykleja sekcję do prawego krawędzi ekranu.
+   - `padding: 1em 3em;` - Dodaje wewnętrzny odstęp 1em z góry i dołu oraz 3em z prawej strony.
+   - `background-color: #d4d7d8;` - Ustawia tło sekcji na kolor szary.
+   - `transform: translateX(100%);` - Przesuwa sekcję na prawo poza ekran, początkowo jest niewidoczna.
+   - `z-index: 10;` - Określa warstwę, na której znajduje się sekcja.
+   - `transition: 0.3s;` - Definiuje efekt płynności zmiany stylu w czasie 0.3 sekundy.
+
+2. **.cart__active**: Klasa, która aktywuje sekcję koszyka, przesuwając ją z powrotem na ekran. Włącza efekt `transform` przy użyciu `translateX(0)`.
+
+3. **.cart__wrapper**: Kontener wewnątrz sekcji koszyka. Stylizacja zawiera:
+   - `display: flex;` - Ustawia elementy w sekcji w jednym rzędzie.
+   - `flex-direction: column;` - Elementy wewnątrz są rozmieszczone w kolumnie.
+   - `gap: 3em;` - Dodaje odstęp między elementami 3em.
+   - `padding: 0.5em;` - Dodaje wewnętrzny odstęp 0.5em.
+   - `margin-top: 5em;` - Ustawia margines z góry na 5em.
+   - `box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);` - Dodaje cień do sekcji.
+
+4. **.cart__heading**: Nagłówek sekcji koszyka. Stylizacja obejmuje:
+   - `padding: 2.5em 0 1em;` - Dodaje wewnętrzny odstęp 2.5em z góry, 0 z prawej i 1em z dołu.
+   - `font-size: 3rem;` - Ustawia rozmiar czcionki na 3rem.
+   - `text-align: center;` - Wyśrodkowuje tekst na środku.
+
+5. **.cart__table**: Tabela zawierająca elementy w koszyku. Stylizacja zawiera:
+   - `border-collapse: collapse;` - Scalanie obramowania komórek tabeli.
+   
+6. **.cart__table-titles**: Wiersz z tytułami kolumn tabeli. Stylizacja obejmuje:
+   - `height: 50px;` - Wysokość wynosząca 50 pikseli.
+
+7. **.cart__table-content**: Komórki z zawartością tabeli. Stylizacja zawiera:
+   - `text-align: center;` - Wyśrodkowuje zawartość tekstu w komórkach.
+
+8. **.cart__table-content td**: Dodaje obramowanie do komórek tabeli.
+
+9. **.cart__table-img**: Zdjęcia produktów w koszyku. Stylizacja obejmuje:
+   - `height: 70px;` - Ustawia wysokość zdjęć na 70 pikseli.
+   - `width: 70px;` - Ustawia szerokość zdjęć na 70 pikseli.
+
+10. **.cart__total**: Wyświetla łączną cenę produktów w koszyku. Stylizacja zawiera:
+    - `padding: 0.1em;` - Dodaje wewnętrzny odstęp 0.1em.
+    - `color: #8e928f;` - Ustawia kolor tekstu na szary.
+
+11. **.cart__minus, .cart__plus**: Przyciski do zmniejszania i zwiększania ilości produktów. Stylizacja obejmuje:
+    - `padding: 0.5em;` - Dodaje wewnętrzny odstęp 0.5em.
+    - `font-size: 1.2rem;` - Ustawia rozmiar czcionki na 1.2rem.
+    - `cursor: pointer;` - Ustawia kursor myszy w postaci wskaźnika.
+
+12. **.cart__
+
+  **box**: Kontener dla pojedynczego produktu w koszyku. Stylizacja zawiera:
+    - `display: flex;` - Elementy wewnątrz są rozmieszczone w jednym rzędzie.
+    - `justify-content: space-between;` - Rozmieszcza elementy w równym odstępie między sobą.
+    - `align-items: center;` - Wyśrodkowuje elementy względem siebie.
+    - `margin-bottom: 2em;` - Dodaje margines na dole o wysokości 2em.
+
+13. **.cart__continue**: Przycisk "Continue Shopping" służący do kontynuacji zakupów. Stylizacja obejmuje:
+    - `padding: 1em 2em;` - Dodaje wewnętrzny odstęp 1em z góry i dołu oraz 2em poziomo.
+    - `background-color: #396e75;` - Ustawia kolor tła na odcień niebieskiego.
+    - `color: #ffffff;` - Ustawia biały kolor tekstu.
+    - `font-size: 1.4rem;` - Ustawia rozmiar czcionki na 1.4rem.
+    - `border-radius: 50px;` - Zaokrągla rogi przycisku.
+
+14. **.cart__total-price**: Wyświetla łączną cenę produktów w koszyku. Stylizacja obejmuje:
+    - `font-size: 2rem;` - Ustawia rozmiar czcionki na 2rem.
+
+To są główne elementy stylizacji sekcji koszyka. Stylizacja zawiera również Media Query dla większych ekranów, które wprowadzają dodatkowe zmiany wizualne. Przycisk "Continue Shopping" zmienia kolor tła i czcionki po najechaniu kursorem (`hover`).
+
+Markup:
+    <main>
+        <div id="container" class="container">
+            <button style="display: none;" id="button" class="button">Potwierdź godzinę !</button>
+        </div>
+        <div class="testi">
+            <div id="cartItems"></div>
+            <div>Total: <span id="totalPrice"></span></div>
+            <div id="checkoutSection">
+            <form id="personalInfoForm">
+                <h2>Personal Information</h2>
+                <input type="text" id="name" placeholder="Name and Surname" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="text" id="address" placeholder="Address" required>
+                <h2>Card Information</h2>
+                <input type="text" id="cardNumber" placeholder="Card Number" required>
+                <input type="text" id="cardMM" placeholder="MM" required>
+                <input type="text" id="cardYYYY" placeholder="YYYY" required>
+                <input type="text" id="cardCVV" placeholder="CVV" required>
+                <button type="button" onclick="validateAndCheckout()">Checkout!</button>
+            </form>
+            </div>
+        </div>
+    </main>
+    <script>
+      function addToCart(buttonElement) {
+          const name = buttonElement.getAttribute('data-name');
+          const price = parseFloat(buttonElement.getAttribute('data-price'));
+          const image = buttonElement.getAttribute('data-image'); // Pobierz ścieżkę obrazu
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.push({ name, price, image }); // Dodaj przedmiot do koszyka
+          localStorage.setItem('cart', JSON.stringify(cart)); // Zaktualizuj koszyk w localStorage
+          updateCartCount(); // Aktualizuj licznik koszyka
+      }
+      function displayCart() {
+          let cartItems = document.getElementById('cartItems');
+          let totalPrice = 0;
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cartItems.innerHTML = ''; // Wyczyść istniejące przedmioty
+          cart.forEach((item, index) => {
+              let itemElement = document.createElement('div');
+              itemElement.classList.add('item');
+              itemElement.innerHTML = `
+                  <img src="${item.image}" alt="${item.name}" style="width:100px;"> 
+                  <span>${item.name} - $${item.price.toFixed(2)}</span>
+                  <button onclick="removeFromCart(${index})">Remove</button> 
+              `;
+              cartItems.appendChild(itemElement);
+              totalPrice += item.price;
+          });
+          if (cart.length === 0) {
+              cartItems.innerHTML = '<p>Your cart is empty.</p>';
+          }
+          document.getElementById('totalPrice').innerText = `$${totalPrice.toFixed(2)}`;
+          updateCartCount(); // Aktualizuj licznik koszyka również tutaj
+      }
+      function removeFromCart(index) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          cart.splice(index, 1); // Usuń przedmiot z koszyka
+          localStorage.setItem('cart', JSON.stringify(cart)); // Zaktualizuj koszyk w localStorage
+          displayCart(); // Odśwież widok koszyka
+          updateCartCount(); // Aktualizuj licznik koszyka
+      }
+      function updateCartCount() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let count = cart.length; // Liczba przedmiotów w koszyku
+          document.getElementById('cartCount').textContent = count; // Ustaw tekst licznika koszyka
+      }
+      function validateAndCheckout() {
+          // Pobierz wartości z pól formularza
+          const name = document.getElementById('name').value;
+          const phone = document.getElementById('phone').value;
+          const address = document.getElementById('address').value;
+          const cardNumber = document.getElementById('cardNumber').value;
+          const cardMM = document.getElementById('cardMM').value;
+          const cardYYYY = document.getElementById('cardYYYY').value;
+          const cardCVV = document.getElementById('cardCVV').value;
+          if (name && phone && address && cardNumber && cardMM && cardYYYY && cardCVV) {
+              alert('Zakupy zrealizowane. Więcej informacji na mailu.');
+              localStorage.removeItem('cart');
+              displayCart();
+              updateCartCount();
+          } else {
+              alert('Proszę uzupełnić wszystkie dane.');
+          }
+      }
+      document.addEventListener('DOMContentLoaded', () => {
+          updateCartCount(); // Aktualizacja licznika przy ładowaniu strony
+          if (window.location.pathname.includes('cart.html')) {
+              displayCart(); // Wyświetl przedmioty w koszyku jeśli jesteś na stronie koszyka
+          }
+      });
+    </script>
+
+Style guide: 8.0
+*/
+
+.chat-container {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 350px;
+  border-radius: 15px 15px 0 0;
+  background: #ffffff;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.chat-header {
+  padding: 10px;
+  background: #b15f01;
+  color: white;
+  border-radius: 15px 15px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.chat-content {
+  display: none;
+  padding: 20px;
+  text-align: center;
+}
+
+.przycisk{
+  padding: 10px 15px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #b15f01;
+  color: white;
+}
+
+.expanded .chat-content {
+  display: block;
+}
+
+.dark-mode .chat-header {
+  background: #343a40;
+}
+
+.dark-mode .chat-container {
+  background: #495057;
+}
+
+.dark-mode button {
+  background-color: #5a6268;
+}
+
+.quote-style {
+  padding: 10px;
+  margin: 10px 0;
+  border-left: 3px solid #b15f01;
+  font-style: italic;
+  display: inline-block;
+  color: #000;
+  background-color: #f0f0f0;
+}
+  
+  @media (max-width: 1100px){
+    .row{
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 100%;
+        flex-direction: column;
+    }
+  
+    .szukaj{
+      width: 50%;
+      gap:10px;
+    }
+  
+      .col-smain {
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+  
+    .row1 {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+  }
+  
+    .col-sm{
+      width: 97%;
+      margin: 0 1.5%;
+      padding: 0;
+    
+    }
+  
+    .col-row{
+      min-height: 300px;
+      min-width: 400px;
+    }
+  
+    .col{
+      width: 70%;
+    }
+  }
+
+  
+  @media screen and (min-width: 769px) and (max-width: 999px) {
+  
+    #hamburger {
+      display: flex;
+      color: var(--white-color);
+      text-decoration: none;
+      transition: transform 0.2s;
+      padding: 0px 10px;
+      font-size: 1.5rem;
+    }
+  
+    #toggle {
+        display: none;
+        border: 0px;
+    }
+  
+    #toggle:checked ~ #menu {
+        display: flex;
+    }
+  
+    #menu {
+        margin-top: 10px;
+        display: none;
+    }
+  
+    .col-row{
+      min-height: 200px;
+      min-width: 300px;
+    }
+  
+    #search-city{
+      width: 150px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .cookie__btn {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cookie__btn:hover {
+      background-color: #ffffff;
+      color: #000000;
+    }
+    .cookie__box {
+      max-width: 700px;
+    }
+    .cookie__content {
+      flex-direction: row;
+      align-items: start;
+    }
+  
+  }
+  
+  @media (max-width: 768px) {
+  
+    #hamburger {
+      display: flex;
+      color: var(--white-color);
+      text-decoration: none;
+      transition: transform 0.2s;
+      padding: 0px 10px;
+      font-size: 1.5rem;
+    }
+  
+    #toggle {
+        display: none;
+        border: 0px;
+    }
+  
+    #toggle:checked ~ #menu {
+        display: flex;
+    }
+  
+  
+    .col-row{
+      min-height: 200px;
+      min-width: 300px;
+    }
+  
+    #search-city{
+      width: 150px;
+    }
+  
+    #menu {
+        margin-top: 10px;
+        display: none;
+    }
+  }
+  
+  @media (max-width: 650px) {
+
+    #menu > li > ul {
+      display: none;
+      top: -100px;
+    }
+    
+    #menu > li:hover > ul{
+      margin-left:50px;
+    }
+  
+    .toggle{
+      margin-top: 5px;
+    }
+
+    #menu > li > ul > li > ul{
+      width: 50px;
+    }
+  
+    #hamburger {
+      margin-left: 6px;
+      display: flex;
+      color: var(--white-color);
+      text-decoration: none;
+      transition: transform 0.2s;
+      padding: 0px 10px;
+      font-size: 1.5rem;
+    }
+  
+    #toggle {
+        display: none;
+        border: 0px;
+    }
+  
+    #toggle:checked ~ #menu {
+        display: flex;
+        flex-direction: column;
+    }
+  
+    #menu a, #menu li{
+      width: 50px;
+      margin-bottom: 7px;
+      background-color: #7c4200;
+      border-right: 0px;
+    }
+  
+  
+    .col{
+      width: 300px;
+    }
+    .col-row{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 300px;
+    }
+  
+    .row img{
+      margin-left: 80px;
+    }
+    
+    .col-row p{
+      text-align: center;
+    }
+  
+    #search-city{
+      width: 150px;
+    }
+  
+    .szukaj{
+      display: flex;
+      flex-direction: column;
+    }
+
+  }
+
+  @media (min-width: 768px) {
+    .nav .nav__menu {
+      display: none;
+    }
+    .nav__links {
+      position: unset;
+      flex-direction: row;
+      top: unset;
+      height: unset;
+      width: unset;
+      background-color: unset;
+      transform: unset;
+    }
+    .nav__link {
+      transition: color 0.3s ease;
+    }
+    .nav__link:hover {
+      color: #5297a3;
+    }
+    .nav__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2em;
+      color: rgb(253, 253, 253);
+      font-size: 2.5rem;
+    }
+    .nav__logo-img {
+      width: 40px;
+    }
+    .nav__basket {
+      font-size: 2.5rem;
+    }
+    .nav__quantity {
+      top: -7px;
+      width: 22px;
+      height: 22px;
+      font-size: 1.2rem;
+    }
+    .payment {
+      width: 400px;
+      border-radius: 10px;
+    }
+    .payment__button {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .payment__button:hover {
+      background-color: #a8882e;
+      color: #ffffff;
+    }
+    .cart {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2em;
+      padding: 5em 0;
+    }
+    .cart__wrapper {
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.541);
+      width: 500px;
+    }
+    .cart__total-price {
+      font-size: 2.5rem;
+    }
+    .cart__heading {
+      margin-top: 50px;
+      padding-left: 1em;
+      text-align: start;
+      font-size: 4rem;
+    }
+    .cart__continue {
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .cart__continue:hover {
+      background-color: #a8882e;
+    }
+    .cart__minus, .cart__plus {
+      cursor: pointer;
+    }
+    .contact__body {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: start;
+    }
+    .contact__content-icons, .contact__media-icon {
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .contact__content-icons:hover, .contact__media-icon:hover {
+      color: #5297a3;
+    }
+    .contact__content-title {
+      text-align: start;
+    }
+    .contact__content-open:hover {
+      color: unset;
+      cursor: auto;
+    }
+  }
+  @media (min-width: 996px) {
+    .payment {
+      width: 400px;
+    }
+    .cart__wrapper {
+      width: 700px;
+    }
+  }
