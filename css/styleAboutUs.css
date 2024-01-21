@@ -185,6 +185,8 @@ html.dark {
 
 #nav{
   position: fixed;
+  left: 0;
+  top: 0;
   z-index: 1000;
   width: 100%;
   padding:10px 0;
@@ -262,7 +264,7 @@ ol > li:hover > a{
   display: none;
   position: absolute;
   left: 100%;
-
+  top: 0;
   width: 150px;
   margin: 0;
   padding-left: 0;
@@ -814,8 +816,6 @@ ol > li:hover > a{
       background-color: lightgrey;
       margin-left: 320px;
       margin-top: 110px;
-      top: 10;
-      left: 20;
       z-index: 2;
   }
   
@@ -1149,7 +1149,7 @@ ol > li:hover > a{
   }
   .cookie__btn {
     cursor: pointer;
-    width: -moz-fit-content;
+    /* width: -moz-fit-content; */
     width: fit-content;
     padding: 0.7em 1.7em;
     font-size: 1.5rem;
