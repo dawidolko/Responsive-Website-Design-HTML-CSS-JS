@@ -452,6 +452,8 @@ W części dokumentacji poświęconej kodowi źródłowemu, szczególną uwagę 
 
 <br>![projekt](img/description/photo43.png)
 
+Całość dokumentacji dostępna również pod linkiem [tutaj](https://projekt2.dawidolko.pl/kss/styleguide/).
+
 JavaScript wykorzystywany w projekcie jest dokumentowany za pomocą JSDoc, standardu dla komentarzy w kodzie JavaScript, który pozwala na generowanie atrakcyjnej i funkcjonalnej dokumentacji. Obejmuje to:
 - Opisy Funkcji i Metod: Jasne wyjaśnienia dotyczące tego, co robi każda funkcja lub metoda, jakie argumenty przyjmuje i co zwraca.
 - Przykłady Użycia: Wskazówki dotyczące sposobu wykorzystania poszczególnych funkcji i metod w praktyce.
