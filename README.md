@@ -464,7 +464,7 @@ Dzięki tym metodom, dokumentacja staje się integralną częścią projektu, ws
 <br>![projekt](img/description/photo44.png)
 <br>![projekt](img/description/photo45.png)
 
-Całość dokumentacji dostępna również pod linkiem tutaj: https://projekt2.dawidolko.pl/jsDoc1/out/index.html
+Całość dokumentacji dostępna również pod linkiem tutaj: [link](https://projekt2.dawidolko.pl/jsDoc1/out/index.html)
 
 ### Grafika AI:
 Wszystkie grafiki użyte w projekcie są wygenerowane za pomocą DALL-E, nowoczesnego narzędzia AI do generowania obrazów. Obrazy te są unikalne i dostosowane do potrzeb wizualnych projektu, co dodaje indywidualnego charakteru i innowacyjności do prezentacji strony.
