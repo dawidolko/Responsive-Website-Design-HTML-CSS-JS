@@ -1423,6 +1423,18 @@ div.slider-controls {
   margin: 10px;
 }
 
+#sekcjaAnimacji {
+  width: auto;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto; /* Centrowanie sekcji na stronie */
+  position: relative;
+}
+#logoCanvas {
+  position: absolute;
+}
 
 .product-grid1 {
   display: flex;
@@ -1894,6 +1906,11 @@ footer img:hover {
 }
 
 @media (max-width:1200px) {
+
+  #sekcjaAnimacji{
+    display: none;
+  }
+
   .collection {
       display: flex;
       flex-direction: column;
