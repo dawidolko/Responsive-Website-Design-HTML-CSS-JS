@@ -448,7 +448,7 @@ input#toggle {
   background: none;
 }
 
-.button {
+.button, .button2 {
   border: 2px solid var(--color-black);
   outline: none;
   padding: 10px 10px;
@@ -464,7 +464,7 @@ input#toggle {
   border-radius: 5px;
 }
 
-.button:hover {
+.button:hover, .button2:hover {
   color: var(--color-red);
   background: var(--primary-color);
 }

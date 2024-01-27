@@ -58,7 +58,7 @@ function toggleChat() {
 function displayProverbAndNavigate(data) {
     const quoteDisplay = document.getElementById('quote-display');
     quoteDisplay.textContent = `"${data.content}" — ${data.author}`;
-    // Użyj BOM do nawigacji, ustaw hasz na 'quote'
+    // uzywanie bom do nawigacji po stronie (hash)
     window.location.hash = 'quote';
 }
 

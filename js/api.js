@@ -74,9 +74,18 @@ function currentWeather(city) {
         localStorage.setItem("cityname", JSON.stringify(sCity));
         addToList(city);
       }
+    } else if (xhr.status === 404) {
+      // Obsługa błędu, gdy miasto nie zostało znalezione
+      alert("Błąd: Nie znaleziono miasta. Spróbuj ponownie.");
     } else {
+      // Obsługa innych błędów
       console.log("Błąd: " + xhr.status);
+      alert("Wystąpił błąd podczas wyszukiwania miasta. Sprawdź połączenie internetowe lub spróbuj ponownie później.");
     }
+  };
+  xhr.onerror = function () {
+    // Obsługa błędu sieciowego
+    alert("Błąd sieci: Nie można nawiązać połączenia z serwerem.");
   };
   xhr.send();
 }

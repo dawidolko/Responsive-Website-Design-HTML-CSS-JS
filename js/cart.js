@@ -59,27 +59,55 @@ function updateCartCount() {
 
 function validateAndCheckout() {
     // Pobierz wartości z pól formularza
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const cardNumber = document.getElementById('cardNumber').value;
-    const cardMM = document.getElementById('cardMM').value;
-    const cardYYYY = document.getElementById('cardYYYY').value;
-    const cardCVV = document.getElementById('cardCVV').value;
+    const name = document.getElementById('name').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const cardNumber = document.getElementById('cardNumber').value.trim();
+    const cardMM = document.getElementById('cardMM').value.trim();
+    const cardYYYY = document.getElementById('cardYYYY').value.trim();
+    const cardCVV = document.getElementById('cardCVV').value.trim();
 
-    // Prosta walidacja (można rozszerzyć o bardziej skomplikowane sprawdzenia)
-    if (name && phone && address && cardNumber && cardMM && cardYYYY && cardCVV) {
-        alert('Zakupy zrealizowane. Więcej informacji na mailu.');
-
-        // Tutaj można dodać kod do obsługi płatności, wysyłania danych na serwer itp.
-
-        // Oczyść koszyk
-        localStorage.removeItem('cart');
-        displayCart();
-        updateCartCount();
-    } else {
-        alert('Proszę uzupełnić wszystkie dane.');
+    // Walidacja numeru telefonu (przykładowo dla formatu polskiego)
+    const phoneRegex = /^[0-9]{9}$/;
+    if (!phoneRegex.test(phone)) {
+        alert('Proszę podać poprawny numer telefonu.');
+        return;
     }
+
+    // Walidacja adresu (tu można dodać bardziej skomplikowane sprawdzenia)
+    if (address.length < 5) {
+        alert('Proszę podać poprawny adres.');
+        return;
+    }
+
+    // Walidacja numeru karty
+    const cardNumberRegex = /^[0-9]{16}$/;
+    if (!cardNumberRegex.test(cardNumber)) {
+        alert('Proszę podać poprawny numer karty.');
+        return;
+    }
+
+    // Walidacja daty ważności karty
+    if (!(cardMM >= 1 && cardMM <= 12 && cardYYYY >= new Date().getFullYear())) {
+        alert('Proszę podać poprawną datę ważności karty.');
+        return;
+    }
+
+    // Walidacja CVV karty
+    const cvvRegex = /^[0-9]{3}$/;
+    if (!cvvRegex.test(cardCVV)) {
+        alert('Proszę podać poprawny kod CVV.');
+        return;
+    }
+
+    alert('Zakupy zrealizowane. Więcej informacji na mailu/sms.');
+
+    // Tutaj można dodać kod do obsługi płatności, wysyłania danych na serwer itp.
+
+    // Oczyść koszyk
+    localStorage.removeItem('cart');
+    displayCart();
+    updateCartCount();
 }
 
 // Wywołaj funkcje po załadowaniu DOM
