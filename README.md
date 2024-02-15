@@ -16,7 +16,7 @@
 7. [Raport SEO](#7-raport-seo)
 
 <hr>
- 
+
 ## OPIS
 
 ### 1. Strona tytułowa
