@@ -1,546 +1,569 @@
- <br>![projekt](img/description/photo1.png)
-# Praca projektowa technologie internetowe
-## Responsywna strona HTML/CSS/JS Wzorcowy Serwis Internetowy z zaawansowanym koszykiem oraz z wykorzystaniem API [link](https://openweathermap.org)
+<br>![project](img/description/photo1.png)
 
-### Prowadzący:	mgr inż. Marcin Mrukowicz	
-### Autor: Dawid Olko | nr albumu: 125148 |Kierunek: Informatyka, grupa lab 3
+# Design work internet technologies
+
+## Responsive HTML/CSS/JS website Model website with advanced shopping cart and API [link](https://openweathermap.org)
+
+### Presenter: M.Sc. Eng. Marcin Mrukowicz
+
+### Author: Dawid Olko | album no.: 125148 |Major: Computer Science, lab group 3
+
 ### Rzeszów 2024
 
-## Spis treści
-1. [Strona tytułowa](#1-strona-tytułowa)
-2. [Zdefiniowanie problemu do realizacji](#2-zdefiniowanie-problemu-do-realizacji)
-3. [Propozycja rozwiązania problemu](#3-propozycja-rozwiązania-problemu)
-4. [Testowanie responsywności i walidacja](#4-testowanie-responsywności-i-walidacja)
-5. [Komentarze kodu i dokumentacja KSS](#5-komentarze-kodu-i-dokumentacja-kss)
-6. [Linki do źródeł](#6-linki-do-źródeł)
-7. [Raport SEO](#7-raport-seo)
+## Contents
+
+1. [Title page](#1-title-page)
+2. [Defining the problem to be implemented](#2-defining-the-problem-to-be implemented)
+3. [Proposal for solving the problem](#3-proposal for solving the problem)
+4. [Responsivity testing and validation](#4-responsiveness-testing-and-validation)
+5. [Code comments and KSS documentation](#5-code-comments-and-documentation-KSS)
+6. [Links to sources](#6-links-to-sources)
+7. [SEO Report](#7-seo-report)
 
 <hr>
 
-## OPIS
+## DESCRIPTION
 
-### 1. Strona tytułowa
+### 1. Title page
 
-**Tytuł projektu:** Wzorcowy serwis internetowy z zaawansowanym koszykiem oraz z wykorzystaniem API – Responsywna strona HTML/CSS/JS
+**Project title:** Model website with an advanced shopping cart and using API - Responsive HTML/CSS/JS website
 
-Projekt obejmuje zestaw stron internetowych składających się z różnorodnych sekcji, takich jak strona główna, galeria, produkty, usługi, kontakt, FAQ, i polityka prywatności, z których każda została zdefiniowana przy użyciu HTML i stylizowana za pomocą dedykowanych plików CSS. Strony są zaprojektowane z myślą o dostarczeniu użytkownikowi intuicyjnego i angażującego doświadczenia, umożliwiającego łatwe nawigowanie i dostęp do potrzebnych informacji.
+The project includes a set of web pages consisting of various sections such as home page, gallery, products, services, contact, FAQ, and privacy policy, each of which has been defined using HTML and styled using dedicated CSS files. Pages are designed to provide users with an intuitive and engaging experience that allows them to easily navigate and access the information they need.
 
-**Szczegóły dotyczące plików:**
-- `ourProducts.html`, `pay.html`, `productFirst.html`, `productSecond.html`, `productThird.html`: Strony te opisują oferowane produkty, umożliwiają zapoznanie się z ofertą oraz dokonywanie zakupów. Ich stylizacja została zdefiniowana w plikach CSS odpowiadających nazwami produktom.
-- `services.html`, `privacy.html`, `aboutUs.html`, `contact.html`, `faq.html`, `gallery.html`, `home.html`: Każda z tych stron pełni specyficzne zadanie, od przedstawienia usług, przez informowanie o polityce prywatności, aż po zapewnienie kontaktu z właścicielami serwisu. Strony te są zaprojektowane w taki sposób, aby użytkownik mógł łatwo znaleźć potrzebne informacje.
-- **Pliki CSS:** Dla każdej strony HTML przygotowano odpowiedni plik CSS, który odpowiada za wizualną prezentację treści. Każdy z tych plików zawiera selektory i reguły stylów specyficzne dla elementów strony, które regulują aspekty takie jak layout, kolory, czcionki, oraz responsywność.
+**File details:**
 
-**Cel dokumentacji:**
-Dokumentacja została stworzona w celu zapewnienia szczegółowego przeglądu każdego z aspektów projektu, włącznie z jego strukturą, używanymi technologiami, oraz metodami implementacji. Ma ona na celu ułatwić zrozumienie projektu przez osoby trzecie, zapewnić wsparcie w dalszym rozwoju, oraz służyć jako dokumentacja techniczna dla użytkowników końcowych.
+- `ourProducts.html`, `pay.html`, `productFirst.html`, `productSecond.html`, `productThird.html`: These pages describe the products offered, enable you to familiarize yourself with the offer and make purchases. Their styling was defined in the CSS files corresponding to the product names.
+- `services.html`, `privacy.html`, `aboutUs.html`, `contact.html`, `faq.html`, `gallery.html`, `home.html`: Each of these pages has a specific purpose , from presenting services, through information about privacy policy, to ensuring contact with the website owners. These pages are designed in such a way that the user can easily find the information he needs.
+- **CSS files:** An appropriate CSS file has been prepared for each HTML page, which is responsible for the visual presentation of the content. Each of these files contains selectors and style rules specific to page elements that regulate aspects such as layout, colors, fonts, and responsiveness.
 
-### Struktura i Treść Strony:
+**Purpose of documentation:**
+The documentation was created to provide a detailed overview of each aspect of the project, including its structure, technologies used, and implementation methods. Its purpose is to facilitate understanding of the project by third parties, to provide support for further development, and to serve as technical documentation for end users.
 
-- **Strona główna (index.html):** Punkt wejściowy witryny, prawdopodobnie zawierający ogólne informacje, banery i linki do innych sekcji.
-- **O nas (aboutUs.html):** Sekcja przedstawiająca informacje o firmie, jej misji, wartościach, historii lub zespole.
-- **Galeria (gallery.html):** Wyświetla zbiór obrazów lub multimediów, prawdopodobnie związanych z oferowanymi produktami, usługami lub działalnością firmy.
-- **Produkty (product.html):** Szczegółowe informacje o oferowanych produktach, możliwe opcje wyboru produktu, ceny, opisy.
-- **Usługi (services.html):** Opis oferowanych usług, ich zakresu, może zawierać cennik lub sposób kontaktu w sprawie usług.
-- **Kontakt (contact.html):** Formularz kontaktowy lub informacje kontaktowe, takie jak adres, numer telefonu, adres e-mail.
-- **FAQ (faq.html):** Sekcja z odpowiedziami na często zadawane pytania, mogące pomóc użytkownikom w rozwiązaniu typowych problemów lub zrozumieniu oferty.
-- **Koszyk (cart.html):** Funkcjonalność sklepu internetowego, pozwalająca użytkownikom na dodawanie produktów do koszyka i przeglądanie ich przed zakupem.
+### Structure and Content of the Page:
 
-### Funkcjonalność i Skrypty JavaScript:
+- **Home page (index.html):** The entry point for the site, possibly containing general information, banners, and links to other sections.
+- **About Us (aboutUs.html):** A section presenting information about the company, its mission, values, history or team.
+- **Gallery (gallery.html):** Displays a collection of images or media possibly related to the company's products, services or activities.
+- **Products (product.html):** Detailed information about the products offered, possible product selection options, prices, descriptions.
+- **Services (services.html):** Description of the services offered, their scope, may include a price list or contact details regarding the services.
+- **Contact (contact.html):** Contact form or contact information such as address, phone number, email address.
+- **FAQ (faq.html):** A section with answers to frequently asked questions that may help users solve common problems or understand the offer.
+- **Cart (cart.html):** Online store functionality that allows users to add products to the cart and browse them before purchasing.
 
-- **api.js:** Skrypt do komunikacji z zewnętrznymi API, prawdopodobnie do integracji z usługami pogodowymi lub innymi zewnętrznymi danymi.
-- **cart.js:** Obsługa funkcjonalności koszyka, w tym dodawanie, usuwanie produktów i obliczanie sumy.
-- **clock.js:** Może wyświetlać aktualny czas lub zegar w różnych formatach.
-- **cookie.js:** Zarządzanie ciasteczkami, prawdopodobnie do śledzenia preferencji użytkownika lub sesji.
-- **data.js:** Skrypt prawdopodobnie odpowiedzialny za przechowywanie i zarządzanie danymi.
-- **main.js:** Główny plik JavaScript, koordynujący działanie skryptów i interaktywność strony.
-- **modal.js:** Funkcje dla modali, takie jak okna dialogowe, alerty, formularze.
+### Functionality and JavaScript Scripts:
 
-### Stylizacja i Wygląd (CSS):
+- **api.js:** Script for communicating with external APIs, possibly for integration with weather services or other external data.
+- **cart.js:** Supports cart functionality, including adding, removing products and calculating totals.
+- **clock.js:** Can display the current time or clock in various formats.
+- **cookie.js:** Manage cookies, possibly to track user or session preferences.
+- **data.js:** Script probably responsible for storing and managing data.
+- **main.js:** The main JavaScript file, coordinating the operation of scripts and website interactivity.
+- **modal.js:** Functions for modals such as dialogs, alerts, forms.
 
-- Każda sekcja ma swój dedykowany plik CSS, sugerujący spersonalizowaną stylizację i układ dla "aboutUs", "cart", "contact", "faq", "gallery", "index", "product" oraz "services".
+### Styling and Appearance (CSS):
 
-### Wnioski:
+- Each section has its own dedicated CSS file, suggesting personalized styling and layout for "aboutUs", "cart", "contact", "faq", "gallery", "index", "product" and "services".
 
-Projekt jest rozbudowaną witryną internetową z bogatym zestawem funkcji, możliwością interakcji z użytkownikiem oraz dynamicznym wyświetlaniem treści. Strona ta może służyć jako sklep internetowy, platforma informacyjna lub reprezentacyjna dla firmy lub organizacji. Elementy takie jak formularz kontaktowy, sekcja FAQ, galeria i szczegółowe opisy produktów i usług wskazują na profesjonalne podejście do prezentacji i obsługi klienta. Dodatkowo, integracja z zewnętrznymi API i zaawansowane skrypty JS sugerują nowoczesne i interaktywne doświadczenie użytkownika.
+### Conclusions:
 
-**Logo Projektu:**
- <br>![projekt](img/description/photo2.png)
+The project is an extensive website with a rich set of functions, the ability to interact with the user and dynamic display of content. This website can serve as an online store, information or representative platform for a company or organization. Elements such as a contact form, FAQ section, gallery and detailed descriptions of products and services indicate a professional approach to presentation and customer service. Additionally, integration with external APIs and advanced JS scripts suggest a modern and interactive user experience.
 
-<hr>
-
-## 2. Zdefiniowanie problemu do realizacji
-
-Projekt zakłada stworzenie szablonu strony internetowej, który będzie służył jako uniwersalna baza dla różnych typów przedsiębiorstw lub osobistych projektów. Szablon musi być elastyczny i łatwy do dostosowania, umożliwiając przyszłym użytkownikom modyfikację zgodnie z własnymi potrzebami — od prostych blogów po skomplikowane witryny e-commerce.
-
-### Problem do realizacji:
-
-Problemem jest stworzenie szablonu strony internetowej, który:
-1. **Uniwersalność i Adaptacyjność:**
-   - Jest dostosowany do różnorodnych zastosowań, od prostych prezentacji po kompleksowe witryny e-commerce.
-   - Umożliwia łatwe modyfikacje, w tym personalizację układów, kolorów i dodawanie nowych funkcji dzięki modularnej architekturze CSS i HTML.
-
-2. **Intuicyjność i Użyteczność:**
-   - Jest intuicyjny w obsłudze dla użytkowników na każdym poziomie doświadczenia.
-   - Posiada przejrzystą i obszerną dokumentację, ułatwiającą wykorzystanie wszystkich funkcjonalności szablonu.
-
-3. **Responsywność i Dostępność:**
-   - Gwarantuje poprawne wyświetlanie na wszystkich typach urządzeń dzięki responsywnemu designowi i elastycznym układom.
-   - Zapewnia dostępność dla osób z różnymi potrzebami, respektując standardy dostępności internetowej.
-
-4. **Optymalizacja i Wydajność:**
-   - Osiąga wysoką wydajność i szybkość ładowania strony poprzez optymalizację kodu i zasobów.
-   - Jest przyjazny dla SEO, zwiększając widoczność strony w wynikach wyszukiwania.
-
-### Zaproponowane rozwiązanie problemu:
-
-W celu rozwiązania powyższych problemów, proponowane są następujące kroki:
-
-1. **Uniwersalność i Adaptacyjność:**
-   - Modularna architektura: Twoje pliki HTML, takie jak `aboutUs.html`, `product.html`, `services.html`, itd., pokazują, że struktura strony jest podzielona na różne moduły i sekcje, co ułatwia personalizację.
-   - Predefiniowane schematy kolorów i komponenty UI w plikach CSS, takie jak `styleAboutUs.css`, `styleCart.css`, itd., które można łatwo dostosować.
-
-2. **Intuicyjność i Użyteczność:**
-   - Struktura plików i kodu sugeruje, że projekt jest dobrze zorganizowany, co ułatwi przyszłym użytkownikom zarządzanie treścią i strukturą strony.
-   - Pliki JavaScript, takie jak `api.js`, `cart.js`, `modal.js`, itd., dodają interaktywne elementy, które ułatwiają zarządzanie funkcjami strony.
-
-3. **Responsywność i Dostępność:**
-   - Pliki CSS są prawdopodobnie zaprojektowane z myślą o responsywności, zapewniając, że szablon będzie poprawnie wyświetlany na różnych urządzeniach.
-   - Zastosowanie praktyk dostępności, takich jak semantyczne znaczniki HTML i odpowiednie etykietowanie dla technologii asystujących.
-
-4. **Optymalizacja i Wydajność:**
-   - Pliki CSS i JavaScript są prawdopodobnie zoptymalizowane pod kątem szybkości ładowania.
-   - Struktura HTML i zastosowanie technik SEO-friendly w kodzie mogą przyczyniać się do lepszej pozycji strony w wyszukiwarkach.
-
-### Cel projektu:
-
-Dostarczenie użytkownikom elastycznego i łatwego w modyfikacji szablonu, który może być wykorzystany do różnorodnych celów, zachęcając do nauki i eksperymentowania z projektowaniem i programowaniem stron internetowych.
-
-### Założenia projektowe:
-
-- Szablon oparty na najlepszych praktykach, dostępny i użyteczny dla szerokiego spektrum użytkowników.
-- Projektowanie z myślą o łatwości adaptacji i rozwoju, umożliwiając użytkownikom zrozumienie kluczowych koncepcji web developmentu.
-
-Podsumowując, projekt wykorzystuje dostarczone pliki HTML, CSS i JavaScript, aby stworzyć uniwersalny, adaptacyjny, intuicyjny i wydajny szablon strony internetowej, który może być używany w różnych kontekstach i dostosowany do potrzeb użytkowników.
-Tak zdefiniowany problem do realizacji wraz z zaproponowanymi rozwiązaniami zapewnia solidne fundamenty dla projektu szablonu strony internetowej, który ma służyć edukacyjnym i praktycznym celom dla szerokiej grupy użytkowników.
+**Project Logo:**
+<br>![project](img/description/photo2.png)
 
 <hr>
 
-## 3. Propozycja rozwiązania problemu
+## 2. Defining the problem to be implemented
 
-Opierając się na analizie dostarczonych kodów HTML/CSS, takich jak `home.html`, `faq.html`, `productFirst.html` i innych, oto zaproponowane metody rozwiązania problemu tworzenia uniwersalnego i efektywnego szablonu strony internetowej na potrzeby projektu studenckiego przy czym do użycia będzie również zastosowanie JavaScript, który będzie połączony z API.
+The project involves the creation of a website template that will serve as a universal base for various types of businesses or personal projects. The template must be flexible and easy to customize, allowing future users to modify it according to their needs - from simple blogs to complex e-commerce sites.
 
-### 1. Struktura i Organizacja Kodu:
+### Problem to be implemented:
 
-**Cel:** Ułatwienie zarządzania i rozwijania szablonu.
+The problem is to create a website template that:
 
-**Rozwiązanie:**
-- Zastosowanie semantycznego HTML w plikach takich jak `home.html` (możliwe że `index.html`), `faq.html`, `product.html`, itd., gdzie treści są strukturyzowane za pomocą nagłówków, sekcji i artykułów.
-- Modularne CSS, gdzie każdy plik (np. `styleHome.css`, `styleFaq.css`) zawiera specyficzne dla danej strony style, co ułatwia modyfikacje i personalizację.
+1. **Versatility and Adaptability:**
 
-**Implementacja:**
-- Kod będzie zorganizowany wokół jasno zdefiniowanych komponentów i sekcji, z przemyślanym nazewnictwem klas i identyfikatorów.
-- Wykorzystanie komentarzy i czytelnego formatowania dla lepszej orientacji w kodzie.
+   - It is adapted to a variety of applications, from simple presentations to comprehensive e-commerce websites.
+   - Enables easy modifications, including personalizing layouts, colors and adding new features thanks to the modular CSS and HTML architecture.
 
-### 2. Responsywność i Wygląd:
+2. **Intuitiveness and Usability:**
 
-**Cel:** Zapewnienie atrakcyjnego i funkcjonalnego wyświetlania na wszystkich urządzeniach.
+   - It is intuitive to use for users of all experience levels.
+   - It has clear and extensive documentation, making it easier to use all the template's functionalities.
 
-**Rozwiązanie:**
-- Stosowanie responsywnych technik takich jak media queries, flexbox i grid w plikach CSS (np. `styleHome.css`, `styleFaq.css`), aby szablon dostosowywał się do różnych rozmiarów ekranów i typów urządzeń.
-- Implementacja:
-- Każdy element strony będzie zaprojektowany z myślą o elastyczności i adaptacji do różnych rozdzielczości ekranu.
-- Stylizacja wykorzystująca nowoczesne techniki CSS, zmienne dla łatwej zmiany tematów kolorystycznych lub fontów.
+3. **Responsivity and Availability:**
 
-### 3. Interaktywność i Użytkowość:
+   - Guarantees correct display on all types of devices thanks to its responsive design and flexible layouts.
+   - Ensures accessibility for people with various needs, respecting Internet accessibility standards.
 
-**Cel:** Poprawa doświadczenia użytkownika przez interaktywne i intuicyjne elementy.
+4. **Optimization and Performance:**
+   - Achieves high performance and page loading speed by optimizing code and resources.
+   - It is SEO friendly, increasing your website's visibility in search results.
 
-**Rozwiązanie:**
-- Dodanie elementów interaktywnych za pomocą JavaScript, jak np. w `cart.js` dla zarządzania koszykiem, rozwijane menu, karuzele zdjęć czy akordeony w sekcjach FAQ lub produktów.
-- Implementacja:
-- Skrypty JS, takie jak `modal.js`, `clock.js` czy `api.js`, będą zapewniały dodatkową interaktywność tam, gdzie to potrzebne, zachowując przy tym prostotę i wydajność.
-- Każdy interaktywny element będzie dostępny i łatwy w obsłudze także dla użytkowników korzystających z czytników ekranu lub klawiatury.
+### Proposed solution to the problem:
 
-### Podsumowanie:
+To solve the above problems, the following steps are proposed:
 
-Projekt zakłada stworzenie uniwersalnego, responsywnego i interaktywnego szablonu strony internetowej, który jest łatwy w adaptacji i rozwijaniu. Kluczowe elementy takie jak modułowa struktura, responsywny design i interaktywne komponenty są zaprojektowane, aby zwiększyć zaangażowanie użytkowników i ułatwić zarządzanie treścią. Przyjęte podejście ma na celu dostarczenie szablonu, który będzie przyjazny dla użytkownika, niezależnie od jego technicznych umiejętności, i który może być wykorzystany w różnych kontekstach edukacyjnych, osobistych lub biznesowych.
+1. **Versatility and Adaptability:**
+
+   - Modular architecture: Your HTML files such as `aboutUs.html`, `product.html`, `services.html`, etc. show that the page structure is divided into different modules and sections, making it easy to personalize.
+   - Predefined color schemes and UI components in CSS files such as `styleAboutUs.css`, `styleCart.css`, etc., which can be easily customized.
+
+2. **Intuitiveness and Usability:**
+
+   - The structure of the files and code suggests that the project is well organized, which will make it easier for future users to manage the content and structure of the site.
+   - JavaScript files such as `api.js`, `cart.js`, `modal.js`, etc. add interactive elements that make it easier to manage page features.
+
+3. **Responsivity and Availability:**
+
+   - CSS files are likely designed with responsiveness in mind, ensuring that the template will display correctly on various devices.
+   - Applying accessibility practices such as semantic HTML markup and appropriate labeling for assistive technologies.
+
+4. **Optimization and Performance:**
+   - CSS and JavaScript files are probably optimized for loading speed.
+   - The HTML structure and the use of SEO-friendly techniques in the code may contribute to a better position of the website in search engines.
+
+### Project goal:
+
+Providing users with a flexible and easy-to-modify template that can be used for a variety of purposes, encouraging learning and experimentation with web design and programming.
+
+### Design assumptions:
+
+- A template based on best practices, accessible and useful to a wide range of users.
+- Design for ease of adaptation and development, enabling users to understand key web development concepts.
+
+In summary, the project uses the provided HTML, CSS and JavaScript files to create a versatile, adaptive, intuitive and efficient website template that can be used in various contexts and adapted to the needs of users.
+The problem to be solved in this way, together with the proposed solutions, provides a solid foundation for the design of a website template that is intended to serve educational and practical purposes for a wide group of users.
 
 <hr>
 
-# 4. Testowanie responsywności i walidacja
+## 3. Proposal for solving the problem
 
-## 4.1. Strona główna „Home”
+Based on the analysis of provided HTML/CSS codes, such as `home.html`, `faq.html`, `productFirst.html` and others, here are the proposed methods to solve the problem of creating a universal and effective website template for a student project, while JavaScript will also be used, which will be connected to the API.
 
-### Pasek nawigacyjny:
+### 1. Code Structure and Organization:
 
-- Na górze strony pokazuje się pasek nawigacyjny, który podczas przewijania strony w dół jest cały czas widoczny, niezależnie od responsywności.
-- Jest on podzielony na dwie części, pierwsza część to „logo strony”, a druga to linki główne całej strony. Po kliknięciu w ikony nawigacyjne, jak i również logo zostajemy przekierowani na adresy podstron.
+**Purpose:** To make your template easier to manage and develop.
 
- <br>![projekt](img/description/photo3.png)
+**Solution:**
 
-### Tło strony głównej (pierwszy widok):
+- Use of semantic HTML in files such as `home.html` (possibly `index.html`), `faq.html`, `product.html`, etc., where content is structured by headings, sections and articles.
+- Modular CSS, where each file (e.g. `styleHome.css`, `styleFaq.css`) contains page-specific styles, making it easy to modify and personalize.
 
-- Po załadowaniu strony widoczne jest tło, które jest zablurowane, a na nim logo z efektem, który ukazuje się po najechaniu na logo. Pod nim znajduje się słowo „klucz” strony i link do podstrony, w której są przedstawione nasze „oferty”.
+**Implementation:**
 
- <br>![projekt](img/description/photo4.png)
+- Code will be organized around clearly defined components and sections, with thoughtful naming of classes and identifiers.
+- Use of comments and clear formatting for better orientation in the code.
 
-### Sekcja pierwsza (galeria):
+### 2. Responsiveness and Appearance:
 
-- Jako pierwsza sekcja na stronie głównej znajduje się galeria z widocznymi trzema zdjęciami, a pod nimi jest przycisk, który po kliknięciu rozwija kolejne kilka zdjęć. Każde zdjęcie ma swoją animację, która jest pokazywana po najechaniu na nie myszką.
+**Goal:** Provide an attractive and functional display on all devices.
 
- <br>![projekt](img/description/photo5.png)
+**Solution:**
 
- <br>![projekt](img/description/photo6.png)
+- Using responsive techniques such as media queries, flexbox and grid in CSS files (e.g. `styleHome.css`, `styleFaq.css`) to make the template adapt to different screen sizes and device types.
+- Implementation:
+- Each element of the website will be designed with flexibility and adaptation to different screen resolutions in mind.
+- Styling using modern CSS techniques, variables for easy change of color themes or fonts.
 
-### Sekcja druga (widok detali i krótki opis):
+### 3. Interactivity and Usability:
 
-- Kolejna sekcja to opis z alertem/popup'em, który ujawnia się po kliknięciu. Są tam również box'y, w których znajdują się informacje i przyciski do przeniesienia na podstronę produktów.
+**Goal:** Improve user experience through interactive and intuitive elements.
 
- <br>![projekt](img/description/photo7.png)
+**Solution:**
 
-### Sekcja trzecia (slider):
+- Adding interactive elements using JavaScript, such as `cart.js` for cart management, drop-down menus, photo carousels or accordions in FAQ or product sections.
+- Implementation:
+- JS scripts such as `modal.js`, `clock.js` and `api.js` will provide additional interactivity where needed, while maintaining simplicity and efficiency.
+- Each interactive element will be accessible and easy to use also for users using screen readers or keyboards.
 
-- Sekcja slideru, została oparta na przedstawieniu produktów w ułożeniu poziomym. Po kliknięciu w daną opcję na sliderze, przenosi nas do danego produktu, gdzie mamy przedstawione zdjęcie, jak i również cenę.
+### Summary:
 
- <br>![projekt](img/description/photo8.png)
-
-### Sekcja czwarta (oferta produktów):
-
-- Ta część kontenera, to sekcja która jest widoczna tylko na wersji desktopowej, przedstawia ona produkty z ich nazwą, ceną, jak i również oceną w postaci gwiazdek.
-
-- Przedstawione są również tam dwa przyciski, na pierwszym i ostatnim zdjęciu. Służą one do przenoszenia do podstrony produktów, gdzie dalej możemy obserwować produkty, którymi jesteśmy zainteresowani.
-
- <br>![projekt](img/description/photo9.png)
-
-### Sekcja piąta (oferty podzielone na kategorie):
-
-- Przedstawiona sekcja, jest wykonana w łatwy i kompleksowy sposób. Ukazane są trzy produkty z nazwą, zdjęciem i przyciskiem do pokazania więcej produktów na podstronie.
-
- <br>![projekt](img/description/photo10.png)
-
-### Sekcja szósta (kolekcje):
-
-- Ta część, to sekcja kolekcji. Ukazuje ona ofertę specjalną z opisem o % promocji oraz przyciskiem przenoszenia na podstronę ukazującą promocję.
-- Poniżej jest również 3 sposoby na szybką i tanią realizację zakupów, z możliwością zwrotu.
-
- <br>![projekt](img/description/photo11.png)
-
-### Sekcja siódma (newsletter):
-
-- To sekcja ukazująca możliwość zasubskrybowania newslettera strony, który będzie wysyłał na podany maila, informację o nowościach i promocjach.
-
- <br>![projekt](img/description/photo12.png)
-
-### Sekcja ósma (stopka):
-
-- Ostatnim elementem widocznym na stronie jest stopka, przedstawiająca informacje o prawach strony, oraz linku do polityki prywatności strony.
-- Jest na niej również informacja, że jest w pełni poprawna semantycznie, ponieważ przeszła walidację.
-- Na stopce są social media strony takie jak Facebook, Instagram, YouTube, Twitter.
-
- <br>![projekt](img/description/photo13.png)
-
-## 4.2. Podstrona „About Us”
-
-### Sekcja „o nas”:
-
-- Krótki opis opisujący naszą firmę i zapraszający do przejrzenia produktów.
-
- <br>![projekt](img/description/photo14.png)
- 
-### Galeria strony:
-
-- Mała i przejrzysta galeria, po której jeśli najedziemy na zdjęcie to ma ono swoją animację.
-
- <br>![projekt](img/description/photo15.png)
- 
-## 4.3. Podstrona „Products”
-
-### Duża sekcja produktów z podziałem na produkty (KIDS/MEN/WOMEN):
-
-- Przyciski pozwalają na przełączenie między danymi strefami produktów. Możliwe jest wyświetlenie produktów tylko dla jednego grona osób, jak i dla wszystkich.
-
- <br>![projekt](img/description/photo16.png)
- 
-## 4.4. Podstrona „Gallery”
- 
-### Galeria (zdjęcia):
-
-- Sekcja zdjęć ułożonych według rozdzielności, sekcja ta jest zrobiona na grid’zie, więc automatycznie niezależnie od urządzenia zdjęcia się układają.
-
- <br>![projekt](img/description/photo17.png)
- 
-## 4.5. Podstrona „Contact”
-
-### Sekcja formularza kontaktowego:
-
-- Ta podstrona zawiera tylko jedną sekcję, mianowicie formularz kontaktowego, gdzie jest uzupełniony ten formularz o walidację. 
-
-- Po poprawnym wprowadzeniu danych wyświetla się nam popup/alert i wiadomość zostaje wysłana.
-
- <br>![projekt](img/description/photo18.png)
- 
-## 4.6. Podstrona „Faq”
-
-### Sekcja najczęstszych pytań (pytania i odpowiedzi):
-
-- Sekcja ta za pomocą details po kliknięciu na zapytanie wyświetla odpowiedź.
-
- <br>![projekt](img/description/photo19.png)
- 
-## 4.7. Podstrona „Cart”
-
-### Sekcja pierwsza (produkty w koszyku):
-
-- Ta sekcja przedstawia produkty dodane do koszyka z nazwą ilością oraz ceną całkowitą.
-- Istnieje możliwość powrotu do podstrony produktów.
-
- <br>![projekt](img/description/photo20.png)
-
-### Sekcja druga (formularz płatniczy):
-
-- Formularz ten zwraca komunikaty jeśli podamy złe dane. Po podaniu dobrych wyświetla się komunikat o udanych zakupach i przejrzeniu maila w sprawie dalszej wysyłki.
-
- <br>![projekt](img/description/photo21.png)
- 
-## 4.8. Podstrona „Privacy Policy”:
-
-### Sekcja opisu polityki prywatności:
-
-- Przedstawiony jest opis polityki prywatności po którego najechaniu test ma animację.
-
- <br>![projekt](img/description/photo22.png)
- 
-## Testy strony w formacie „Desktop”:
-
-
- <br>![projekt](img/description/photo23.png)
-
-Strona główna wygląda w wersji desktopowej dobrze, nie ma nigdzie zagięć, wystających krawędzi. Pasek nawigacyjny wygląda przejrzyście, jest opisany i dodatkowo działa na wyobraźnię poprzez ikony.
-
-<br>![projekt](img/description/photo24.png)
-
-Sekcja galerii i detali jest w wersji desktopowej w miarę przejrzysta, widać równe odstępy od krawędzi i równe odstępy między zdjęciami. Wszystko wygląda czytelnie i nie sprawia kłopotów z odczytaniem.
-
-<br>![projekt](img/description/photo25.png)
-
-Slider oraz sekcje produktów mają równe wcięcia i dobre ułożenie, są w pełni czytelne i spełniają wymogi, dotyczące założeń.
-
-<br>![projekt](img/description/photo26.png)
-<br>![projekt](img/description/photo27.png)
-
-Elementy są dopasowane w taki sposób, aby nie raziły w oczy i nakłaniały do kliknięcia w dany produkt. Z pewnością ich ilość nie przytłacza i działa w sposób naturalny na wyobraźnię.
-
-<br>![projekt](img/description/photo28.png)
-<br>![projekt](img/description/photo29.png)
-
-Strona zakańcza się na sekcji stopki która w sposób minimalistyczny nie psuje całości wykonania strony i w pełni dopasowuje się do wybranych urządzeń.
-
-<br>![projekt](img/description/photo30.png)
-
-Podstrony też mają poprawne ułożenie i są czytelne dla oka, realizując wizję kompleksowej firmy.
-
-<br>![projekt](img/description/photo31.png)
-
-Formularze kontaktowe i płatnicze są ułożone centralnie na środku ekranu co w pewności jest przyjemne dla oka i odpowiednie dla użytkownika.
-
-<br>![projekt](img/description/photo32.png)
-<br>![projekt](img/description/photo33.png)
-
-Produkty i ich opisy są dopasowane do siebie co pokazuje, iż pasują do siebie i nie psują wizji łączenia całości.
-
-## Testy strony w formacie „Mobilnie”:
-
-<br>![projekt](img/description/photo34.png)
-
-Pasek nawigacyjny wygląda dobrze, ikona koszyka jest oddzielnie, aby odznaczała się od całości zakładek. Logo jest stale umieszczone w rogu ekranu, aby wbijało się w pamięć. Odznacza się i nie nakłada na inne elementy.
-
-<br>![projekt](img/description/photo35.png)
-
-<br>![projekt](img/description/photo36.png)
-
-Zdjęcia jak widać zmieniły swoją pozycję i nadal są w równych odstępach od siebie co spełnia wizję responsywnej strony.
-
-<br>![projekt](img/description/photo37.png)
-
-Slider jest teraz gotowy do przewijania slajd by slajd, poprzez co można w czytelny sposób nadal oglądać produkty w nim przedstawione.
-
-<br>![projekt](img/description/photo38.png)
-
-Promocję, newsletter i pasek stopki również w czytelny i responsywny sposób się ułożyły. Pokazuje to, że strona jest w pełni responsywna i dobrze dopasowana.
-
-<br>![projekt](img/description/photo39.png)
-
-Podstrony, jak widać też są w pełni responsywne i spełniają założenia projektu. Odstępy są równe, co robi stronę dobrą dla oka i przyciągającą klientów. Pasek nawigacyjny nie zasłania zbyt dużego pola i spełnia założenie, mówiące o polu dotyku (40px x 40px).
-
-<br>![projekt](img/description/photo40.png)
-
-Formularze kontaktowe, płatnicze są idealnie dopasowane do urządzeń mobilnych, dodatkowo są czytelne i spełniają warunki strony responsywnej.
-
-Podsumowując można zauważyć, że strona w wersji mobilnej i desktopowej jest zrobiona w sposób dobry. Nie ma nigdzie wcięć, ucinania krawędzi czy pasków do scrolowania. Strona spełnia założenia i została w pełni przetestowana responsywnie. Poniżej znajdują się testy uzupełniające takie jak wyniki walidacji czy testy szybkości załadowania strony.
-
-## Testowanie wydajności:
-
-### Czas Ładowania:
-- Wykorzystanie narzędzi takich jak Google PageSpeed Insights lub Lighthouse do analizy czasu ładowania strony i zidentyfikowania elementów, które mogą go spowalniać.
-
-### Optymalizacja Zasobów:
-- Sprawdzenie, czy obrazy, skrypty i arkusze stylów są zoptymalizowane pod kątem szybkiego ładowania (np. kompresja, minifikacja).
-
-## Testowanie kompatybilności przeglądarek:
-
-### Przeglądarki Desktopowe:
-- Testowanie strony na najnowszych wersjach popularnych przeglądarek (Chrome, Firefox, Safari, Edge), aby upewnić się, że wygląd i funkcje działają jednolicie.
-
-### Przeglądarki Mobilne:
-- Sprawdzenie działania strony na przeglądarkach mobilnych, szczególnie na systemach Android i iOS.
-
-## Testowanie dostępności:
-
-### Standardy Dostępności:
-- Wykorzystanie narzędzi takich jak WAVE lub AXE do sprawdzenia, czy strona jest dostępna dla użytkowników z ograniczeniami, np. dla osób korzystających z czytników ekranowych.
-
-### Kontrast i Czytelność:
-- Ocena, czy kontrast tekstu na tle jest wystarczający dla osób z zaburzeniami widzenia, oraz czy fonty i ich rozmiary są czytelne.
-
-## Podsumowanie:
-
-Strona została sprawdzona przez powyższe standardy, nie znaleziono błędów, które wynikałyby z złego napisania kodu, albo nie doprecyzowania jakiegoś z jego składników. Strona jest responsywna dla każdej z zakładek tak samo, wszystkie jej funkcje działają i spełniają swoją funkcję. Strona niezależnie od przeglądarek działa poprawnie oraz ma wysokie wyniki w różnych testach.
-
-Zgodnie z dokumentacją, strona została poddana rygorystycznym testom funkcjonalności, responsywności, wydajności, kompatybilności przeglądarek oraz dostępności, które przyniosły bardzo dobre wyniki. Zarówno HTML, jak i CSS strony przeszły walidację bez błędów, co świadczy o wysokiej jakości kodu i jego zgodności ze standardami. Strona wykazuje optymalną responsywność na różnych urządzeniach, a jej funkcje działają bez zarzutu. Dzięki przeprowadzonym testom i walidacjom, strona uzyskała wysokie oceny w narzędziu Lighthouse, w tym maksymalną wydajność 100/100, co świadczy o optymalizacji szybkości ładowania. Dostępność strony również została pozytywnie oceniona, choć wskazano pole do poprawy dla jeszcze lepszej dostępności dla osób z niepełnosprawnościami. Wyniki te potwierdzają, że strona jest bezbłędna i spełnia swoje założenia, dostarczając użytkownikom funkcjonalne, responsywne i profesjonalnie wykonane doświadczenie.
-
-### Wyniki z narzędzia Lighthouse:
-
-- Wydajność: Na zrzucie ekranu widać wynik 100/100, co oznacza, że strona jest wysoce optymalizowana pod kątem szybkości ładowania. Taki wynik jest wynikiem stosowania dobrych praktyk programistycznych, takich jak optymalizacja obrazów i skryptów, co przekłada się na krótki czas ładowania i pozytywne doświadczenia użytkownika.
-
-- Dostępność: Osiągnięto wynik 86/100, co świadczy o wysokiej dostępności strony, ale wciąż istnieje pole do poprawy, zwłaszcza w kontekście ułatwień dostępu dla osób z niepełnosprawnościami.
-
-- Najlepsze praktyki: Wynik 95/100 sugeruje, że strona przestrzega większości zalecanych praktyk, takich jak bezpieczne protokoły i nowoczesne funkcje API.
-
-- SEO: Perfekcyjny wynik 100/100 wskazuje na to, że strona została zbudowana zgodnie z zasadami SEO, co przyczynia się do jej widoczności w wynikach wyszukiwania.
-
-<br>![projekt](img/description/photo40.png)
-
-### Walidacja CSS przez W3C Validator:
-
-- Walidacja CSS zakończyła się sukcesem - nie znaleziono żadnych błędów. Jest to oznaka, że arkusz stylów CSS został napisany czysto i zgodnie z obowiązującymi standardami, co zapewnia jego kompatybilność między przeglądarkami i ułatwia dalsze utrzymanie oraz rozwijanie kodu.
-
-<br>![projekt](img/description/photo41.png)
-
-### Walidacja HTML przez Nu Html Checker:
-
-- Podobnie jak CSS, HTML strony również przeszedł walidację bez błędów. To świadczy o wysokiej jakości kodu, jego zgodności ze standardami oraz o tym, że prawdopodobnie będzie dobrze interpretowany przez różnorodne przeglądarki i urządzenia.
-
-<br>![projekt](img/description/photo42.png)
-
-Każdy z tych testów odgrywa kluczową rolę w zapewnieniu jakości i profesjonalizmu w projektowaniu stron internetowych. Dobre wyniki w testach wydajności i SEO są szczególnie ważne dla użytkowników końcowych oraz dla pozycjonowania strony w wyszukiwarkach. Natomiast wyniki walidacji CSS i HTML są ważne z perspektywy deweloperskiej, ponieważ potwierdzają, że kod jest dobrze napisany i będzie łatwiejszy w dalszym utrzymaniu i rozwijaniu. Dostępność jest istotna dla zapewnienia, że wszyscy użytkownicy, niezależnie od swoich możliwości, będą mogli korzystać ze strony. Osiągnięte wyniki wskazują, że szablon jest już na wysokim poziomie, ale wskazują również na obszary, które mogą zostać dodatkowo poprawione w przyszłości.
+The project involves the creation of a universal, responsive and interactive website template that is easy to adapt and develop. Key elements such as modular structure, responsive design and interactive components are designed to increase user engagement and facilitate content management. The approach taken aims to provide a template that is user-friendly, regardless of technical skills, and can be used in a variety of educational, personal or business contexts.
 
 <hr>
 
-## 5. Komentarze kodu i dokumentacja KSS oraz jsDoc
+#4. Responsiveness testing and validation
 
-Kod jest komentowany w sposób, który ma na celu dostarczenie jasnych i czytelnych informacji na temat każdej sekcji kodu. Komentarze są używane, aby opisać, do czego służy każdy blok kodu oraz jakie są jego główne cele i funkcje. To pomaga programistom zrozumieć strukturę i działanie kodu oraz ułatwia utrzymanie i ewentualne modyfikacje w przyszłości.
+## 4.1. Home page
 
-Komentarze są także używane do spełnienia wymogu tego punktu:
-- Komentarze są używane do opisania zmiennych korzeniowych, keyframes oraz stylów dla ciała strony, nagłówka i innych sekcji kodu.
-- Komentarze są napisane w jasny i zrozumiały sposób, co pomaga innym programistom szybko zrozumieć kod.
-- Komentarze zawierają informacje o tym, co dany fragment kodu robi, jakie są jego efekty wizualne oraz jakie są używane techniki (np. flexbox) w projekcie.
+### Navigation bar:
 
-Dzięki temu podejściu, kod jest czytelny i łatwy do zarządzania, a programiści mogą bezproblemowo pracować nad projektem i wprowadzać ewentualne zmiany lub ulepszenia.
+- A navigation bar appears at the top of the page and remains visible when scrolling down the page, regardless of responsiveness.
+- It is divided into two parts, the first part is the "site logo" and the second is the main links of the entire site. After clicking on the navigation icons and logos, we are redirected to the subpage addresses.
 
-Wszystkie zdjęcia wykorzystane w projekcie zostały wygenerowane przy użyciu sztucznej inteligencji DALL-E. Nie jestem w stanie dostarczyć bezpośrednich linków do źródeł, ponieważ te obrazy są wynikiem procesu generacji modelu DALL-E, a nie pochodzą z konkretnych źródeł zewnętrznych.
+<br>![project](img/description/photo3.png)
 
-W części dokumentacji poświęconej kodowi źródłowemu, szczególną uwagę zwrócono na szczegółowe dokumentowanie najważniejszych funkcji CSS. Dokumentacja została przygotowana przy użyciu metodologii KSS (Knyle Style Sheets), co pozwoliło na stworzenie czytelnej, spójnej i łatwo dostępnej dokumentacji dla wszystkich członków zespołu. Metodologia ta umożliwia zarówno opisywanie stylów bezpośrednio w kodzie, jak i automatyczne generowanie przewodników stylów, co znacząco ułatwia zarządzanie kodem CSS i jego późniejsze utrzymanie. Dokumentacja KSS dla najważniejszych funkcji CSS obejmuje nie tylko same selektory i właściwości, ale również ich zastosowanie, możliwe modyfikacje oraz przykłady użycia, co znacznie ułatwia zrozumienie i wykorzystanie kodu przez innych programistów.
+### Home page background (first view):
 
-<br>![projekt](img/description/photo43.png)
+- After loading the page, the background is blurred and has a logo with an effect that appears when you hover over the logo. Below it there is the word "key" of the page and a link to the subpage where our "offers" are presented.
 
-Całość dokumentacji dostępna również pod linkiem [tutaj](https://projekt2.dawidolko.pl/kss/styleguide/).
+<br>![project](img/description/photo4.png)
 
-JavaScript wykorzystywany w projekcie jest dokumentowany za pomocą JSDoc, standardu dla komentarzy w kodzie JavaScript, który pozwala na generowanie atrakcyjnej i funkcjonalnej dokumentacji. Obejmuje to:
-- Opisy Funkcji i Metod: Jasne wyjaśnienia dotyczące tego, co robi każda funkcja lub metoda, jakie argumenty przyjmuje i co zwraca.
-- Przykłady Użycia: Wskazówki dotyczące sposobu wykorzystania poszczególnych funkcji i metod w praktyce.
-- Typowanie: Informacje o oczekiwanych typach danych, co jest szczególnie pomocne w dynamicznym środowisku JavaScript.
+### Section one (gallery):
 
-Dzięki tym metodom, dokumentacja staje się integralną częścią projektu, wspierając jego przejrzystość, utrzymanie oraz dalszy rozwój. Kod jest przyjazny dla programistów na każdym poziomie zaawansowania i umożliwia efektywne zarządzanie projektem.
+- The first section on the home page is a gallery with three photos visible, and under them there is a button which, when clicked, expands several more photos. Each photo has its own animation, which is shown when you hover over it with the mouse.
 
-<br>![projekt](img/description/photo44.png)
-<br>![projekt](img/description/photo45.png)
+<br>![project](img/description/photo5.png)
 
-Całość dokumentacji dostępna również pod linkiem tutaj: [link](https://projekt2.dawidolko.pl/jsDoc1/out/index.html)
+<br>![project](img/description/photo6.png)
 
-### Grafika AI:
-Wszystkie grafiki użyte w projekcie są wygenerowane za pomocą DALL-E, nowoczesnego narzędzia AI do generowania obrazów. Obrazy te są unikalne i dostosowane do potrzeb wizualnych projektu, co dodaje indywidualnego charakteru i innowacyjności do prezentacji strony.
+### Section two (detail view and short description):
 
-Podsumowując, dokumentacja kodu, wraz z systematycznym komentowaniem, wykorzystaniem KSS i JSDoc, oraz unikalnymi grafikami AI, tworzy solidne i przystępne fundamenty dla projektu. Wszystko działa prawidłowo i efektywnie, zapewniając wysoką jakość oraz łatwość dalszego rozwoju i adaptacji projektu.
+- The next section is a description with an alert/popup that appears when clicked. There are also boxes containing information and buttons to be transferred to the product subpage.
+
+<br>![project](img/description/photo7.png)
+
+### Third section (slider):
+
+- The slider section is based on presenting products in a horizontal arrangement. After clicking on a given option on the slider, it takes us to a given product, where we have a photo and price.
+
+<br>![project](img/description/photo8.png)
+
+### Section four (product offering):
+
+- This part of the container is a section that is visible only on the desktop version, it presents products with their name, price, and star rating.
+
+- Two buttons are also shown there, in the first and last photo. They are used to transfer us to the products subpage, where we can further observe the products we are interested in.
+
+<br>![project](img/description/photo9.png)
+
+### Section five (offers divided into categories):
+
+- The presented section is made in an easy and comprehensive way. Three products are shown with a name, photo and a button to show more products on the subpage.
+
+<br>![project](img/description/photo10.png)
+
+### Section six (collections):
+
+- This part is the collection section. It shows a special offer with a description of the promotion percentage and a button to move to the subpage showing the promotion.
+- Below are also 3 ways to make purchases quickly and cheaply, with the possibility of return.
+
+<br>![project](img/description/photo11.png)
+
+### Section seven (newsletter):
+
+- This is a section showing the possibility of subscribing to the website's newsletter, which will send information about new products and promotions to the provided e-mail address.
+
+<br>![project](img/description/photo12.png)
+
+### Section eight (footer):
+
+- The last element visible on the website is the footer, presenting information about the website's rights and a link to the website's privacy policy.
+- It also states that it is fully semantically correct because it has been validated.
+- The footer includes social media sites such as Facebook, Instagram, YouTube, and Twitter.
+
+<br>![project](img/description/photo13.png)
+
+## 4.2. "About Us" subpage
+
+### "About us" section:
+
+- A short description describing our company and inviting you to view our products.
+
+<br>![project](img/description/photo14.png)
+
+### Page gallery:
+
+- A small and clear gallery where if we hover over a photo, it has its own animation.
+
+<br>![project](img/description/photo15.png)
+
+## 4.3. "Products" subpage
+
+### Large product section divided into products (KIDS/MEN/WOMEN):
+
+- Buttons allow you to switch between specific product zones. It is possible to display products only for one group of people or for everyone.
+
+<br>![project](img/description/photo16.png)
+
+## 4.4. "Gallery" subpage
+
+### Gallery (photos):
+
+- A section of photos arranged according to resolution, this section is made on a grid, so the photos are automatically arranged regardless of the device.
+
+<br>![project](img/description/photo17.png)
+
+## 4.5. "Contact" subpage
+
+### Contact form section:
+
+- This subpage contains only one section, namely the contact form, where this form is completed with validation.
+
+- After entering the data correctly, a popup/alert is displayed and the message is sent.
+
+<br>![project](img/description/photo18.png)
+
+## 4.6. "Faq" subpage
+
+### Frequently asked questions section (questions and answers):
+
+- This section uses details to display the answer after clicking on the query.
+
+<br>![project](img/description/photo19.png)
+
+## 4.7. "Cart" subpage
+
+### Section one (products in the basket):
+
+- This section shows the products added to the cart with name, quantity and total price.
+- It is possible to return to the products subpage.
+
+<br>![project](img/description/photo20.png)
+
+### Section two (payment form):
+
+- This form returns messages if we provide wrong data. After entering the correct ones, a message about successful purchases and an e-mail regarding further shipment is displayed.
+
+<br>![project](img/description/photo21.png)
+
+## 4.8. "Privacy Policy" subpage:
+
+### Privacy Policy Description Section:
+
+- A description of the privacy policy is presented and when hovered over, the test is animated.
+
+<br>![project](img/description/photo22.png)
+
+## Site tests in "Desktop" format:
+
+<br>![project](img/description/photo23.png)
+
+The home page looks good in the desktop version, there are no bends or protruding edges anywhere. The navigation bar looks clear, is described and additionally stimulates the imagination through icons.
+
+<br>![project](img/description/photo24.png)
+
+The gallery and details section is quite transparent in the desktop version, you can see equal spacing from the edges and equal spacing between photos. Everything looks legible and is easy to read.
+
+<br>![project](img/description/photo25.png)
+
+The slider and product sections have equal indentations and good arrangement, are fully legible and meet the requirements regarding the assumptions.
+
+<br>![project](img/description/photo26.png)
+<br>![project](img/description/photo27.png)
+
+The elements are adjusted in such a way that they do not irritate the eyes and encourage people to click on a given product. Certainly their number is not overwhelming and it naturally stimulates the imagination.
+
+<br>![project](img/description/photo28.png)
+<br>![project](img/description/photo29.png)
+
+The website ends with a footer section which, in a minimalist way, does not spoil the overall design of the website and fully adapts to selected devices.
+
+<br>![project](img/description/photo30.png)
+
+The subpages are also correctly arranged and readable, realizing the vision of a comprehensive company.
+
+<br>![project](img/description/photo31.png)
+
+Contact and payment forms are placed centrally in the middle of the screen, which is certainly pleasing to the eye and suitable for the user.
+
+<br>![project](img/description/photo32.png)
+<br>![project](img/description/photo33.png)
+
+The products and their descriptions are matched to each other, which shows that they fit together and do not spoil the vision of combining the whole.
+
+## Website tests in the "Mobile" format:
+
+<br>![project](img/description/photo34.png)
+
+The navigation bar looks good, the basket icon is separate to stand out from all the tabs. The logo is constantly placed in the corner of the screen to make it stick in your mind. It stands out and does not overlap with other elements.
+
+<br>![project](img/description/photo35.png)
+
+<br>![project](img/description/photo36.png)
+
+As you can see, the photos have changed their position and are still evenly spaced from each other, which meets the vision of a responsive website.
+
+<br>![project](img/description/photo37.png)
+
+The slider is now ready to scroll slide by slide, so you can still view the products presented in it in a clear way.
+
+<br>![project](img/description/photo38.png)
+
+The promotion, newsletter and footer bar are also arranged in a clear and responsive way. This shows that the website is fully responsive and well-adjusted.
+
+<br>![project](img/description/photo39.png)
+
+As you can see, the subpages are also fully responsive and meet the project assumptions. The spacing is even, which makes the website visually pleasing and attracts customers. The navigation bar does not cover too large a field and meets the assumption of a touch field (40px x 40px).
+
+<br>![project](img/description/photo40.png)
+
+Contact and payment forms are perfectly adapted to mobile devices, they are also legible and meet the requirements of a responsive website.
+
+To sum up, it can be noted that the website in both mobile and desktop versions is well-made. There are no indentations, edge cutting or scrolling strips anywhere. The website meets the assumptions and has been fully responsively tested. Below you will find additional tests such as validation results and page loading speed tests.
+
+## Performance testing:
+
+### Charging Time:
+
+- Using tools such as Google PageSpeed Insights or Lighthouse to analyze page loading time and identify elements that may slow it down.
+
+### Resource Optimization:
+
+- Check whether images, scripts and stylesheets are optimized for fast loading (e.g. compression, minification).
+
+## Browser compatibility testing:
+
+### Desktop Browsers:
+
+- Testing the website on the latest versions of popular browsers (Chrome, Firefox, Safari, Edge) to ensure that the appearance and functions work consistently.
+
+### Mobile Browsers:
+
+- Checking the operation of the website on mobile browsers, especially on Android and iOS systems.
+
+## Accessibility testing:
+
+### Accessibility Standards:
+
+- Using tools such as WAVE or AX to check whether the page is accessible to limited users, such as those using screen readers.
+
+### Contrast and Readability:
+
+- Assessment of whether the contrast of the text against the background is sufficient for people with visual impairments, and whether the fonts and their sizes are legible.
+
+## Summary:
+
+The website has been checked according to the above standards, no errors were found that would result from incorrect code writing or lack of specification of any of its components. The website is responsive for each tab in the same way, all its functions work and fulfill their function. The website works correctly regardless of browsers and has high results in various tests.
+
+According to the documentation, the website was subjected to rigorous tests of functionality, responsiveness, performance, browser compatibility and accessibility, which yielded very good results. Both the HTML and CSS pages were validated without errors, which proves the high quality of the code and its compliance with standards. The website is optimally responsive on various devices and its functions work flawlessly. Thanks to the tests and validations carried out, the website received high scores in the Lighthouse tool, including maximum efficiency of 100/100, which proves that the loading speed has been optimized. The accessibility of the website was also positively assessed, although room for improvement was indicated for even better accessibility for people with disabilities. These results confirm that the website is error-free and meets its objectives, providing users with a functional, responsive and professionally crafted experience.
+
+### Lighthouse results:
+
+- Performance: The screenshot shows a score of 100/100, which means the site is highly optimized for loading speed. This result is the result of good programming practices, such as image and script optimization, which translates into short loading times and a positive user experience.
+
+- Accessibility: A score of 86/100 was achieved, which indicates high accessibility of the website, but there is still room for improvement, especially in the context of accessibility for people with disabilities.
+
+- Best practices: A score of 95/100 suggests that the site follows most recommended practices, such as secure protocols and modern API features.
+
+- SEO: A perfect score of 100/100 indicates that the website has been built according to SEO principles, which contributes to its visibility in search results.
+
+<br>![project](img/description/photo40.png)
+
+### CSS validation by W3C Validator:
+
+- CSS validation was successful - no errors found. This is a sign that the CSS stylesheet has been written cleanly and according to current standards, ensuring cross-browser compatibility and making it easier to maintain and develop the code.
+
+<br>![project](img/description/photo41.png)
+
+### HTML validation by Nu Html Checker:
+
+- Like CSS, the website's HTML also passed validation without errors. This demonstrates the high quality of the code, its compliance with standards, and the fact that it will likely be interpreted well by a variety of browsers and devices.
+
+<br>![project](img/description/photo42.png)
+
+Each of these tests plays a key role in ensuring quality and professionalism in website design. Good results in performance and SEO tests are especially important for end users and for the website's positioning in search engines. However, CSS and HTML validation results are important from a development perspective because they confirm that the code is well written and will be easier to maintain and develop. Accessibility is important to ensure that all users, regardless of their ability, can use the site. The results achieved indicate that the template is already at a high level, but also point to areas that can be further improved in the future.
+
+<hr>
+## 5. Code comments and documentation KSS and jsDoc
+
+The code is commented in a way that is intended to provide clear and readable information about each section of the code. Comments are used to describe what each block of code does and what its main purposes and functions are. This helps developers understand the structure and operation of the code and facilitates maintenance and possible modifications in the future.
+
+Comments are also used to fulfill the requirement of this section:
+
+- Comments are used to describe root variables, keyframes, and styles for the page body, header, and other sections of the code.
+- Comments are written in a clear and understandable way, which helps other developers quickly understand the code.
+- Comments contain information about what a given fragment of code does, what its visual effects are and what techniques (e.g. flexbox) are used in the project.
+
+Thanks to this approach, the code is readable and easy to manage, and developers can seamlessly work on the project and make any changes or improvements.
+
+All photos used in the project were generated using DALL-E artificial intelligence. I am unable to provide direct links to sources because these images are the result of the DALL-E model generation process and do not come from specific external sources.
+
+In the part of the documentation devoted to the source code, special attention was paid to detailed documentation of the most important CSS functions. The documentation was prepared using the KSS (Knyle Style Sheets) methodology, which allowed for the creation of clear, consistent and easily accessible documentation for all team members. This methodology allows both the description of styles directly in the code and the automatic generation of style guides, which significantly facilitates CSS code management and its subsequent maintenance. KSS documentation for the most important CSS functions covers not only the selectors and properties themselves, but also their use, possible modifications and examples of use, which makes it much easier for other developers to understand and use the code.
+
+<br>![project](img/description/photo43.png)
+
+The entire documentation is also available at the link [here](https://projekt2.dawidolko.pl/kss/styleguide/).
+
+The JavaScript used in the project is documented using JSDoc, a standard for JavaScript comments that allows you to generate attractive and functional documentation. This includes:
+
+- Function and Method Descriptions: Clear explanations of what each function or method does, what arguments it takes, and what it returns.
+- Usage Examples: Tips on how to use individual functions and methods in practice.
+- Typing: Information about expected data types, which is especially helpful in a dynamic JavaScript environment.
+
+Thanks to these methods, documentation becomes an integral part of the project, supporting its transparency, maintenance and further development. The code is friendly to programmers of all skill levels and enables effective project management.
+
+<br>![project](img/description/photo44.png)
+<br>![project](img/description/photo45.png)
+
+The entire documentation is also available at the link here: [link](https://projekt2.dawidolko.pl/jsDoc1/out/index.html)
+
+### AI graphics:
+
+All graphics used in the project are generated using DALL-E, a modern AI tool for generating images. These images are unique and tailored to the visual needs of the project, which adds individual character and innovation to the website's presentation.
+
+To sum up, code documentation, along with systematic commenting, the use of KSS and JSDoc, and unique AI graphics, create a solid and accessible foundation for the project. Everything works properly and efficiently, ensuring high quality and ease of further development and adaptation of the project.
 
 <hr>
 
-## 6. Linki do źródeł
+## 6. Links to sources
 
-- Co do ikon użytych w nawigacji, zostały one pozyskane z serwisu [Flaticon](https://www.flaticon.com/). 
+- As for the icons used in the navigation, they were obtained from the [Flaticon](https://www.flaticon.com/) website.
 
-- Treści graficzne i ikony z serwisu Flaticon są dostępne na licencji Creative Commons BY 3.0, co oznacza, że można je używać w projektach, pod warunkiem zachowania informacji o autorze (atrybucja). Dlatego też, autor projektu powinien uwzględnić odpowiednie atrybucje do tych ikon, informując o ich źródle i autorze.
+- Graphic content and icons from Flaticon are available under the Creative Commons BY 3.0 license, which means they can be used in projects as long as attribution is retained. Therefore, the author of the project should include appropriate attributions to these icons, providing information about their source and author.
 
-- Jeśli chodzi o dokumentację, to korzystałem tylko i wyłącznie z prezentacji z zajęć oraz stron [W3Schools](https://www.w3schools.com/).
+- When it comes to documentation, I only used presentations from classes and the [W3Schools](https://www.w3schools.com/) website.
 
-- Całość projektu znajduje się również w repozytorium prywatnym na [GitHubie](https://github.com/dawidolko/Responsive-Website-Design-HTML-CSS-JS.git).
+- The entire project is also located in a private repository on [GitHub](https://github.com/dawidolko/Responsive-Website-Design-HTML-CSS-JS.git).
 
-- Dodatkowo jest załączona na GitHub Pages, więc możliwa jest indywidualna ocena strony - [https://projekt2.dawidolko.pl/](https://projekt2.dawidolko.pl/).
+- Additionally, it is included on GitHub Pages, so it is possible to individually evaluate the website - [https://projekt2.dawidolko.pl/](https://projekt2.dawidolko.pl/).
 
-- Historia commit’ów: [Link do repozytorium na GitHubie](https://github.com/dawidolko/Responsive-Website-Design-HTML-CSS-JS/commits/main)
+- Commit history: [Link to GitHub repository](https://github.com/dawidolko/Responsive-Website-Design-HTML-CSS-JS/commits/main)
 
-<br>![projekt](img/description/photo46.png)
+<br>![project](img/description/photo46.png)
 
 <hr>
-
-## 7. Raport SEO
+## 7. SEO Report
 
 ### a) [https://www.seobility.net/en/seocheck/](https://www.seobility.net/en/seocheck/)
 
-<br>![projekt](img/description/photo47.png)
+<br>![project](img/description/photo47.png)
 
-Oto szczegółowy opis metryk przedstawionych w raporcie:
+Here is a detailed description of the metrics presented in the report:
 
-- **Ocena SEO:** Ogólna ocena SEO wynosi 68%, co jest przedstawione na wykresie kołowym. Ta ocena jest podsumowaniem wydajności strony we wszystkich mierzonych aspektach.
+- **SEO Rating:** The overall SEO rating is 68%, which is shown in the pie chart. This rating is a summary of the site's performance across all measured aspects.
 
-- **Informacje Meta:** Bardzo dobra ocena na poziomie 88%, co wskazuje, że tagi meta, takie jak tytuł i opis, są dobrze zoptymalizowane.
+- **Meta Info:** A very good rating of 88%, which indicates that meta tags such as title and description are well optimized.
 
-- **Jakość Strony:** Ocena wynosi 48%, co sugeruje, że istnieje sporo miejsca na poprawę jakości stron internetowych, możliwe obszary do poprawy to m.in. treść, czytelność lub wydajność strony.
+- **Site Quality:** The rating is 48%, which suggests that there is a lot of room to improve the quality of websites, possible areas for improvement include: content, readability or page performance.
 
-- **Struktura Strony:** Strona otrzymała ocenę 58%, co wskazuje, że struktura strony, która może obejmować nagłówki i wykorzystanie elementów strukturalnych HTML5, jest umiarkowanie zoptymalizowana.
+- **Page Structure:** The page received a rating of 58%, indicating that the page structure, which may include headings and the use of HTML5 structural elements, is moderately optimized.
 
-- **Struktura Linków:** Strona ma wysoką ocenę struktury linków, wynoszącą 92%, co sugeruje, że strategie linkowania wewnętrznego i zewnętrznego są silne.
+- **Link Structure:** The site has a high link structure score of 92%, which suggests that its internal and external linking strategies are strong.
 
-- **Serwer:** Konfiguracja serwera jest doskonała z oceną 100%, co może wskazywać na dobrze skonfigurowany serwer, dobre czasy odpowiedzi i brak poważnych problemów związanych z serwerem.
+- **Server:** The server configuration is excellent with a rating of 100%, which may indicate a well-configured server, good response times, and no major server-related issues.
 
-- **Czynniki Zewnętrzne:** Ocena wynosi 23%, co jest dość niską wartością. Może to odnosić się do takich czynników jak linki zwrotne, obecność w mediach społecznościowych i inne czynniki zewnętrzne, które leżą poza samą stroną.
+- **External Factors:** The rating is 23%, which is quite low. This may refer to factors such as backlinks, social media presence and other external factors that lie beyond the site itself.
 
-Dodatkowe metryki to:
+Additional metrics include:
 
-- **Czas Reakcji:** Czas odpowiedzi serwera jest bardzo dobry, wynosi 0,13 sekundy.
+- **Response Time:** The server response time is very good, 0.13 seconds.
 
-- **Rozmiar Pliku:** Całkowity rozmiar pliku strony to 38,40 kB, co jest lekkie i zazwyczaj korzystne dla czasów ładowania.
+- **File Size:** The total page file size is 38.40 kB, which is lightweight and usually good for load times.
 
-- **Słowa:** Na stronie znajduje się 348 słów. W zależności od kontekstu, może to być uznane za małą ilość pod kątem SEO, ponieważ dłuższe treści czasami mogą być lepiej pozycjonowane.
+- **Words:** There are 348 words on the page. Depending on the context, this may be considered a low amount in terms of SEO, as longer content can sometimes rank better.
 
-- **Pliki Multimedialne:** Jest 100 plików multimedialnych, mogą to być obrazy lub wideo. Jest to stosunkowo duża liczba, która może potencjalnie spowolnić ładowanie się strony, jeśli nie są odpowiednio zoptymalizowane.
+- **Multimedia Files:** There are 100 multimedia files, they can be images or videos. This is a relatively large number that can potentially slow down page loading times if they are not properly optimized.
 
-- **Liczba Linków:** Jest 36 wewnętrznych linków i 5 zewnętrznych. Dobre wyważenie linków wewnętrznych i zewnętrznych może pomóc w SEO, ale jakość i trafność tych linków są również ważnymi czynnikami.
+- **Number of Links:** There are 36 internal links and 5 external links. A good balance of internal and external links can help with SEO, but the quality and relevance of these links are also important factors.
 
-Podsumowując, raport wskazuje, że chociaż strona internetowa działa dobrze w pewnych aspektach, takich jak wydajność serwera i struktura linków, istnieją obszary takie jak jakość strony i czynniki zewnętrzne, które mogłyby być znacznie ulepszone, aby zwiększyć ogólną wydajność SEO.
+Overall, the report indicates that while the website performs well in certain aspects such as server performance and link structure, there are areas such as page quality and external factors that could be significantly improved to increase overall SEO performance.
 
 ### b) [https://developer.chrome.com/docs/lighthouse/](https://developer.chrome.com/docs/lighthouse/)
 
-<br>![projekt](img/description/photo48.png)
+<br>![project](img/description/photo48.png)
 
-Oto wyniki przedstawione na zrzucie ekranu, z wykorzystaniem danych ze zdjęcia:
+Here are the results shown in the screenshot, using the data from the photo:
 
-- **Wydajność (Performance):** 99/100 - Wynik ten wskazuje, że strona jest bardzo dobrze zoptymalizowana pod kątem szybkości i wydajności. Wysoka ocena w tej kategorii sugeruje krótki czas ładowania, efektywne wykorzystanie zasobów i dobrą reakcję na interakcje użytkowników.
+- **Performance:** 99/100 - This score indicates that the website is very well optimized for speed and performance. A high rating in this category suggests short loading times, efficient use of resources, and good response to user interactions.
 
-- **Dostępność (Accessibility):** 90/100 - Ta ocena sugeruje, że strona w ogólnym rozrachunku jest dostępna, ale mogą występować pewne problemy, które można by poprawić, aby strona była bardziej dostępna dla osób z niepełnosprawnościami, takie jak potencjalne problemy z kontrastem, etykietami formularzy lub strukturą nagłówków.
+- **Accessibility:** 90/100 - This rating suggests that the site is generally accessible, but there may be some issues that could be improved to make the site more accessible to people with disabilities, such as potential problems with contrast, form labels, or heading structure.
 
-- **Najlepsze Praktyki (Best Practices):** 91/100 - Ten wynik wskazuje na stosowanie większości najlepszych praktyk w zakresie tworzenia stron internetowych, z niewielkim marginesem na drobne poprawki.
+- **Best Practices:** 91/100 - This score demonstrates most web development best practices, with a small margin for minor tweaks.
 
-- **SEO:** 100/100 - Ocena SEO jest doskonała, co wskazuje, że strona jest bardzo dobrze zoptymalizowana pod kątem wyszukiwarek internetowych, osiągając maksymalny potencjał w tej kategorii.
+- **SEO:** 100/100 - The SEO rating is excellent, indicating that the site is very well optimized for search engines, reaching its maximum potential in this category.
 
-- **PWA (Progressive Web App):** Nie zostało to wyraźnie ocenione na obrazie, ale maksymalna ocena 100/100 w tej kategorii oznaczałaby, że strona spełnia kryteria aplikacji webowej postępującej, w tym aspekty takie jak szybkość, niezawodność i niezależność od połączenia sieciowego.
+- **PWA (Progressive Web App):** This is not explicitly rated in the image, but a maximum score of 100/100 in this category would mean that the site meets the criteria for a progressive web application, including aspects such as speed, reliability and independence from network connection.
 
-Podsumowując, raport Lighthouse pokazuje, że strona w dużym stopniu spełnia standardy wydajności i SEO bardzo dobrze, chociaż istnieją pewne obszary, szczególnie dostępność i najlepsze praktyki, które mają przestrzeń na poprawę.
+Overall, the Lighthouse report shows that the site largely meets performance and SEO standards very well, although there are some areas, particularly accessibility and best practices, that have room for improvement.
