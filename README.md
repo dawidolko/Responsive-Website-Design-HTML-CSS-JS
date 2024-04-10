@@ -16,7 +16,7 @@
 2. [Defining the problem to be implemented](#2-defining-the-problem-to-be-implemented)
 3. [Proposal for solving the problem](#3-proposal-for-solving-the-problem)
 4. [Responsivity testing and validation](#4-responsiveness-testing-and-validation)
-5. [Code comments and KSS documentation](#5-code-comments-and-documentation-KSS)
+5. [Code comments and KSS documentation](#5-code-comments-and-documentation-kss-and-jsdoc)
 6. [Links to sources](#6-links-to-sources)
 7. [SEO Report](#7-seo-report)
 
