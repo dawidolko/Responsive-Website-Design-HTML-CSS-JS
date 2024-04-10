@@ -13,8 +13,8 @@
 ## Contents
 
 1. [Title page](#1-title-page)
-2. [Defining the problem to be implemented](#2-defining-the-problem-to-be implemented)
-3. [Proposal for solving the problem](#3-proposal for solving the problem)
+2. [Defining the problem to be implemented](#2-defining-the-problem-to-be-implemented)
+3. [Proposal for solving the problem](#3-proposal-for-solving-the-problem)
 4. [Responsivity testing and validation](#4-responsiveness-testing-and-validation)
 5. [Code comments and KSS documentation](#5-code-comments-and-documentation-KSS)
 6. [Links to sources](#6-links-to-sources)
@@ -183,7 +183,7 @@ The project involves the creation of a universal, responsive and interactive web
 
 <hr>
 
-#4. Responsiveness testing and validation
+# 4. Responsiveness testing and validation
 
 ## 4.1. Home page
 
@@ -456,6 +456,7 @@ According to the documentation, the website was subjected to rigorous tests of f
 Each of these tests plays a key role in ensuring quality and professionalism in website design. Good results in performance and SEO tests are especially important for end users and for the website's positioning in search engines. However, CSS and HTML validation results are important from a development perspective because they confirm that the code is well written and will be easier to maintain and develop. Accessibility is important to ensure that all users, regardless of their ability, can use the site. The results achieved indicate that the template is already at a high level, but also point to areas that can be further improved in the future.
 
 <hr>
+
 ## 5. Code comments and documentation KSS and jsDoc
 
 The code is commented in a way that is intended to provide clear and readable information about each section of the code. Comments are used to describe what each block of code does and what its main purposes and functions are. This helps developers understand the structure and operation of the code and facilitates maintenance and possible modifications in the future.
@@ -514,6 +515,7 @@ To sum up, code documentation, along with systematic commenting, the use of KSS 
 <br>![project](img/description/photo46.png)
 
 <hr>
+
 ## 7. SEO Report
 
 ### a) [https://www.seobility.net/en/seocheck/](https://www.seobility.net/en/seocheck/)
